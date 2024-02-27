@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .image-item {
+            width: 48%; /* Each image takes up 48% of the container width */
+            margin-bottom: 10px; /* Add margin between images */
+            box-sizing: border-box;
+        }
+        .image-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .description-input {
+            width: 100%;
+            margin-top: 5px;
+        }
+        @media (min-width: 768px) {
+            .image-item {
+                width: 48%; /* Each image takes up 48% of the container width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="file-input" accept="image/*" multiple>
+    <button onclick="generateHTML()">Generate HTML</button>
+
+    <script>
+        function generateHTML() {
+            const files = document.getElementById('file-input').files;
+            const images = [];
+            for (let i = 0; i < files.length; i++) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imageData = {
+                        src: e.target.result,
+                        description: ""
+                    };
+                    images.push(imageData);
+                    if (images.length === files.length) {
+                        createNewPage(images);
+                    }
+                }
+                reader.readAsDataURL(files[i]);
+            }
+        }
+
+        function createNewPage(images) {
+            const htmlContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Uploaded Images</title>
+                    <style>
+                        #image-container {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                        }
+                        .image-item {
+                            width: 48%; /* Each image takes up 48% of the container width */
+                            margin-bottom: 10px; /* Add margin between images */
+                            box-sizing: border-box;
+                        }
+                        .image-item img {
+                            width: 100%;
+                            height: auto;
+                            object-fit: contain;
+                        }
+                        .description-input {
+                            width: 100%;
+                            margin-top: 5px;
+                        }
+                        @media (min-width: 768px) {
+                            .image-item {
+                                width: 48%; /* Each image takes up 48% of the container width */
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div id="image-container">
+                        ${images.map((image, index) => `
+                            <div class="image-item">
+                                <img src="${image.src}" alt="Uploaded Image">
+                                <input type="text" class="description-input" id="description-${index}" placeholder="Enter description">
+                            </div>
+                        `).join('')}
+                    </div>
+                </body>
+                </html>
+            `;
+            const newWindow = window.open();
+            newWindow.document.open();
+            newWindow.document.write(htmlContent);
+            newWindow.document.close();
+        }
+    </script>
+</body>
+</html>
