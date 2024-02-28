@@ -2565,9 +2565,10 @@
   </div>
   <div class="footer">
     <input type="file" id="imageFileInput" multiple accept="image/*" style="display: none;" onchange="handleImageFiles(event)">
-    <button class="button" onclick="document.getElementById('imageFileInput').click()">Upload Images</button>    <button class="button" onclick="exportToJson()">Download JSON</button>
+    <button class="button" onclick="document.getElementById('imageFileInput').click()">Upload Images</button>    
+    <button class="button" onclick="exportToJson()">Download</button>
     <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">
-    <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload JSON</button>
+    <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload</button>
     <button class="button" onclick="openFullReportXband()">Full Report</button>
     <button class="button" onclick="openCloudCertificate()">Miros Cloud Certificate</button>
     <button class="clear_button" onclick="clearForm()">Clear Data</button>
