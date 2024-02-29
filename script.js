@@ -817,9 +817,36 @@ function handleJsonFile(event) {
   reader.readAsText(file);
 }
 
-// Function to fill in the form elements from JSON data
+
 function fillFormFromJson(data) {
+  console.log(data); // Log the data for debugging
   const form = document.getElementById('myForm');
+  
+  // Handle top-level properties
+  Object.keys(data).forEach(key => {
+    if (typeof data[key] !== 'object') {
+      if (form.elements[key]) {
+        form.elements[key].value = data[key];
+      }
+    } else {
+      // Handle nested objects like 'recordEquipment'
+      Object.keys(data[key]).forEach(nestedKey => {
+        // Here, we assume the form element's name matches the nested key directly
+        if (form.elements[nestedKey]) {
+          form.elements[nestedKey].value = data[key][nestedKey];
+        }
+      });
+    }
+  });
+}
+
+
+
+// Function to fill in the form elements from JSON data
+function fillFormFromJsonORIG(data) {
+  console.log(data); // Add this line to log the data to the console
+  const form = document.getElementById('myForm');
+  
 
   // Set the values of the form elements based on the JSON data
   form.elements.system.value = data.system;
@@ -903,28 +930,24 @@ function fillFormFromJson(data) {
   form.elements.checkCabling4.value = data.checkCabling4;
   form.elements.checkPower4.value = data.checkPower4;
   form.elements.checkEarthing4.value = data.checkEarthing4;
-
   form.elements.checkEquipment5.value = data.checkEquipment5;
   form.elements.checkVisual5.value = data.checkVisual5;
   form.elements.checkMech5.value = data.checkMech5;
   form.elements.checkCabling5.value = data.checkCabling5;
   form.elements.checkPower5.value = data.checkPower5;
   form.elements.checkEarthing5.value = data.checkEarthing5;
-
   form.elements.checkEquipment6.value = data.checkEquipment6;
   form.elements.checkVisual6.value = data.checkVisual6;
   form.elements.checkMech6.value = data.checkMech6;
   form.elements.checkCabling6.value = data.checkCabling6;
   form.elements.checkPower6.value = data.checkPower6;
   form.elements.checkEarthing6.value = data.checkEarthing6;
-
   form.elements.checkEquipment7.value = data.checkEquipment7;
   form.elements.checkVisual7.value = data.checkVisual7;
   form.elements.checkMech7.value = data.checkMech7;
   form.elements.checkCabling7.value = data.checkCabling7;
   form.elements.checkPower7.value = data.checkPower7;
   form.elements.checkEarthing7.value = data.checkEarthing7;
-
   form.elements.checkEquipment8.value = data.checkEquipment8;
   form.elements.checkVisual8.value = data.checkVisual8;
   form.elements.checkMech8.value = data.checkMech8;
@@ -1116,8 +1139,6 @@ function fillFormFromJson(data) {
   form.elements.workStatus.value = data.workStatus;
   form.elements.subscriptionExpiry.value = data.subscriptionExpiry;
   form.elements.generalComments.value = data.generalComments;
-
-
 }
 
 
