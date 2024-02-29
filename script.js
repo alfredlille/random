@@ -1490,7 +1490,7 @@ function openFullReportXband() {
   <div class="container">
   <h2>Site Report</h2>
   <h3>1. Overview</h3>
-  <p>${selectedElements.generalComments}</p>
+  <p style="max-width: 900px;">${selectedElements.generalComments}</p>
 
   <table>
   <tr>
