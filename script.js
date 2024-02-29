@@ -838,6 +838,9 @@ function fillFormFromJson(data) {
       });
     }
   });
+
+  // Reload the page after filling the form
+  window.location.reload();
 }
 
 
