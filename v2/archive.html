@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON File List</title>
+</head>
+<body>
+    <h1>JSON File List</h1>
+    <ul id="fileList">
+        <!-- JSON filenames will be inserted here -->
+    </ul>
+
+    <script>
+        // Function to fetch JSON filenames and create hyperlinks
+        function fetchAndDisplayJSONFiles() {
+            fetch('data/') // Assuming 'data' is the folder containing JSON files
+            .then(response => response.text())
+            .then(text => {
+                const parser = new DOMParser();
+                const htmlDocument = parser.parseFromString(text, 'text/html');
+                const fileList = Array.from(htmlDocument.querySelectorAll('a')).map(a => a.href);
+                displayJSONFiles(fileList);
+            })
+            .catch(error => console.error('Error fetching JSON files:', error));
+        }
+
+        // Function to display JSON filenames as hyperlinks
+        function displayJSONFiles(fileList) {
+            const fileListElement = document.getElementById('fileList');
+            fileList.forEach(filename => {
+                if (filename.endsWith('.json')) {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.textContent = filename.split('/').pop(); // Extract filename from the path
+                    link.href = filename; // Assuming filenames are relative paths within the 'data' folder
+                    listItem.appendChild(link);
+                    fileListElement.appendChild(listItem);
+                }
+            });
+        }
+
+        // Call the function when the page loads
+        fetchAndDisplayJSONFiles();
+    </script>
+</body>
+</html>

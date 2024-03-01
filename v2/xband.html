@@ -1,0 +1,2630 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Report Tool</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <!-- INTRODUCTION. -->
+    <a href="index.html">
+      <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg">
+    </a>
+    <h1>Report Tool</Form>
+    </h1>
+    <form id="dropdownForm">
+      <label for="dropdown"></label>
+      <select id="dropdown" onchange="navigate()">
+        <option value=" ">Choose a System</option>
+        <option value="xband.html">Wavex & OSD</option>
+        <option value="rangefinder.html">RangeFinder</option>
+        <option value="waveradar.html">Wave & Current Radar</option>
+        <option value="other.html">Other</option>
+      </select>
+    </form>
+    <h2>X Band Suite</h2>
+    <h3>Wavex, WaveSystem and Oil Spill Detection</h3>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form id="myForm" oninput="saveToLocalStorage()">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- OVERVIEW. -->
+        <h2>1. Overview</h2>
+        <p>Please refer to XXX</p>
+        <label for="system">System:</label>
+        <select name="system">
+          <option value=" "> </option>
+          <option value="Wavex">Wavex</option>
+          <option value="WaveSystem">WaveSystem</option>
+          <option value="OSD">OSD</option>
+        </select>
+        <label for="workType">Work Type:</label>
+        <select name="workType">
+          <option value=" "> </option>
+          <option value="Commissioning">Commissioning</option>
+          <option value="Upgrade">Upgrade</option>
+          <option value="Service">Service</option>
+          <option value="Troubleshooting">Troubleshooting</option>
+        </select>
+        <label for="site">Site:</label>
+        <input type="text" name="site">
+        <label for="siteType">Site Type:</label>
+        <select name="siteType">
+          <option value=" "> </option>
+          <option value="Platform">Platform</option>
+          <option value="Supply Vessel">Supply Vessel</option>
+          <option value="Cable Layer">Cable Layer</option>
+          <option value="Tanker">Tanker</option>
+          <option value="Cruise Vessel">Cruise Vessel</option>
+          <option value="FPSO">FPSO</option>
+          <option value="Dry Cargo">Dry Cargo</option>
+          <option value="Construction Vessel">Construction Vessel</option>
+          <option value="FPSO">FPSO</option>
+          <option value="FPSO">FPSO</option>
+          <option value="FPSO">FPSO</option>
+        </select>
+        <label for="customer">Customer:</label>
+        <input type="text" name="customer">
+        <label for="date">Date:</label>
+        <input type="date" name="date">
+        <label for="imo">IMO:</label>
+        <input type="text" name="imo">
+        <label for="location">Location:</label>
+        <input type="text" name="location">
+        <label for="engineer">Engineer:</label>
+        <select name="engineer">
+          <option value=" "> </option>
+          <option value="Daniel Denyer">Daniel Denyer</option>
+          <option value="Eirik Tenningen">Eirik Tenningen</option>
+          <option value="Ørjan Kleppe">Ørjan Kleppe</option>
+          <option value="Kristopher Ganzel">Kristopher Ganzel</option>
+          <option value="Vemund Bertelsen">Vermund Bertelsen</option>
+          <option value="Sahil Kochhar">Sahil Kochhar</option>
+        </select>
+        <!-- RECORD EQUIPMENT. -->
+        <h2>2. Record of Equipment</h2>
+        <button class="show_explanation">Show Explanation</button>
+        <p class="expandableText" style="display: none;" width="100x"> The following items shall be checked and recorded
+          in the commissioning report for
+          all hardware supplied by Miros.
+          For each installed unit of equipment record the following:
+          Item Description
+          Manufact.
+          Equipment manufacturer.
+          Model
+          Equipment model.
+          PN
+          Note the equipment part number the equipment is labelled with.
+          SN
+          Note the serial number the equipment is labelled with.
+          Location
+          Describe where the equipment is located.
+        </p>
+        <br>
+        <br>
+
+        <table id="equipmentTable">
+          <!-- Rows 1 to 4 (Visible by default) -->
+          <tr>
+            <td>
+              <label for="recordEquipment1">Equipment:</label>
+              <select name="recordEquipment1">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td><label for="equipmentManufact1">Manufacturer:</label><input type="text" name="equipmentManufact1"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentModel1">Model:</label><input type="text" name="equipmentModel1"
+                style="width:100px;"></td>
+            <td><label for="equipmentPartNo1">Part No:</label><input type="text" name="equipmentPartNo1"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentSerialNo1">Serial No:</label><input type="text" name="equipmentSerialNo1"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentLocation1">Location:</label><input type="text" name="equipmentLocation1"
+                style="width:100px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="recordEquipment2"></label>
+              <select name="recordEquipment2">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td><label for="equipmentManufact2"></label><input type="text" name="equipmentManufact2"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentModel2"></label><input type="text" name="equipmentModel2" style="width:100px;">
+            </td>
+            <td><label for="equipmentPartNo2"></label><input type="text" name="equipmentPartNo2" style="width:100px;">
+            </td>
+            <td><label for="equipmentSerialNo2"></label><input type="text" name="equipmentSerialNo2"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentLocation2"></label><input type="text" name="equipmentLocation2"
+                style="width:100px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="recordEquipment3"></label>
+              <select name="recordEquipment3">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td><label for="equipmentManufact3"></label><input type="text" name="equipmentManufact3"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentModel3"></label><input type="text" name="equipmentModel3" style="width:100px;">
+            </td>
+            <td><label for="equipmentPartNo3"></label><input type="text" name="equipmentPartNo3" style="width:100px;">
+            </td>
+            <td><label for="equipmentSerialNo3"></label><input type="text" name="equipmentSerialNo3"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentLocation3"></label><input type="text" name="equipmentLocation3"
+                style="width:100px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="recordEquipment4"></label>
+              <select name="recordEquipment4">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td><label for="equipmentManufact4"></label><input type="text" name="equipmentManufact4"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentModel4"></label><input type="text" name="equipmentModel4" style="width:100px;">
+            </td>
+            <td><label for="equipmentPartNo4"></label><input type="text" name="equipmentPartNo4" style="width:100px;">
+            </td>
+            <td><label for="equipmentSerialNo4"></label><input type="text" name="equipmentSerialNo4"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentLocation4"></label><input type="text" name="equipmentLocation4"
+                style="width:100px;">
+            </td>
+          </tr>
+
+          <!-- Rows 5 to 8 (Hidden by default) -->
+          <!-- Fifth row as an example, repeat for rows 6 to 8 -->
+          <!-- Repeat similar structure for rows 6 to 8, ensuring each has the class 'hidden' -->
+          <tr class="hidden">
+            <td>
+              <label for="recordEquipment5"></label>
+              <select name="recordEquipment5">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td><label for="equipmentManufact5"></label><input type="text" name="equipmentManufact5"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentModel5"></label><input type="text" name="equipmentModel5" style="width:100px;">
+            </td>
+            <td><label for="equipmentPartNo5"></label><input type="text" name="equipmentPartNo5" style="width:100px;">
+            </td>
+            <td><label for="equipmentSerialNo5"></label><input type="text" name="equipmentSerialNo5"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentLocation5"></label><input type="text" name="equipmentLocation5"
+                style="width:100px;">
+            </td>
+          </tr>
+          <tr class="hidden">
+            <td>
+              <label for="recordEquipment6"></label>
+              <select name="recordEquipment6">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td><label for="equipmentManufact6"></label><input type="text" name="equipmentManufact6"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentModel6"></label><input type="text" name="equipmentModel6" style="width:100px;">
+            </td>
+            <td><label for="equipmentPartNo6"></label><input type="text" name="equipmentPartNo6" style="width:100px;">
+            </td>
+            <td><label for="equipmentSerialNo6"></label><input type="text" name="equipmentSerialNo6"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentLocation6"></label><input type="text" name="equipmentLocation6"
+                style="width:100px;">
+            </td>
+          </tr>
+          <tr class="hidden">
+            <td>
+              <label for="recordEquipment7"></label>
+              <select name="recordEquipment7">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td><label for="equipmentManufact7"></label><input type="text" name="equipmentManufact7"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentModel7"></label><input type="text" name="equipmentModel7" style="width:100px;">
+            </td>
+            <td><label for="equipmentPartNo7"></label><input type="text" name="equipmentPartNo7" style="width:100px;">
+            </td>
+            <td><label for="equipmentSerialNo7"></label><input type="text" name="equipmentSerialNo7"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentLocation7"></label><input type="text" name="equipmentLocation7"
+                style="width:100px;">
+            </td>
+          </tr>
+          <tr class="hidden">
+            <td>
+              <label for="recordEquipment8"></label>
+              <select name="recordEquipment8">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td><label for="equipmentManufact8"></label><input type="text" name="equipmentManufact8"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentModel8"></label><input type="text" name="equipmentModel8" style="width:100px;">
+            </td>
+            <td><label for="equipmentPartNo8"></label><input type="text" name="equipmentPartNo8" style="width:100px;">
+            </td>
+            <td><label for="equipmentSerialNo8"></label><input type="text" name="equipmentSerialNo8"
+                style="width:100px;">
+            </td>
+            <td><label for="equipmentLocation8"></label><input type="text" name="equipmentLocation8"
+                style="width:100px;">
+            </td>
+          </tr>
+          <td>
+            <button class="show_hide" button id="toggleButton">Show/Hide Additional Equipment</button>
+          </td>
+
+
+          <!-- CHECK EQUIPMENT. -->
+
+        </table>
+
+
+        <h2>3. Check of Equipment</h2>
+        <button class="show_explanation">Show Explanation</button>
+        <p class="expandableText" style="display: none;" width="100x"> Visual
+          Item Description
+          Damage
+          Check for physical damage of the equipment (i.e., caused by accidents, improper or
+          rough handling of equipment during installation or transport). Corrosion, paint
+          damage etc...
+          Check labels
+          Verify that equipment is labelled with product no, serial no, tag no etc. as relevant.
+          Mechanical
+          Item Description
+          Correct installation
+          Check that equipment is properly mounted and otherwise correctly installed.
+          Cabling
+          Item Description
+          Cables and connections
+          Check that signal cables are correctly installed according to wiring diagrams and
+          have been properly secured in place.
+          Power
+          Item Description
+          Power supply
+          Check that incoming power supply voltage and polarity is correct.
+          Earthing
+          Item Description
+          Instrument earth
+          Verify that equipment utilizing a signal earth is properly connected to a proper earth
+          terminal.
+          PR-002 - Wavex v6.1 commissioning (Procedure)
+          Miros AS Page 9 of 24 Revision 1
+          Protective earth
+          Verify that equipment is properly connected to protective earth.
+        </p>
+        <br>
+        <br>
+        <table id="equipmentTable">
+          <tr>
+            <td>
+              <label for="checkEquipment1">Equipment:</label>
+              <select name="checkEquipment1">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+              </label>
+            <td>
+              <label for="checkVisual1">Visual:</label>
+              <select name="checkVisual1" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+              </label>
+            <td>
+              <label for="checkMech1">Mechanical:</label>
+              <select name="checkMech1" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+              </label>
+            <td>
+              <label for="checkCabling1">Cabling:</label>
+              <select name="checkCabling1" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+              </label>
+            <td>
+              <label for="checkPower1">Power:</label>
+              <select name="checkPower1" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+              </label>
+            <td>
+              <label for="checkEarthing1">Earthing:</label>
+              <select name="checkEarthing1" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+              </label>
+          </tr>
+          <tr>
+            <td>
+              <label for="checkEquipment2"></label>
+              <select name="checkEquipment2">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkVisual2"></label>
+              <select name="checkVisual2" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkMech2"></label>
+              <select name="checkMech2" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkCabling2"></label>
+              <select name="checkCabling2" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkPower2"></label>
+              <select name="checkPower2" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkEarthing2"></label>
+              <select name="checkEarthing2" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="checkEquipment3"></label>
+              <select name="checkEquipment3">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkVisual3"></label>
+              <select name="checkVisual3" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkMech3"></label>
+              <select name="checkMech3" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkCabling3"></label>
+              <select name="checkCabling3" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkPower3"></label>
+              <select name="checkPower3" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkEarthing3"></label>
+              <select name="checkEarthing3" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="checkEquipment4"></label>
+              <select name="checkEquipment4">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkVisual4"></label>
+              <select name="checkVisual4" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkMech4"></label>
+              <select name="checkMech4" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkCabling4"></label>
+              <select name="checkCabling4" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkPower4"></label>
+              <select name="checkPower4" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkEarthing4"></label>
+              <select name="checkEarthing4" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="hidden">
+            <td>
+              <label for="checkEquipment5"></label>
+              <select name="checkEquipment5">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkVisual5"></label>
+              <select name="checkVisual5" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkMech5"></label>
+              <select name="checkMech5" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkCabling5"></label>
+              <select name="checkCabling5" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkPower5"></label>
+              <select name="checkPower5" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkEarthing5"></label>
+              <select name="checkEarthing5" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="hidden">
+            <td>
+              <label for="checkEquipment6"></label>
+              <select name="checkEquipment6">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkVisual6"></label>
+              <select name="checkVisual6" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkMech6"></label>
+              <select name="checkMech6" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkCabling6"></label>
+              <select name="checkCabling6" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkPower6"></label>
+              <select name="checkPower6" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkEarthing6"></label>
+              <select name="checkEarthing6" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="hidden">
+            <td>
+              <label for="checkEquipment7"></label>
+              <select name="checkEquipment7">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkVisual7"></label>
+              <select name="checkVisual7" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkMech7"></label>
+              <select name="checkMech7" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkCabling7"></label>
+              <select name="checkCabling7" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkPower7"></label>
+              <select name="checkPower7" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkEarthing7"></label>
+              <select name="checkEarthing7" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="hidden">
+            <td>
+              <label for="checkEquipment8"></label>
+              <select name="checkEquipment8">
+                <option value=" "> </option>
+                <option value="Computer">Computer</option>
+                <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse & Keyboard">Mouse & Keyboard</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="MGate">MGate</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkVisual8"></label>
+              <select name="checkVisual8" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkMech8"></label>
+              <select name="checkMech8" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkCabling8"></label>
+              <select name="checkCabling8" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkPower8"></label>
+              <select name="checkPower8" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+            <td>
+              <label for="checkEarthing8"></label>
+              <select name="checkEarthing8" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="TBC">TBC</option>
+              </select>
+            </td>
+          </tr>
+          <td>
+            <button class="show_hide" button id="toggleButton">Show/Hide Additional Equipment</button>
+          </td>
+          
+        </table>
+        <br>
+        <!-- RADAR SECTION. -->
+        <h3>Radar</h3>
+        <button class="show_explanation">Show Explanation</button>
+        <p class="expandableText" style="display: none;" width="100x">XXX.
+        </p>
+        <br>
+        <br>
+        
+        <table>
+          <tr>
+            <td>
+              <label for="radarManufacturer">Radar Manufacturer:</label>
+              <select name="radarManufacturer" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="Furuno">Furuno</option>
+                <option value="Sperry">Sperry</option>
+                <option value="Wartsila">Wartsila</option>
+                <option value="Kongsberg">Kongsberg</option>
+                <option value="JRC">JRC</option>
+                <option value="Raytheon">Raytheon</option>
+                <option value="Kelvin Hughes">Kelvin Hughes</option>
+              </select>
+            </td>
+            <td>
+              <label for="radarModel">Radar Model:</label>
+              <input type="text" name="radarModel" style="width: 150px;">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <label for="radarUse">Radar Use Case:</label>
+              <select name="radarUse" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="Dedicated">Dedicated</option>
+                <option value="Shared">Shared</option>
+              </select>
+            </td>
+            <td>
+              <label for="radarTxtime">Radar Tx Time (hrs):</label>
+              <input type="radatTxTime" name="radarTxtime" style="width: 150px;">
+            </td>
+          </tr>
+        </table>
+        <label for="radarLocation">Radar Location Suitability:</label>
+        <!-- <input type="text" name="radarLocation" style="width: 400px;height: 100px;"> -->
+        <textarea type="radarLocation" name="radarLocation" rows="8" cols="40"></textarea>
+        <label for="radarSettings">Radar Settings:</label>
+        <textarea type="radarSettings" name="radarSettings" rows="8" cols="40"></textarea>
+        <!-- <input type="text" name="radarSettings" style="width: 400px;height: 75px;"> -->
+        <br>
+        <!-- SENSOR INPUT CHECKS. -->
+        <h3>Sensor Input Checks</h3>
+        <button class="show_explanation">Show Explanation</button>
+        <p class="expandableText" style="display: none;" width="100x">XXX.
+        </p>
+        <br>
+        <br>
+        <table>
+          <tr>
+            <td>
+              <label for="gpsCheck">GPS:</label>
+              <select name="gpsCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="gyroCheck">Gyro:</label>
+              <select name="gyroCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="windCheck">Wind:</label>
+              <select name="windCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="draughtCheck">Draught:</label>
+              <select name="draughtCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="waveCheck">Wave:</label>
+              <select name="waveCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="shaftCheck">Shaft:</label>
+              <select name="shaftCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <!-- EM-129 CONNECTIONS. -->
+        <h3>EM-129 Connections</h3>
+        <button class="show_explanation">Show Explanation</button>
+        <p class="expandableText" style="display: none;" width="100x">XXX.
+        </p>
+        <br>
+        <br>
+        <table>
+          <p>Video Signal</p>
+          <tr>
+            <td>
+              <label for="videoCableType">Cable Type</label>
+              <select name="videoCableType" style="width:100px;">
+                <option value=" "> </option>
+                <option value="RG 58">RG 58</option>
+                <option value="RG 59">RG 59</option>
+                <option value="Other">Other</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="videoCableImpedance">Impedance:</label>
+              <select name="videoCableImpedance" style="width:100px;">
+                <option value=" "> </option>
+                <option value="50 ohm">50 ohm</option>
+                <option value="75 ohm">75 ohm</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="videoCableComments">Comments:</label>
+              <input type="videoCableComments" name="videoCableComments" style="width: 250px;">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <p>Sync Signal</p>
+          <tr>
+            <td>
+              <label for="syncCableType">Cable Type</label>
+              <select name="syncCableType" style="width:100px;">
+                <option value=" "> </option>
+                <option value="RG 58">RG 58</option>
+                <option value="RG 59">RG 59</option>
+                <option value="Other">Other</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="syncCableImpedance">Impedance:</label>
+              <select name="syncCableImpedance" style="width: 100px;">
+                <option value=" "> </option>
+                <option value="50 ohm">50 ohm</option>
+                <option value="75 ohm">75 ohm</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="syncCableComments">Comments:</label>
+              <input type="syncCableComments" name="syncCableComments" style="width: 250px;">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <p>Azimuth Signal</p>
+          <tr>
+            <td>
+              <label for="azimuthCableType">Cable Type</label>
+              <select name="azimuthCableType" style="width:100px;">
+                <option value=" "> </option>
+                <option value="RG 58">RG 58</option>
+                <option value="RG 59">RG 59</option>
+                <option value="TP">Twisted Pair</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="azimuthCableImpedance">Impedance:</label>
+              <select name="azimuthCableImpedance" style="width:100px;">
+                <option value=" "> </option>
+                <option value="50 ohm">50 ohm</option>
+                <option value="75 ohm">75 ohm</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="azimuthCableComments">Comments:</label>
+              <input type="azimuthCableComments" name="azimuthCableComments" style="width: 250px;">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <p>Heading Signal</p>
+          <tr>
+            <td>
+              <label for="headingCableType">Cable Type</label>
+              <select name="headingCableType" style="width:100px;">
+                <option value=" "> </option>
+                <option value="RG 58">RG 58</option>
+                <option value="RG 59">RG 59</option>
+                <option value="TP">Twisted Pair</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="headingCableImpedance">Impedance:</label>
+              <select name="headingCableImpedance" style="width:100px;">
+                <option value=" "> </option>
+                <option value="50 ohm">50 ohm</option>
+                <option value="75 ohm">75 ohm</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="headingCableComments">Comments:</label>
+              <input type="headingCableComments" name="headingCableComments" style="width: 250px;">
+            </td>
+          </tr>
+        </table>
+        <h3>Jumper Checks</h3>
+        <table>
+          <tr>
+            <td>
+              <label for="videoJumper">Video JP1:</label>
+              <select name="videoJumper" style="width:100px;">
+                <option value=" "> </option>
+                <option value="50 ohm">50 ohm</option>
+                <option value="75 ohm">75 ohm</option>
+                <option value="1 kohm">1 kohm</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="syncJumper">Sync JP2:</label>
+              <select name="syncJumper" style="width:100px;">
+                <option value=" "> </option>
+                <option value="50 ohm">50 ohm</option>
+                <option value="75 ohm">75 ohm</option>
+                <option value="33 kohm">33 kohm</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="azimuthJumper">Azimuth JP5:</label>
+              <select name="azimuthJumper" style="width:100px;">
+                <option value=" "> </option>
+                <option value="Zener">Zener</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="headingJumper">Heading JP6:</label>
+              <select name="headingJumper" style="width:100px;">
+                <option value=" "> </option>
+                <option value="Zener">Zener</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="pullupJumper">Pull-Up JP3:</label>
+              <select name="pullupJumper" style="width:100px;">
+                <option value=" "> </option>
+                <option value="+5 V">+5 V</option>
+                <option value="+12 V">+12 V</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="pulldownJumper">Pull-Down JP4:</label>
+              <select name="pulldownJumper" style="width:100px;">
+                <option value=" "> </option>
+                <option value="-5 V">-5 V</option>
+                <option value="-12 V">-12 V</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+        </table>
+        <!-- MISCELLANEOUS CHECKS. -->
+        <h3>Miscellaneous Checks</h3>
+        <button class="show_explanation">Show Explanation</button>
+        <p class="expandableText" style="display: none;" width="100x">XXX.
+        </p>
+        <br>
+        <br>
+        <table>
+          <p>Radar Buffer Amplifier</p>
+          <tr>
+            <td>
+              <label for="amplifierType">Type</label>
+              <select name="amplifierType" style="width:250px;">
+                <option value=" "> </option>
+                <option value="EM-124 Radar Buffer Amplifier">EM-124 Radar Buffer Amplifier</option>
+                <option value="dspnor Amplifier">dspnor Amplifier</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="amplifierCheck">Check:</label>
+              <select name="amplifierCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="amplifierComments">Comments:</label>
+              <input type="amplifierComments" name="amplifierComments" style="width: 250px;">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <p>Radar Firewall</p>
+          <tr>
+            <td>
+              <label for="radarFirewallType">Type</label>
+              <select name="radarFirewallType" style="width:250px;">
+                <option value=" "> </option>
+                <option value="Wartsila">Wartsila</option>
+                <option value="Kongsberg">Kongsberg</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="radarFirewallCheck">Check:</label>
+              <select name="radarFirewallCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="radarFirewallComments">Comments:</label>
+              <input type="radarFirwallComments" name="radarFirewallComments" style="width: 250px;">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <p>Serial Interfacing</p>
+          <tr>
+            <td>
+              <label for="serialInterfaceType">Type</label>
+              <select name="serialInterfaceType" style="width:250px;">
+                <option value=" "> </option>
+                <option value="MOXA PCI">MOXA PCI</option>
+                <option value="MOXA NPort">MOXA Nport</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="serialInterfaceCheck">Check:</label>
+              <select name="serialInterfaceCheck" style="width:100px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+                <option value="NA">NA</option>
+              </select>
+            </td>
+            <td>
+              <label for="serialInterfaceComments">Comments:</label>
+              <input type="serialInterfaceComments" name="serialInterfaceComments" style="width: 250px;">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <!-- NETWORK DETAILS. -->
+          <h2>4. Network Details</h2>
+          <button class="show_explanation">Show Explanation</button>
+          <p class="expandableText" style="display: none;" width="100x">XXX.
+          </p>
+          <br>
+          <br>
+          <table id="equipmentTable">
+            <tr>
+              <td>
+                <label for="networkEquipment1">Equipment:</label>
+                <select name="networkEquipment1">
+                  <option value=" "> </option>
+                  <option value="Computer">Computer</option>
+                  <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                  <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
+                  <option value="Switch">Switch</option>
+                  <option value="NPort">NPort</option>
+                  <option value="MGate">MGate</option>
+                </select>
+              </td>
+              <td>
+                <label for="equipmentIpAddress1">IP Address:</label>
+                <input type="text" name="equipmentIpAddress1" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentSubnetMask1">Subnet Mask:</label>
+                <input type="text" name="equipmentSubnetMask1" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentDefaultGateway1">Default Gateway:</label>
+                <input type="text" name="equipmentDefaultGateway1" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentMac1">MAC Address:</label>
+                <input type="text" name="equipmentMac1" style="width:120px;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="networkEquipment2"></label>
+                <select name="networkEquipment2">
+                  <option value=" "> </option>
+                  <option value="Computer">Computer</option>
+                  <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                  <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
+                  <option value="Switch">Switch</option>
+                  <option value="NPort">NPort</option>
+                  <option value="MGate">MGate</option>
+                </select>
+              </td>
+              <td>
+                <label for="equipmentIpAddress2"></label>
+                <input type="text" name="equipmentIpAddress2" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentSubnetMask2"></label>
+                <input type="text" name="equipmentSubnetMask2" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentDefaultGateway2"></label>
+                <input type="text" name="equipmentDefaultGateway2" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentMac2"></label>
+                <input type="text" name="equipmentMac2" style="width:120px;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="networkEquipment3"></label>
+                <select name="networkEquipment3">
+                  <option value=" "> </option>
+                  <option value="Computer">Computer</option>
+                  <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                  <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
+                  <option value="Switch">Switch</option>
+                  <option value="NPort">NPort</option>
+                  <option value="MGate">MGate</option>
+                </select>
+              </td>
+              <td>
+                <label for="equipmentIpAddress3"></label>
+                <input type="text" name="equipmentIpAddress3" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentSubnetMask3"></label>
+                <input type="text" name="equipmentSubnetMask3" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentDefaultGateway3"></label>
+                <input type="text" name="equipmentDefaultGateway3" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentMac3"></label>
+                <input type="text" name="equipmentMac3" style="width:120px;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="networkEquipment4"></label>
+                <select name="networkEquipment4">
+                  <option value=" "> </option>
+                  <option value="Computer">Computer</option>
+                  <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                  <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
+                  <option value="Switch">Switch</option>
+                  <option value="NPort">NPort</option>
+                  <option value="MGate">MGate</option>
+                </select>
+              </td>
+              <td>
+                <label for="equipmentIpAddress4"></label>
+                <input type="text" name="equipmentIpAddress4" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentSubnetMask4"></label>
+                <input type="text" name="equipmentSubnetMask4" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentDefaultGateway4"></label>
+                <input type="text" name="equipmentDefaultGateway4" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentMac4"></label>
+                <input type="text" name="equipmentMac4" style="width:120px;">
+              </td>
+            </tr>
+            <tr class="hidden">
+              <td>
+                <label for="networkEquipment5"></label>
+                <select name="networkEquipment5">
+                  <option value=" "> </option>
+                  <option value="Computer">Computer</option>
+                  <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                  <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
+                  <option value="Switch">Switch</option>
+                  <option value="NPort">NPort</option>
+                  <option value="MGate">MGate</option>
+                </select>
+              </td>
+              <td>
+                <label for="equipmentIpAddress5"></label>
+                <input type="text" name="equipmentIpAddress5" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentSubnetMask5"></label>
+                <input type="text" name="equipmentSubnetMask5" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentDefaultGateway5"></label>
+                <input type="text" name="equipmentDefaultGateway5" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentMac5"></label>
+                <input type="text" name="equipmentMac5" style="width:120px;">
+              </td>
+            </tr>
+            <tr class="hidden">
+              <td>
+                <label for="networkEquipment6"></label>
+                <select name="networkEquipment6">
+                  <option value=" "> </option>
+                  <option value="Computer">Computer</option>
+                  <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                  <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
+                  <option value="Switch">Switch</option>
+                  <option value="NPort">NPort</option>
+                  <option value="MGate">MGate</option>
+                </select>
+              </td>
+              <td>
+                <label for="equipmentIpAddress6"></label>
+                <input type="text" name="equipmentIpAddress6" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentSubnetMask6"></label>
+                <input type="text" name="equipmentSubnetMask6" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentDefaultGateway6"></label>
+                <input type="text" name="equipmentDefaultGateway6" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentMac6"></label>
+                <input type="text" name="equipmentMac6" style="width:120px;">
+              </td>
+            </tr>
+            <tr class="hidden">
+              <td>
+                <label for="networkEquipment7"></label>
+                <select name="networkEquipment7">
+                  <option value=" "> </option>
+                  <option value="Computer">Computer</option>
+                  <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                  <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
+                  <option value="Switch">Switch</option>
+                  <option value="NPort">NPort</option>
+                  <option value="MGate">MGate</option>
+                </select>
+              </td>
+              <td>
+                <label for="equipmentIpAddress7"></label>
+                <input type="text" name="equipmentIpAddress7" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentSubnetMask7"></label>
+                <input type="text" name="equipmentSubnetMask7" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentDefaultGateway7"></label>
+                <input type="text" name="equipmentDefaultGateway7" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentMac7"></label>
+                <input type="text" name="equipmentMac7" style="width:120px;">
+              </td>
+            </tr>
+            <tr class="hidden">
+              <td>
+                <label for="networkEquipment8"></label>
+                <select name="networkEquipment8">
+                  <option value=" "> </option>
+                  <option value="Computer">Computer</option>
+                  <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
+                  <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
+                  <option value="Switch">Switch</option>
+                  <option value="NPort">NPort</option>
+                  <option value="MGate">MGate</option>
+                </select>
+              </td>
+              <td>
+                <label for="equipmentIpAddress8"></label>
+                <input type="text" name="equipmentIpAddress8" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentSubnetMask8"></label>
+                <input type="text" name="equipmentSubnetMask8" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentDefaultGateway8"></label>
+                <input type="text" name="equipmentDefaultGateway8" style="width:120px;">
+              </td>
+              <td>
+                <label for="equipmentMac8"></label>
+                <input type="text" name="equipmentMac8" style="width:120px;">
+              </td>
+            </tr>
+            <td>
+              <button class="show_hide" button id="toggleButton">Show/Hide Additional Equipment</button>
+              <br>
+              <br>
+              <br>
+  
+            </td>
+
+            </table>
+          <label for="networkDns">DNS Servers:</label>
+          <input type="text" name="networkDns" style="width: 200px;">
+          <label for="networkComments">Comments:</label>
+          <!-- <input type="text" name="networkComments" style="width: 400px;height: 100px;"> -->
+          <textarea id="networkComments" name="networkComments" rows="8" cols="40"></textarea>
+        
+
+          <!-- MIROS CLOUD. -->
+          <h3>Miros Cloud</h3>
+          <p>Firewall Exceptions</p>
+          <button class="show_explanation">Show Explanation</button>
+          <p class="expandableText" style="display: none;" width="100x">XXX.
+          </p>
+          <br>
+          <br>
+            <table>
+            <tr>
+              <td>
+                <label for="cloudHost1">admin.miros.app:</label>
+                <select name="cloudHost1" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="cloudHost2">azure-devices.net:</label>
+                <select name="cloudHost2" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <!-- STARTUP. -->
+          <h2>5. Startup</h2>
+          <h3>Computer & Software Installation Checks</h3>
+          <button class="show_explanation">Show Explanation</button>
+          <p class="expandableText" style="display: none;" width="100x">XXX.
+          </p>
+          <br>
+          <br>
+            <table>
+            <tr>
+              <td>
+                <label for="computerStartup">Computer Startup:</label>
+                <select name="computerStartup" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+              <td>
+                <label for="systemRequirements">System Requirements:</label>
+                <select name="systemRequirements" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+            <tr>
+              <td>
+                <label for="windowsVersion">Windows Version:</label>
+                <input type="text" name="windowsVersion" style="width:140px;">
+              </td>
+              <td>
+                <label for="wavexStartup">Wavex Startup:</label>
+                <select name="wavexStartup" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+            <tr>
+              <td>
+                <label for="wavexOptions">Wavex Options:</label>
+                <select name="wavexOptions" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="Wave">Wave</option>
+                  <option value="Wave & Current">Wave & Current</option>
+                  <option value="Wave & Current & STW">Wave & Current & STW</option>
+                </select>
+              </td>
+              <td>
+                <label for="thirdPartyStartup">Third Party Startup:</label>
+                <select name="thirdPartyStartup" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+            <tr>
+              <td>
+                <label for="storageSpace">Storage Space (GB):</label>
+                <input type="text" name="storageSpace" style="width:140px;">
+              </td>
+              <td>
+                <label for="remoteAccessTools">Remote Access Tools:</label>
+                <select name="remoteAccessTools" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+            <tr>
+              <td>
+                <label for="serialMouseFix">Serial Mouse Fix:</label>
+                <select name="serialMouseFix" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+              <td>
+                <label for="networkInterfaceConfig">Network Card Config:</label>
+                <select name="networkInterfaceConfig" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+            <tr>
+              <td>
+                <label for="windowsFirewall">Windows Firewall:</label>
+                <select name="windowsFirewall" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+              <td>
+                <label for="antiVirus">Anti Virus:</label>
+                <select name="antiVirus" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <h3>System Startup</h3>
+          <p>Prior to configuration:</p>
+          <button class="show_explanation">Show Explanation</button>
+          <p class="expandableText" style="display: none;" width="100x">XXX.
+          </p>
+          <br>
+          <br>
+            <table>
+            <tr>
+              <td>
+                <label for="gpsCheck2">GPS:</label>
+                <select name="gpsCheck2" style="width:100px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="gyroCheck2">Gyro:</label>
+                <select name="gyroCheck2" style="width:100px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="windCheck2">Wind:</label>
+                <select name="windCheck2" style="width:100px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="draughtCheck2">Draught:</label>
+                <select name="draughtCheck2" style="width:100px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="waveCheck2">Wave:</label>
+                <select name="waveCheck2" style="width:100px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="shaftCheck2">Shaft:</label>
+                <select name="shaftCheck2" style="width:100px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <!-- COMMISSIONING. -->
+          <h2>6. Configuration & Commissioning</h2>
+          <button class="show_explanation">Show Explanation</button>
+          <p class="expandableText" style="display: none;" width="100x">XXX.
+          </p>
+          <br>
+          <br>
+            <h3>6.1 EM-129 Configuration</h3>
+            <button class="show_explanation">Show Explanation</button>
+            <p class="expandableText" style="display: none;" width="100x">XXX.
+            </p>
+            <br>
+            <br>
+              <table>
+            <tr>
+              <td>
+                <label for="em129Version">Version:</label>
+                <select name="em129Version" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="1.4.3">1.4.3</option>
+                  <option value="1.4.4">1.4.4</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="em129Settings">Settings:</label>
+                <select name="em129Settings" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+            <tr>
+              <td>
+                <label for="em129SignalStatus">Signal Status:</label>
+                <select name="em129SignalStatus" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="em129NetworkSettings">Network Settings:</label>
+                <select name="em129NetworkSettings" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+            <tr>
+              <td>
+                <label for="em129InterfaceConfig">Interface Config:</label>
+                <select name="em129InterfaceConfig" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="em129Scope">Oscilloscope Check</label>
+                <select name="em129Scope" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+          </table>
+          <label for="em129Comments">Comments:</label>
+          <!-- <input type="text" name="em129Comments" style="width:300px; height: 100px;"> -->
+          <textarea type="em129Comments" name="em129Comments" rows="8" cols="40"></textarea>
+          </td>
+          <!-- WAVEX SOFTWARE CONFIGURATION. -->
+          <h3>6.2. Wavex Software Configuration</h3>
+          <button class="show_explanation">Show Explanation</button>
+          <p class="expandableText" style="display: none;" width="100x">XXX.
+          </p>
+          <br>
+          <br>
+            <h3>Site</h3>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexDescription">Description:</label>
+                <select name="wavexDescription" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexMovement">Movement:</label>
+                <select name="wavexMovement" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="Fixed">Fixed</option>
+                  <option value="Rotating">Rotating</option>
+                  <option value="Dynamic">Dynamic</option>
+                </select>
+              </td>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexLat">Latitude:</label>
+                <input type="text" name="wavexLat" style="width:140px;">
+              </td>
+              <td>
+                <label for="wavexLong">Latitude:</label>
+                <input type="text" name="wavexLong" style="width:140px;">
+              </td>
+              <td>
+                <label for="wavexHeading">Heading:</label>
+                <input type="text" name="wavexHeading" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Fixed and
+                  rotating sites</p>
+              </td>
+          </table>
+          <h3>Input</h3>
+          <p> Radar:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexRadar">Radar Configuration:</label>
+                <select name="wavexRadar" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexMulticast">Multicast Address:</label>
+                <input type="text" name="wavexMulticast" style="width:140px;">
+              </td>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexTransceiver">Transceiver ID:</label>
+                <input type="text" name="wavexTransceiver" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style:italic; color: grey;">Wartsila & Raytheon
+                  radars</p>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexRinId">RIN ID:</label>
+                <select name="wavexRinId" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexRinNetwork">RIN Network:</label>
+                <select name="wavexRinNetwork" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                </select>
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Kongsberg radars
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="wavexImageStorage">Image Storage:</label>
+                <select name="wavexImageStorage" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <p> GPS:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexGPS">Configuration:</label>
+                <select name="wavexGPS" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexGPSPositionSentence">Position Sentence:</label>
+                <select name="wavexGPSPositionSentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="GGA">GGA</option>
+                  <option value="GLL">GLL</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexGPSTrackSpeedSentence">Track & Speed Sentence:</label>
+                <select name="wavexGPSTrackSpeedSentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="VTG">VTG</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexGPSTimeSentence">Time Sentence:</label>
+                <select name="wavexGPSTimeSentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="ZDA">VTG</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexGPSSettings">Settings:</label>
+                <input type="text" name="wavexGPSSettings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+          </table>
+          <p> Gyro:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexGyro">Configuration:</label>
+                <select name="wavexGyro" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexGyroSentence">Gyro Sentence:</label>
+                <select name="wavexGyroSentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="HDT">HDT</option>
+                  <option value="THS">THS</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexGyroSettings">Settings:</label>
+                <input type="text" name="wavexGyroSettings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+          </table>
+          <p> Wind:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexWind">Configuration:</label>
+                <select name="wavexWind" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexWindSentence">Wind Sentence:</label>
+                <select name="wavexWindSentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="MWV">MWV</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexWindSettings">Settings:</label>
+                <input type="text" name="wavexWindSettings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+          </table>
+          <p> Wave:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexWave">Configuration:</label>
+                <select name="wavexWave" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexWaveSentence">Wave Sentence:</label>
+                <select name="wavexWaveSentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="PMIRW">PMIRW</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexWaveSettings">Settings:</label>
+                <input type="text" name="wavexWaveSettings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+          </table>
+          <p> Draught:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexDraught">Configuration:</label>
+                <select name="wavexDraught" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexDraughtSentence">Draught Sentence:</label>
+                <select name="wavexDraughtSentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="XDR">XDR</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexDraughtSettings">Settings:</label>
+                <input type="text" name="wavexDraughtSettings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+          </table>
+          <p> Shaft:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexShaft">Configuration:</label>
+                <select name="wavexShaft" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexShaftSentence">Shaft Sentence:</label>
+                <select name="wavexShaftSentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="XDR">XDR</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexShaftSettings">Settings:</label>
+                <input type="text" name="wavexShaftSettings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+          </table>
+          <h3>Processing</h3>
+          <p> Geometry</p>
+          <p style="padding-top: 0px; padding-left: 0px; font-style: italic; color: grey; ">All measurements are to
+            be recorded metres (m)</p>
+          <p> Radar:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexGeometryRadarX">X Offset:</label>
+                <input type="text" name="wavexGeometryRadarX" style="width:70px;">
+              </td>
+              <td>
+                <label for="wavexGeometryRadarY">Y Offset:</label>
+                <input type="text" name="wavexGeometryRadarY" style="width:70px;">
+              </td>
+              <td>
+                <label for="wavexGeometryRadarZ">Height above MSL:</label>
+                <input type="text" name="wavexGeometryRadarZ" style="width:140px;">
+              </td>
+          </table>
+          <p> GPS:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexGeometryGPSX">X Offset:</label>
+                <input type="text" name="wavexGeometryGPSX" style="width:70px;">
+              </td>
+              <td>
+                <label for="wavexGeometryGPSY">Y Offset:</label>
+                <input type="text" name="wavexGeometryGPSY" style="width:70px;">
+              </td>
+          </table>
+          <p> Wind:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexGeometryWindHeadingOffset">Heading Offset:</label>
+                <input type="text" name="wavexGeometryWindHeadingOffset" style="width:140px;">
+              </td>
+              <td>
+                <label for="wavexGeometryWindZ">Height above MSL:</label>
+                <input type="text" name="wavexGeometryWindZ" style="width:140px;">
+              </td>
+          </table>
+          <p> Radar Settings</p>
+          <p style="padding-top: 0px; padding-left: 0px; font-style: italic; color: grey; ">All measurements are to
+            be recorded metres (m)</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexRadarRangeOffset">Range Offset:</label>
+                <input type="text" name="wavexRadarRangeOffset" style="width:100px;">
+              </td>
+              <td>
+                <label for="wavexRadarAzimuthOffset">Azimuth Offset:</label>
+                <input type="text" name="wavexRadarAzimuthOffset" style="width:100px;">
+              </td>
+              <td>
+                <label for="wavexRadarStartAngle">Start Angle:</label>
+                <input type="text" name="wavexRadarStartAngle" style="width:100px;">
+              </td>
+              <td>
+                <label for="wavexRadarSectorSize">Sector Size:</label>
+                <input type="text" name="wavexRadarSectorSize" style="width:100px;">
+              </td>
+              <td>
+                <label for="wavexRadarStartRange">Start Range:</label>
+                <input type="text" name="wavexRadarStartRange" style="width:100px;">
+              </td>
+              <td>
+                <label for="wavexRadarStopRange">Stop Range:</label>
+                <input type="text" name="wavexRadarStopRange" style="width:100px;">
+              </td>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexRadarImageCheck">Radar Image Check:</label>
+                <select name="wavexRadarImageCheck" style="width: 140px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Tolerance is 20m
+                </p>
+              </td>
+          </table>
+          <p> Advanced</p>
+          <p> Wave:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexAdvancedWaveAntennaMeanHeight">Antenna Mean Height:</label>
+                <select name="wavexAdvancedWaveAntennaMeanHeight" style="width: 140px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">When a draught
+                  input is configured, ensure Antenna Mean Height is configured</p>
+              </td>
+            <tr>
+              <td>
+                <label for="wavexAdvancedWaveCartesianSections">Cartesian Sections:</label>
+                <select name="wavexAdvancedWaveCartesianSections" style="width: 140px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+          </table>
+          <p> Advanced</p>
+          <p> Current:</p>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexAdvancedCurrentAntennaMeanHeight">Antenna Mean Height:</label>
+                <select name="wavexAdvancedCurrentAntennaMeanHeight" style="width: 140px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">When a draught
+                  input is configured, ensure Antenna Mean Height is configured</p>
+              </td>
+            <tr>
+              <td>
+                <label for="wavexAdvancedCurrentCartesianSections">Cartesian Sections:</label>
+                <select name="wavexAdvancedCurrentCartesianSections" style="width: 140px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                </select>
+              </td>
+          </table>
+          <h3>Output</h3>
+          <table>
+            <tr>
+              <td>
+                <label for="wavexOutput1">Configuration:</label>
+                <select name="wavexOutput1" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexOutput1Sentence">Sentence:</label>
+                <select name="wavexOutput1Sentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="PMIRW">PMIRW</option>
+                  <option value="PMILD">PMIRLD</option>
+                  <option value="PMICV">PMIRCV</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexOutput1UpdateInterval">Update Interval:</label>
+                <input type="text" name="wavexOutput1UpdateInterval" style="width:100px;">
+              </td>
+              <td>
+                <label for="wavexOutput1Settings">Settings:</label>
+                <input type="text" name="wavexOutput1Settings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+            <tr>
+              <td>
+                <label for="wavexOutput2"></label>
+                <select name="wavexOutput2" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexOutput2Sentence"></label>
+                <select name="wavexOutput2Sentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="PMIRW">PMIRW</option>
+                  <option value="PMILD">PMIRLD</option>
+                  <option value="PMICV">PMIRCV</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexOutput2UpdateInterval"></label>
+                <input type="text" name="wavexOutput2UpdateInterval" style="width:100px;">
+              </td>
+              <td>
+                <label for="wavexOutput2Settings"></label>
+                <input type="text" name="wavexOutput2Settings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+            <tr>
+              <td>
+                <label for="wavexOutput3"></label>
+                <select name="wavexOutput3" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexOutput3Sentence"></label>
+                <select name="wavexOutput3Sentence" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="PMIRW">PMIRW</option>
+                  <option value="PMILD">PMIRLD</option>
+                  <option value="PMICV">PMIRCV</option>
+                </select>
+              </td>
+              <td>
+                <label for="wavexOutput3UpdateInterval"></label>
+                <input type="text" name="wavexOutput3UpdateInterval" style="width:100px;">
+              </td>
+              <td>
+                <label for="wavexOutput3Settings"></label>
+                <input type="text" name="wavexOutput3Settings" style="width:140px;">
+              </td>
+              <td>
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                  N 1 or TCP 192.168.73.150 4001</p>
+              </td>
+          </table>
+          <h3>Cloud</h3>
+          <table>
+            <tr>
+              <td>
+                <label for="cloudEnabled">Enabled:</label>
+                <select name="cloudEnabled" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+          </table>
+          <h3>Final Configuration</h3>
+          <table>
+            <tr>
+              <td>
+                <label for="finalConfig">Configuration:</label>
+                <select name="finalConfig" style="width: 150px;">
+                  <option value=" "> </option>
+                  <option value="OK">OK</option>
+                  <option value="Not OK">Not OK</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+          </table>
+          <!-- FINAL STARTUP. -->
+          <h2>7. Final Startup</h3>
+            <button class="show_explanation">Show Explanation</button>
+            <p class="expandableText" style="display: none;" width="100x">XXX.
+            </p>
+            <br>
+            <br>
+                <table>
+              <tr>
+                <td>
+                  <label for="finalPowerCycle">Power Cycle:</label>
+                  <select name="finalPowerCycle" style="width: 150px;">
+                    <option value=" "> </option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="finalStartup">Software Startup:</label>
+                  <select name="finalStartup" style="width: 150px;">
+                    <option value=" "> </option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="final20Minute">20 Minute Verification:</label>
+                  <select name="final20Minute" style="width: 150px;">
+                    <option value=" "> </option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="finalDataOutput">Data Output:</label>
+                  <select name="finalDataOutput" style="width: 150px;">
+                    <option value=" "> </option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                  </select>
+                </td>
+            </table>
+            <!-- SYSTEM BACKUP. -->
+            <h2>8. System Backup</h3>
+              <button class="show_explanation">Show Explanation</button>
+              <p class="expandableText" style="display: none;" width="100x">XXX.
+              </p>
+              <br>
+              <br>
+                    <table>
+                <tr>
+                  <td>
+                    <label for="backupWavexJson">Config JSON:</label>
+                    <select name="backupWavexJson" style="width: 150px;">
+                      <option value=" "> </option>
+                      <option value="OK">OK</option>
+                      <option value="Not OK">Not OK</option>
+                    </select>
+                  </td>
+                  <td>
+                    <label for="backupDF047">Radar Images:</label>
+                    <select name="backupDF047" style="width: 150px;">
+                      <option value=" "> </option>
+                      <option value="OK">OK</option>
+                      <option value="Not OK">Not OK</option>
+                    </select>
+                  </td>
+                  <td>
+                    <label for="backupEM129">EM-129 Configuration:</label>
+                    <select name="backupEM129" style="width: 150px;">
+                      <option value=" "> </option>
+                      <option value="OK">OK</option>
+                      <option value="Not OK">Not OK</option>
+                    </select>
+                  </td>
+                  <td>
+                    <label for="backupMisc">Miscellaneous:</label>
+                    <select name="backupMisc" style="width: 150px;">
+                      <option value=" "> </option>
+                      <option value="OK">OK</option>
+                      <option value="Not OK">Not OK</option>
+                    </select>
+                  </td>
+              </table>
+              <!-- LOGIN DETAILS. -->
+              <h2>9. Login Details</h3>
+                <button class="show_explanation">Show Explanation</button>
+                <p class="expandableText" style="display: none;" width="100x">XXX.
+                </p>
+                <br>
+                <br>
+                        <table>
+                  <tr>
+                    <td>
+                      <label for="loginType1">Type:</label>
+                      <select name="loginType1" style="width: 150px;">
+                        <option value=" "> </option>
+                        <option value="Wavex">Wavex</option>
+                        <option value="OS">OS</option>
+                        <option value="Software">Software</option>
+                        <option value="TeamViewer">TeamViewer</option>
+                        <option value="Hardware">Hardware</option>
+                      </select>
+                    </td>
+                    <td>
+                      <label for="loginUsername1">Username:</label>
+                      <input type="text" name="loginUsername1" style="width:140px;">
+                    </td>
+                    <td>
+                      <label for="loginPassword1">Password:</label>
+                      <input type="text" name="loginPassword1" style="width:140px;">
+                    </td>
+                    <td>
+                      <label for="loginComments1">Comments:</label>
+                      <input type="text" name="loginComments1" style="width:140px;">
+                    </td>
+                  <tr>
+                    <td>
+                      <label for="loginType2"></label>
+                      <select name="loginType2" style="width: 150px;">
+                        <option value=" "> </option>
+                        <option value="Wavex">Wavex</option>
+                        <option value="OS">OS</option>
+                        <option value="Software">Software</option>
+                        <option value="TeamViewer">TeamViewer</option>
+                        <option value="Hardware">Hardware</option>
+                      </select>
+                    </td>
+                    <td>
+                      <label for="loginUsername2"></label>
+                      <input type="text" name="loginUsername2" style="width:140px;">
+                    </td>
+                    <td>
+                      <label for="loginPassword2"></label>
+                      <input type="text" name="loginPassword2" style="width:140px;">
+                    </td>
+                    <td>
+                      <label for="loginComments2"></label>
+                      <input type="text" name="loginComments2" style="width:140px;">
+                    </td>
+                  <tr>
+                    <td>
+                      <label for="loginType3"></label>
+                      <select name="loginType3" style="width: 150px;">
+                        <option value=" "> </option>
+                        <option value="Wavex">Wavex</option>
+                        <option value="OS">OS</option>
+                        <option value="Software">Software</option>
+                        <option value="TeamViewer">TeamViewer</option>
+                        <option value="Hardware">Hardware</option>
+                      </select>
+                    </td>
+                    <td>
+                      <label for="loginUsername3"></label>
+                      <input type="text" name="loginUsername3" style="width:140px;">
+                    </td>
+                    <td>
+                      <label for="loginPassword3"></label>
+                      <input type="text" name="loginPassword3" style="width:140px;">
+                    </td>
+                    <td>
+                      <label for="loginComments3"></label>
+                      <input type="text" name="loginComments3" style="width:140px;">
+                    </td>
+                </table>
+                <!-- STATUS. -->
+                <h3 style="color: lightgreen;">Status</h3>
+                <table>
+                  <td>
+                    <label for="workStatus">Work Status:</label>
+                    <select name="workStatus" style="width:200px;">
+                      <option value=" "> </option>
+                      <option value="Planning">Planning</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Complete">Complete</option>
+                      <option value="Needs Attention">Needs Attention</option>
+                    </select>
+                  </td>
+                  <td>
+                    <label for="subscriptionExpiry">aaS Subscription Expiry:</label>
+                    <input type="date" name="subscriptionExpiry" style="width:200px">
+                  </td>
+                </table>
+                <label for="generalComments">Summary:</label>
+                <textarea type="generalComments" name="generalComments" rows="8" cols="80"></textarea>
+                <!-- <input type="textarea" name="generalComments" rows="4" cols="50" style="width:300px; height: 100px;"> -->
+                <label id="uploaded-images-label" for="image-container"
+                  style="display: none; margin-top: 10px;">Attached:</label>
+                <div id="image-container" class="uploaded-images"></div>
+
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <input type="file" id="imageFileInput" multiple accept="image/*" style="display: none;"
+      onchange="handleImageFiles(event)">
+    <button class="button" onclick="document.getElementById('imageFileInput').click()">Add Images</button>
+    <button class="button" onclick="openFullReportXband()">Full Report</button>
+    <button class="button" onclick="openCloudCertificate()">Miros Cloud Certificate</button>
+    <button class="button" onclick="exportToJson()">Download</button>
+    <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">
+    <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload</button>
+    <button class="clear_button" onclick="clearForm()">Clear Data</button>
+    <button class="toggle_scroll" onclick="toggleScroll()">Jump to End / Start</button>
+  </div>
+</body>
+
+</html>

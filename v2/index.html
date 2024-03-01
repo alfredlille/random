@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report Tool</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="header">
+    <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg">
+    <h1>Report Tool</Form>
+    </h1>
+    <p>This tool is for recording new installations and other system-related activities</p>
+    <form id="dropdownForm">
+      <label for="dropdown"></label>
+      <select id="dropdown" onchange="navigate()">
+        <option value="">Choose a System</option>
+        <option value="xband.html">Wavex & OSD</option>
+        <option value="rangefinder.html">RangeFinder</option>
+        <option value="waveradar.html">Wave & Current Radar</option>
+        <option value="other.html">Other</option>
+        <option value="archive.html">Site Archive</option>        
+      </select>
+    </form>
+  </div>
+  <div class="image-container" style="overflow: hidden;">
+    <img src="bg.png" alt="Wave Background" style="max-width: 100%; height: auto;">
+  </div>
+  
+  <div class="footer">
+    <button class="button" onclick="window.location.href = 'https://miros.app/'">Miros Cloud</button>
+    <button class="button" onclick="window.location.href = 'https://mirosas.sharepoint.com/_layouts/15/sharepoint.aspx'">SharePoint</button>
+    <button class="button" onclick="window.location.href = 'https://app.hubspot.com/reports-dashboard/4788297/view/8486351'">HubSpot</button>
+    <button class="button" onclick="window.location.href = 'https://www.marinetraffic.com/en/ais/home/centerx:86.7/centery:51.7/zoom:3'">MarineTraffic</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report Tool</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="header">
+    <a href="index.html">
+      <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg">
+  </a>
+      <h1>Report Tool</Form>
+    </h1>
+    <form id="dropdownForm">
+      <label for="dropdown"></label>
+      <select id="dropdown" onchange="navigate()">
+        <option value="-">Choose a System</option>
+        <option value="xband.html">Wavex & OSD</option>
+        <option value="rangefinder.html">RangeFinder</option>
+        <option value="waveradar.html">Wave & Current Radar</option>
+        <option value="other.html">Other</option>
+      </select>
+    </form>
+    <h2>RangeFinder - WORK IN PROGRESS</h2>
+    <p>Use the below form to record new setups or other related activities.</p>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form id="myForm" oninput="saveToLocalStorage()">
+        <br>
+        <br>
+        <br>
+        <h2>1. Overview</h2>
+        <p>Please refer to XXX.</p>
+        <label for="system">System:</label>
+        <select name="system">
+          <option value="-">-</option>
+          <option value="RangeFinder">RangeFinder</option>
+          <option value="RangeFinderEX">RangeFinder EX</option>
+        </select>
+        <label for="workType">Work Type:</label>
+        <select name="workType">
+          <option value="-">-</option>
+          <option value="Commissionng">Commissioning</option>
+          <option value="Upgrade">Upgrade</option>
+          <option value="Service">Service</option>
+          <option value="Troubleshooting">Troubleshooting</option>
+        </select>
+        <label for="site">Site:</label>
+        <input type="text" name="site">
+        <label for="siteType">Site Type:</label>
+        <select name="siteType">
+          <option value="-">-</option>
+          <option value="Platform">Platform</option>
+          <option value="Supply Vessel">Supply Vessel</option>
+          <option value="Cable Layer">Cable Layer</option>
+          <option value="Tanker">Tanker</option>
+          <option value="Cruise Vessel">Cruise Vessel</option>
+          <option value="FPSO">FPSO</option>
+          <option value="FPSO">FPSO</option>
+          <option value="FPSO">FPSO</option>
+          <option value="FPSO">FPSO</option>
+          <option value="FPSO">FPSO</option>
+          <option value="FPSO">FPSO</option>
+        </select>
+        <label for="customer">Customer:</label>
+        <input type="text" name="customer">
+        <label for="date">Date:</label>
+        <input type="date" name="date">
+        <label for="imo">IMO:</label>
+        <input type="text" name="imo">
+        <label for="location">Location:</label>
+        <input type="text" name="location">
+        <label for="engineer">Engineer:</label>
+        <select name="engineer">
+          <option value="-">-</option>
+          <option value="Daniel Denyer">Daniel Denyer</option>
+          <option value="Eirik Tenningen">Eirik Tenningen</option>
+          <option value="Orjan Kleppe">Orjan Kleppe</option>
+          <option value="Kristopher Ganzel">Kristopher Ganzel</option>
+          <option value="Vemund Bertelsen">Vermund Bertelsen</option>
+          <option value="Javier Mozo">Javier Mozo</option>
+        </select>
+        <h2>2. Record of Equipment</h2>
+        <p>Please refer to XXX.</p>
+        <table>
+          <tr>
+            <td>
+              <label for="recordEquipment1">Equipment:</label>
+              <select name="recordEquipment1">
+                <option value="-">-</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="RangeFinderEX">RangeFinderEX</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="JunctionBox">Junction Box</option>
+              </select>
+            </td>
+            <td>
+              <label for="equipmentManufact1">Manufacturer:</label>
+              <input type="text" name="equipmentManufact1" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentModel1">Model:</label>
+              <input type="text" name="equipmentModel1" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentPartNo1">Part Number:</label>
+              <input type="text" name="equipmentPartNo1" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentSerialNo1">Serial Number:</label>
+              <input type="text" name="equipmentSerialNo1" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentLocation1">Location:</label>
+              <input type="text" name="equipmentLocation1" style="width:100px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="recordEquipment2"></label>
+              <select name="recordEquipment2">
+                <option value="-">-</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="RangeFinderEX">RangeFinderEX</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="JunctionBox">Junction Box</option>
+              </select>
+            </td>
+            <td>
+              <label for="equipmentManufact2"></label>
+              <input type="text" name="equipmentManufact2" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentModel2"></label>
+              <input type="text" name="equipmentModel2" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentPartNo2"></label>
+              <input type="text" name="equipmentPartNo2" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentSerialNo2"></label>
+              <input type="text" name="equipmentSerialNo2" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentLocation2"></label>
+              <input type="text" name="equipmentLocation2" style="width:100px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="recordEquipment3"></label>
+              <select name="recordEquipment3">
+                <option value="-">-</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="RangeFinderEX">RangeFinderEX</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="JunctionBox">Junction Box</option>
+              </select>
+            </td>
+            <td>
+              <label for="equipmentManufact3"></label>
+              <input type="text" name="equipmentManufact3" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentModel3"></label>
+              <input type="text" name="equipmentModel3" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentPartNo3"></label>
+              <input type="text" name="equipmentPartNo3" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentSerialNo3"></label>
+              <input type="text" name="equipmentSerialNo3" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentLocation3"></label>
+              <input type="text" name="equipmentLocation3" style="width:100px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="recordEquipment4"></label>
+              <select name="recordEquipment4">
+                <option value="-">-</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="RangeFinderEX">RangeFinderEX</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="JunctionBox">Junction Box</option>
+              </select>
+            </td>
+            <td>
+              <label for="equipmentManufact4"></label>
+              <input type="text" name="equipmentManufact4" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentModel4"></label>
+              <input type="text" name="equipmentModel4" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentPartNo4"></label>
+              <input type="text" name="equipmentPartNo4" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentSerialNo4"></label>
+              <input type="text" name="equipmentSerialNo4" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentLocation4"></label>
+              <input type="text" name="equipmentLocation4" style="width:100px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="recordEquipment5"></label>
+              <select name="recordEquipment5">
+                <option value="-">-</option>
+                <option value="RangeFinder">RangeFinder</option>
+                <option value="RangeFinderEX">RangeFinderEX</option>
+                <option value="Switch">Switch</option>
+                <option value="NPort">NPort</option>
+                <option value="JunctionBox">Junction Box</option>
+              </select>
+            </td>
+            <td>
+              <label for="equipmentManufact5"></label>
+              <input type="text" name="equipmentManufact5" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentModel5"></label>
+              <input type="text" name="equipmentModel5" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentPartNo5"></label>
+              <input type="text" name="equipmentPartNo5" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentSerialNo5"></label>
+              <input type="text" name="equipmentSerialNo5" style="width:100px;">
+            </td>
+            <td>
+              <label for="equipmentLocation5"></label>
+              <input type="text" name="equipmentLocation5" style="width:100px;">
+            </td>
+          </tr>
+          <table>
+            <h2>3. Check of Equipment</h2>
+            <p>Please refer to XXX.</p>
+            <table>
+              <tr>
+                <td>
+                  <label for="checkEquipment1">Equipment:</label>
+                  <select name="checkEquipment1">
+                    <option value="-">-</option>
+                    <option value="RangeFinder">RangeFinder</option>
+                    <option value="RangeFinderEX">RangeFinderEX</option>
+                    <option value="Switch">Switch</option>
+                    <option value="NPort">NPort</option>
+                    <option value="JunctionBox">Junction Box</option>
+                      </select>
+                  </label>
+                <td>
+                  <label for="checkVisual1">Visual:</label>
+                  <select name="checkVisual1" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                  </label>
+                <td>
+                  <label for="checkMech1">Mechanical:</label>
+                  <select name="checkMech1" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                  </label>
+                <td>
+                  <label for="checkCabling1">Cabling:</label>
+                  <select name="checkCabling1" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                  </label>
+                <td>
+                  <label for="checkPower1">Power:</label>
+                  <select name="checkPower1" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                  </label>
+                <td>
+                  <label for="checkEarthing1">Earthing:</label>
+                  <select name="checkEarthing1" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                  </label>
+              </tr>
+              <tr>
+                <td>
+                  <label for="checkEquipment2"></label>
+                  <select name="checkEquipment2">
+                    <option value="-">-</option>
+                    <option value="RangeFinder">RangeFinder</option>
+                    <option value="RangeFinderEX">RangeFinderEX</option>
+                    <option value="Switch">Switch</option>
+                    <option value="NPort">NPort</option>
+                    <option value="JunctionBox">Junction Box</option>
+                      </select>
+                </td>
+                <td>
+                  <label for="checkVisual2"></label>
+                  <select name="checkVisual2" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkMech2"></label>
+                  <select name="checkMech2" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkCabling2"></label>
+                  <select name="checkCabling2" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkPower2"></label>
+                  <select name="checkPower2" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkEarthing2"></label>
+                  <select name="checkEarthing2" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="checkEquipment3"></label>
+                  <select name="checkEquipment3">
+                    <option value="-">-</option>
+                    <option value="RangeFinder">RangeFinder</option>
+                    <option value="RangeFinderEX">RangeFinderEX</option>
+                    <option value="Switch">Switch</option>
+                    <option value="NPort">NPort</option>
+                    <option value="JunctionBox">Junction Box</option>
+                      </select>
+                </td>
+                <td>
+                  <label for="checkVisual3"></label>
+                  <select name="checkVisual3" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkMech3"></label>
+                  <select name="checkMech3" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkCabling3"></label>
+                  <select name="checkCabling3" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkPower3"></label>
+                  <select name="checkPower3" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkEarthing3"></label>
+                  <select name="checkEarthing3" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="checkEquipment4"></label>
+                  <select name="checkEquipment4">
+                    <option value="-">-</option>
+                    <option value="RangeFinder">RangeFinder</option>
+                    <option value="RangeFinderEX">RangeFinderEX</option>
+                    <option value="Switch">Switch</option>
+                    <option value="NPort">NPort</option>
+                    <option value="JunctionBox">Junction Box</option>
+                      </select>
+                </td>
+                <td>
+                  <label for="checkVisual4"></label>
+                  <select name="checkVisual4" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkMech4"></label>
+                  <select name="checkMech4" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkCabling4"></label>
+                  <select name="checkCabling4" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkPower4"></label>
+                  <select name="checkPower4" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkEarthing4"></label>
+                  <select name="checkEarthing4" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="checkEquipment5"></label>
+                  <select name="checkEquipment5">
+                    <option value="-">-</option>
+                    <option value="RangeFinder">RangeFinder</option>
+                    <option value="RangeFinderEX">RangeFinderEX</option>
+                    <option value="Switch">Switch</option>
+                    <option value="NPort">NPort</option>
+                    <option value="JunctionBox">Junction Box</option>
+                      </select>
+                </td>
+                <td>
+                  <label for="checkVisual5"></label>
+                  <select name="checkVisual5" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkMech5"></label>
+                  <select name="checkMech5" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkCabling5"></label>
+                  <select name="checkCabling5" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkPower5"></label>
+                  <select name="checkPower5" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="checkEarthing5"></label>
+                  <select name="checkEarthing5" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="OK">OK</option>
+                    <option value="Not OK">Not OK</option>
+                    <option value="TBC">TBC</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <h2>4. Configuration & Commissioning</h2>
+            <p>Please refer to XXX.</p>
+            <h3>4.1 - Site</h3>
+            <p>Please refer to XXX.</p>
+            <table>
+              <tr>
+                <td>
+                  <label for="mountingHeight">Mounting Height (m):</label>
+                  <input type="text" name="mountingHeight" style="width: 150px;">
+                </td>
+              </tr>
+              <td>
+                <label for="minRange">Minimum Range (m):</label>
+                <input type="text" name="minRange" style="width: 150px;">
+              </td>
+              <td>
+                <label for="maxRange">Maximum Range (m):</label>
+                <input type="text" name="maxRange" style="width: 150px;">
+              </td>
+            </table>
+            <label for="siteComments">Comments:</label>
+            <input type="text" name="siteComments" style="width: 400px;height: 100px;">
+            <h3>4.2 - Output</h3>
+            <p>Please refer to XXX.</p>
+            <table>
+              <tr>
+                <td>
+                  <label for="output1">Sentence</label>
+                  <select name="output1" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="output2">+</label>
+                  <select name="output2" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="output3">+</label>
+                  <select name="output3" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="output4"></label>
+                  <select name="output4" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="output5"></label>
+                  <select name="output5" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="output6"></label>
+                  <select name="output6" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="output7"></label>
+                  <select name="output7" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="output8"></label>
+                  <select name="output8" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="output9"></label>
+                  <select name="output9" style="width:100px;">
+                    <option value="-">-</option>
+                    <option value="PMIRW">PMIRW</option>
+                    <option value="PMIRWM">PMIRWM</option>
+                    <option value="PMIRWP">PMIRWP</option>
+                    <option value="PMIRLD">PMIRLD</option>
+                    <option value="PMIRR">PMIRR</option>
+                    <option value="PMIRF">PMIRF</option>
+                    <option value="PMIRWD">PMIRWD</option>
+                    <option value="PMIRM">PMIRM</option>
+                    <option value="YXXDR">YXXDR</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          <table>
+            <tr>
+              <td>
+                <label for="serFormat">Serial Format</label>
+                <select name="serFormat" style="width:100px;">
+                  <option value="-">-</option>
+                  <option value="OFF">OFF</option>
+                  <option value="ON">ON</option>
+                </select>
+              </td>
+                <td>
+                  <label for="outputFrequency">Output Frequency (Hz):</label>
+                  <input type="text" name="outputFrequency" style="width: 100px;">
+                </td>
+          </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label for="autoCalc">Auto Calculate</label>
+                <select name="autoCalc" style="width:100px;">
+                  <option value="-">-</option>
+                  <option value="ON">ON</option>
+                  <option value="OFF">OFF</option>
+                </select>
+              </td>
+                <td>
+                  <label for="urTimeConstant">User Range Time Constant (s):</label>
+                  <input type="text" name="urTimeConstant" style="width: 100px;">
+                </td>
+          </tr>
+          <td>
+            <label for="baudRate">Baud Rate</label>
+            <select name="baudRate" style="width:100px;">
+              <option value="-">-</option>
+              <option value="1200">1200</option>
+              <option value="2400">2400</option>
+              <option value="4800">4800</option>
+              <option value="9600">9600</option>
+              <option value="19200">19200</option>
+              <option value="38400">38400</option>
+              <option value="57600">57600</option>
+              <option value="115200">115200</option>
+            </select>
+          </td>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label for="hfCloud">High Frequency Cloud Data</label>
+                <select name="hfCloud" style="width:100px;">
+                  <option value="-">-</option>
+                  <option value="OFF">OFF</option>
+                  <option value="ON">ON</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table>
+          <td>
+            <label for="outputFrequency2">Output Frequency</label>
+            <select name="outputFrequency2" style="width:100px;">
+              <option value="-">-</option>
+              <option value="0.1">0.1</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="4">4</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+          <td>
+            <label for="rTimeConstant">Range Time Constant (s):</label>
+            <input type="text" name="rTimeConstant" style="width: 150px;">
+          </td>
+          <td>
+            <label for="autoCalc2">Auto Calculate</label>
+            <select name="autoCalc2" style="width:100px;">
+              <option value="-">-</option>
+              <option value="ON">ON</option>
+              <option value="OFF">OFF</option>
+            </select>
+          </td>
+         </table>
+      </table>
+     <h3>4.3 - Network</h3>
+      <p>Please refer to XXX.</p>
+      <table>
+        <tr>
+          <td>
+            <label for="dhcpEnabled">DHCP Enabled</label>
+            <select name="dhcpEnabled" style="width:120px;">
+              <option value="-">-</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+       <td>
+          <label for="rfIpAddress1">IP Address:</label>
+          <input type="text" name="rfIpAddress1" style="width:120px;">
+        </td>
+        <td>
+          <label for="rfSubnetMask1">Subnet Mask:</label>
+          <input type="text" name="rfSubnetMask1" style="width:120px;">
+        </td>
+        <td>
+          <label for="rfDefaultGateway1">Default Gateway:</label>
+          <input type="text" name="rfDefaultGateway1" style="width:120px;">
+        </td>
+        <td>
+          <label for="rfMac1">MAC Address:</label>
+          <input type="text" name="rfMac1" style="width:120px;">
+        </td>
+        <td>
+          <label for="rfDns1">DNS 1:</label>
+          <input type="text" name="rfDns1" style="width:120px;">
+        </td>
+        <td>
+          <label for="rfDns2">DNS 2:</label>
+          <input type="text" name="rfDns2" style="width:120px;">
+        </td>
+     </tr>
+      <tr>
+        <td>
+          <label for="proxyEnabled">Proxy Enabled</label>
+          <select name="proxyEnabled" style="width:120px;">
+            <option value="-">-</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </td>
+        <td>
+          <label for="proxyHost">Proxy Host:</label>
+          <input type="text" name="proxyHost" style="width:120px;">
+        </td>
+        <td>
+          <label for="proxyPort">Proxy Port:</label>
+          <input type="text" name="proxyPort" style="width:120px;">
+        </td>
+     </tr>
+          <td>
+            <label for="cloudEnabled">Cloud Enabled</label>
+            <select name="cloudEnabled" style="width:120px;">
+              <option value="-">-</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </td>
+        </table>
+       <td>
+          <label for="cloudString">Cloud Connection String:</label>
+          <input type="text" name="cloudString" style="width:400px;">
+        </td>
+     </table>
+     <h3>4.4 - Time</h3>
+      <p>Please refer to XXX.</p>
+      <table>
+        <tr>
+        <td>
+          <label for="timeSync">Time Sync</label>
+          <select name="timeSync" style="width:120px;">
+            <option value="-">-</option>
+            <option value="Automatic">Automatic</option>
+            <option value="Manual">Manual</option>
+          </select>
+        </td>
+      </tr>
+    <tr>
+       <td>
+          <label for="timeServer">Time Server:</label>
+          <input type="text" name="timeServer" style="width:120px;">
+        </td>
+      </tr>
+     </table>
+     <h3>4.5 - Wave & Water Level</h3>
+      <p>Please enter reference level information here.</p>
+      <table>
+        <tr>
+        <td>
+          <label for="wlReference">WL Reference (m):</label>
+          <input type="text" name="wlReference" style="width:120px;">
+        </td>
+        <td>
+          <label for="wlTimeConstant">Time Constant (s):</label>
+          <input type="text" name="wlTimeConstant" style="width:120px;">
+        </td>
+     </tr>
+      <tr>
+        <td>
+          <label for="drReference">Draught Reference (m):</label>
+          <input type="text" name="drReference" style="width:120px;">
+        </td>
+        <td>
+          <label for="drTimeConstant">Time Constant (s):</label>
+          <input type="text" name="drTimeConstant" style="width:120px;">
+        </td>
+     </tr>
+      <tr>
+        <td>
+          <label for="usReference">User Reference (m):</label>
+          <input type="text" name="usReference" style="width:120px;">
+        </td>
+        <td>
+          <label for="usTimeConstant">Time Constant (s):</label>
+          <input type="text" name="usTimeConstant" style="width:120px;">
+        </td>
+     </tr>
+    </table>
+  <table>
+     <tr>
+        <td>
+          <label for="obTime">Range and Heave Timeseries Observation Time (min):</label>
+          <input type="text" name="obTime" style="width:120px;">
+        </td>
+     </tr>
+     </table>
+     <h3>4.6 - Advanced</h3>
+     <p>Please enter advanced sensor parameters here.</p>
+     <table>
+      <tr>
+         <td>
+           <label for="minLevel">Minimum Level:</label>
+           <input type="text" name="minLevel" style="width:120px;">
+         </td>
+         <td>
+          <label for="threshold">Threshold (%):</label>
+          <input type="text" name="threshold" style="width:120px;">
+        </td>
+        <td>
+          <label for="timeout">Timeout (s):</label>
+          <input type="text" name="timeout" style="width:120px;">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="trackingEnabled">Tracking Enabled</label>
+          <select name="trackingEnabled" style="width:120px;">
+            <option value="-">-</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </td>
+        <td>
+          <label for="trackingWindow">Window Size (m):</label>
+          <input type="text" name="trackingWindow" style="width:120px;">
+        </td>
+        <td>
+          <label for="trackingTimeConstant">Time Constant (s):</label>
+          <input type="text" name="trackingTimeConstant" style="width:120px;">
+        </td>
+     </tr>
+    </table>
+  <table>
+
+
+     <tr>
+      <td>
+        <label for="periodogramLength">Length Of FFT (s)</label>
+        <select name="periodogramLength" style="width:120px;">
+          <option value="-">-</option>
+          <option value="128">128</option>
+          <option value="256">256</option>
+        </select>
+      </td>
+      <td>
+        <label for="dqLimit">Data Quality Limit (%):</label>
+        <input type="text" name="dqLimit" style="width:120px;">
+      </td>
+   </tr>
+   <tr>
+    <td>
+      <label for="parameterTlim">Parameter Tlim (s)</label>
+      <input type="text" name="dqLimit" style="width:120px;">
+    </td>
+    <td>
+      <label for="parameterMaxHlim">Parameter Max Hlim (m):</label>
+      <input type="text" name="parameterMaxHlim" style="width:120px;">
+    </td>
+ </tr>
+
+      </table>
+
+      <h3>4.7 - Display</h3>
+      <p>Please enter display settings here.</p>
+
+      <table>
+
+
+        <tr>
+         <td>
+           <label for="alarmColour">Alarm Colour</label>
+           <select name="alarmColour" style="width:120px;">
+             <option value="-">-</option>
+             <option value="ON">ON</option>
+             <option value="OFF">OFF</option>
+           </select>
+         </td>
+         <td>
+          <label for="alarmBlink">Alarm Blink</label>
+          <select name="alarmBlink" style="width:120px;">
+            <option value="-">-</option>
+            <option value="ON">ON</option>
+            <option value="OFF">OFF</option>
+          </select>
+        </td>
+        <td>
+          <label for="displayUnits">Display Units</label>
+          <select name="displayUnits" style="width:120px;">
+            <option value="-">-</option>
+            <option value="Metric">Metric</option>
+            <option value="Imperial">Imperial</option>
+          </select>
+        </td>
+
+     </tr>
+   
+         </table>
+
+         <h3>4.8 - Firmware</h3>
+         <p>Ensure the sensor has been upgraded to the latest firmware.</p>
+         <table>
+
+
+          <tr>
+           <td>
+             <label for="firmware">Firmware Version</label>
+             <input type="text" name="firmware" style="width:120px;">
+           </td>
+          </table>
+
+  
+   
+   
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <h2>Miros Cloud</h2>
+              <p>Firewall Exceptions</p>
+              <table>
+                <tr>
+                  <td>
+                    <label for="cloudHost1">admin.miros.app:</label>
+                    <select name="cloudHost1" style="width: 150px;">
+                      <option value="-">-</option>
+                      <option value="OK">OK</option>
+                      <option value="Not OK">Not OK</option>
+                      <option value="NA">NA</option>
+                    </select>
+                  </td>
+                  <td>
+                    <label for="cloudHost2">azure-devices.net:</label>
+                    <select name="cloudHost2" style="width: 150px;">
+                      <option value="-">-</option>
+                      <option value="OK">OK</option>
+                      <option value="Not OK">Not OK</option>
+                      <option value="NA">NA</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+                  <h2>5. Login Details</h3>
+                    <table>
+                      <tr>
+                        <td>
+                          <label for="loginType1">Type:</label>
+                          <select name="loginType1" style="width: 150px;">
+                            <option value="-">-</option>
+                            <option value="RangeFinder">RangeFinder</option>
+                            <option value="OS">OS</option>
+                            <option value="Software">Software</option>
+                            <option value="TeamViewer">TeamViewer</option>
+                            <option value="Hardware">Hardware</option>
+                          </select>
+                        </td>
+                        <td>
+                          <label for="loginUsername1">Username:</label>
+                          <input type="text" name="loginUsername1" style="width:140px;">
+                        </td>
+                        <td>
+                          <label for="loginPassword1">Password:</label>
+                          <input type="text" name="loginPassword1" style="width:140px;">
+                        </td>
+                        <td>
+                          <label for="loginComments1">Comments:</label>
+                          <input type="text" name="loginComments1" style="width:340px;">
+                        </td>
+                      <tr>
+                        <td>
+                          <label for="loginType2">Type:</label>
+                          <select name="loginType2" style="width: 150px;">
+                            <option value="-">-</option>
+                            <option value="RangeFinder">RangeFinder</option>
+                            <option value="OS">OS</option>
+                            <option value="Software">Software</option>
+                            <option value="TeamViewer">TeamViewer</option>
+                            <option value="Hardware">Hardware</option>
+                          </select>
+                        </td>
+                        <td>
+                          <label for="loginUsername2">Username:</label>
+                          <input type="text" name="loginUsername2" style="width:140px;">
+                        </td>
+                        <td>
+                          <label for="loginPassword2">Password:</label>
+                          <input type="text" name="loginPassword2" style="width:140px;">
+                        </td>
+                        <td>
+                          <label for="loginComments2">Comments:</label>
+                          <input type="text" name="loginComments2" style="width:340px;">
+                        </td>
+                      <tr>
+                        <td>
+                          <label for="loginType3">Type:</label>
+                          <select name="loginType3" style="width: 150px;">
+                            <option value="-">-</option>
+                            <option value="RangeFinder">RangeFinder</option>
+                            <option value="OS">OS</option>
+                            <option value="Software">Software</option>
+                            <option value="TeamViewer">TeamViewer</option>
+                            <option value="Hardware">Hardware</option>
+                          </select>
+                        </td>
+                        <td>
+                          <label for="loginUsername3">Username:</label>
+                          <input type="text" name="loginUsername3" style="width:140px;">
+                        </td>
+                        <td>
+                          <label for="loginPassword3">Password:</label>
+                          <input type="text" name="loginPassword3" style="width:140px;">
+                        </td>
+                        <td>
+                          <label for="loginComments3">Comments:</label>
+                          <input type="text" name="loginComments3" style="width:340px;">
+                        </td>
+                    </table>
+                    <h3 style="color: lightgreen;">Status</h3>
+                    <label for="workStatus">Work Status:</label>
+                    <select name="workStatus" style="width:200px;">
+                      <option value="-">-</option>
+                      <option value="Planning">Planning</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Complete">Complete</option>
+                      <option value="Needs Attention">Needs Attention</option>
+                    </select>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="button" onclick="exportToJson()">Download JSON</button>
+    <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">
+    <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload JSON</button>
+    <button class="button" onclick="openFullReport()">Full Report</button>
+    <button class="button" onclick="openCloudCertificate()">Miros Cloud Certificate</button>
+    <button class="clear_button" onclick="clearForm()">Clear Data</button>
+ </div>
+/body>
+</html>
