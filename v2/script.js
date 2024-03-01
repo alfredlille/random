@@ -826,12 +826,23 @@ function handleJsonFile(event) {
 function fillFormFromJson(data) {
   console.log(data); // Log the data for debugging
   const form = document.getElementById('myForm');
-  
+
+  // Function to trigger a change event
+  function triggerChangeEvent(element) {
+    let event = new Event('change', {
+      bubbles: true,
+      cancelable: true,
+    });
+    element.dispatchEvent(event);
+  }
+
   // Handle top-level properties
   Object.keys(data).forEach(key => {
     if (typeof data[key] !== 'object') {
       if (form.elements[key]) {
         form.elements[key].value = data[key];
+        // Trigger change event after setting value
+        triggerChangeEvent(form.elements[key]);
       }
     } else {
       // Handle nested objects like 'recordEquipment'
@@ -839,6 +850,8 @@ function fillFormFromJson(data) {
         // Here, we assume the form element's name matches the nested key directly
         if (form.elements[nestedKey]) {
           form.elements[nestedKey].value = data[key][nestedKey];
+          // Trigger change event after setting value
+          triggerChangeEvent(form.elements[nestedKey]);
         }
       });
     }
