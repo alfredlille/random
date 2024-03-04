@@ -94,26 +94,25 @@
           <option value="Sahil Kochhar">Sahil Kochhar</option>
         </select>
         <!-- RECORD EQUIPMENT. -->
+        <div class="line"></div>
         <h2>2. Record of Equipment</h2>
         <button class="show_explanation">Show Explanation</button>
-        <p class="expandableText" style="display: none;" width="100x"> The following items shall be checked and recorded
-          in the commissioning report for
-          all hardware supplied by Miros.
-          For each installed unit of equipment record the following:
-          Item Description
-          Manufact.
-          Equipment manufacturer.
-          Model
-          Equipment model.
-          PN
-          Note the equipment part number the equipment is labelled with.
-          SN
-          Note the serial number the equipment is labelled with.
-          Location
-          Describe where the equipment is located.
-        </p>
-        <br>
-        <br>
+        <div class="expandableText">
+          <h2></h2>
+          <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied by Miros. For each installed unit of equipment record the following:</p>
+          <h3>Equipment Details</h3>
+          <ul>
+              <li><span>Item Description:</span> Brief description of the item.</li>
+              <li><span>Manufact.:</span> Equipment manufacturer.</li>
+              <li><span>Model:</span> Equipment model.</li>
+              <li><span>PN:</span> Note the equipment part number the equipment is labelled with.</li>
+              <li><span>SN:</span> Note the serial number the equipment is labelled with.</li>
+              <li><span>Location:</span> Describe where the equipment is located.</li>
+          </ul>
+      </div>      
+      <br>
+      <br>
+
 
         <table id="equipmentTable">
           <!-- Rows 1 to 4 (Visible by default) -->
@@ -375,44 +374,27 @@
           </td>
 
 
+
           <!-- CHECK EQUIPMENT. -->
 
         </table>
-
+        <div class="line"></div>
 
         <h2>3. Check of Equipment</h2>
         <button class="show_explanation">Show Explanation</button>
-        <p class="expandableText" style="display: none;" width="100x"> Visual
-          Item Description
-          Damage
-          Check for physical damage of the equipment (i.e., caused by accidents, improper or
-          rough handling of equipment during installation or transport). Corrosion, paint
-          damage etc...
-          Check labels
-          Verify that equipment is labelled with product no, serial no, tag no etc. as relevant.
-          Mechanical
-          Item Description
-          Correct installation
-          Check that equipment is properly mounted and otherwise correctly installed.
-          Cabling
-          Item Description
-          Cables and connections
-          Check that signal cables are correctly installed according to wiring diagrams and
-          have been properly secured in place.
-          Power
-          Item Description
-          Power supply
-          Check that incoming power supply voltage and polarity is correct.
-          Earthing
-          Item Description
-          Instrument earth
-          Verify that equipment utilizing a signal earth is properly connected to a proper earth
-          terminal.
-          PR-002 - Wavex v6.1 commissioning (Procedure)
-          Miros AS Page 9 of 24 Revision 1
-          Protective earth
-          Verify that equipment is properly connected to protective earth.
-        </p>
+        <div class="expandableText">
+          <h2></h2>
+          <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied by Miros. For each installed unit of equipment record the following:</p>
+          <h3>Equipment Details</h3>
+          <ul>
+              <li><span>Item Description:</span> Brief description of the item.</li>
+              <li><span>Manufact.:</span> Equipment manufacturer.</li>
+              <li><span>Model:</span> Equipment model.</li>
+              <li><span>PN:</span> Note the equipment part number the equipment is labelled with.</li>
+              <li><span>SN:</span> Note the serial number the equipment is labelled with.</li>
+              <li><span>Location:</span> Describe where the equipment is located.</li>
+          </ul>
+      </div>      
         <br>
         <br>
         <table id="equipmentTable">
@@ -927,6 +909,7 @@
         </table>
         <br>
         <!-- RADAR SECTION. -->
+        <div class="line_sub"></div>
         <h3>Radar</h3>
         <button class="show_explanation">Show Explanation</button>
         <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -979,6 +962,8 @@
         <!-- <input type="text" name="radarSettings" style="width: 400px;height: 75px;"> -->
         <br>
         <!-- SENSOR INPUT CHECKS. -->
+        <div class="line_sub"></div>
+
         <h3>Sensor Input Checks</h3>
         <button class="show_explanation">Show Explanation</button>
         <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -1045,6 +1030,7 @@
         </table>
         <br>
         <!-- EM-129 CONNECTIONS. -->
+        <div class="line_sub"></div>
         <h3>EM-129 Connections</h3>
         <button class="show_explanation">Show Explanation</button>
         <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -1222,6 +1208,7 @@
             </td>
         </table>
         <!-- MISCELLANEOUS CHECKS. -->
+        <div class="line_sub"></div>
         <h3>Miscellaneous Checks</h3>
         <button class="show_explanation">Show Explanation</button>
         <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -1311,6 +1298,7 @@
         </table>
         <table>
           <!-- NETWORK DETAILS. -->
+          <div class="line"></div>
           <h2>4. Network Details</h2>
           <button class="show_explanation">Show Explanation</button>
           <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -1583,6 +1571,7 @@
         
 
           <!-- MIROS CLOUD. -->
+          <div class="line_sub"></div>
           <h3>Miros Cloud</h3>
           <p>Firewall Exceptions</p>
           <button class="show_explanation">Show Explanation</button>
@@ -1613,6 +1602,8 @@
             </tr>
           </table>
           <!-- STARTUP. -->
+          <div class="line"></div>
+
           <h2>5. Startup</h2>
           <h3>Computer & Software Installation Checks</h3>
           <button class="show_explanation">Show Explanation</button>
@@ -1719,6 +1710,8 @@
               </td>
             </tr>
           </table>
+          <div class="line_sub"></div>
+
           <h3>System Startup</h3>
           <p>Prior to configuration:</p>
           <button class="show_explanation">Show Explanation</button>
@@ -1785,12 +1778,16 @@
             </tr>
           </table>
           <!-- COMMISSIONING. -->
+          <div class="line"></div>
+
           <h2>6. Configuration & Commissioning</h2>
           <button class="show_explanation">Show Explanation</button>
           <p class="expandableText" style="display: none;" width="100x">XXX.
           </p>
           <br>
           <br>
+          <div class="line_sub"></div>
+
             <h3>6.1 EM-129 Configuration</h3>
             <button class="show_explanation">Show Explanation</button>
             <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -1861,6 +1858,8 @@
           <textarea type="em129Comments" name="em129Comments" rows="8" cols="40"></textarea>
           </td>
           <!-- WAVEX SOFTWARE CONFIGURATION. -->
+          <div class="line_sub"></div>
+
           <h3>6.2. Wavex Software Configuration</h3>
           <button class="show_explanation">Show Explanation</button>
           <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -1907,6 +1906,8 @@
                   rotating sites</p>
               </td>
           </table>
+          <div class="line_sub"></div>
+
           <h3>Input</h3>
           <p> Radar:</p>
           <table>
@@ -2157,6 +2158,8 @@
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>
+          <div class="line_sub"></div>
+
           <h3>Processing</h3>
           <p> Geometry</p>
           <p style="padding-top: 0px; padding-left: 0px; font-style: italic; color: grey; ">All measurements are to
@@ -2298,6 +2301,8 @@
                 </select>
               </td>
           </table>
+          <div class="line_sub"></div>
+
           <h3>Output</h3>
           <table>
             <tr>
@@ -2394,6 +2399,8 @@
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>
+          <div class="line_sub"></div>
+
           <h3>Cloud</h3>
           <table>
             <tr>
@@ -2407,6 +2414,8 @@
                 </select>
               </td>
           </table>
+          <div class="line_sub"></div>
+
           <h3>Final Configuration</h3>
           <table>
             <tr>
@@ -2421,6 +2430,7 @@
               </td>
           </table>
           <!-- FINAL STARTUP. -->
+          <div class="line"></div>
           <h2>7. Final Startup</h3>
             <button class="show_explanation">Show Explanation</button>
             <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -2463,6 +2473,8 @@
                 </td>
             </table>
             <!-- SYSTEM BACKUP. -->
+            <div class="line"></div>
+
             <h2>8. System Backup</h3>
               <button class="show_explanation">Show Explanation</button>
               <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -2505,6 +2517,8 @@
                   </td>
               </table>
               <!-- LOGIN DETAILS. -->
+              <div class="line"></div>
+
               <h2>9. Login Details</h3>
                 <button class="show_explanation">Show Explanation</button>
                 <p class="expandableText" style="display: none;" width="100x">XXX.
@@ -2585,6 +2599,8 @@
                       <input type="text" name="loginComments3" style="width:140px;">
                     </td>
                 </table>
+                <div class="line"></div>
+
                 <!-- STATUS. -->
                 <h3 style="color: lightgreen;">Status</h3>
                 <table>

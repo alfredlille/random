@@ -165,3 +165,23 @@ input[type="file"]#file-input {
   display: none;
 }
 
+.expandableText {
+  display: none; /* Adjust this as needed */
+  width: 100%; /* This should be corrected or adjusted as needed */
+  /* Other styling for expandableText */
+}
+
+/* Styling for <span> to make text bold, emulating <strong> */
+.expandableText ul li span {
+  font-weight: bold;
+}
+
+.line {
+  border-top: 2px solid white; /* Creates a line at the top of the div */
+  margin: 20px 0; /* Space above and below the div */
+}
+
+.line_sub {
+  border-top: 1px solid grey; /* Creates a line at the top of the div */
+  margin: 20px 0; /* Space above and below the div */
+}
