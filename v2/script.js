@@ -826,12 +826,23 @@ function handleJsonFile(event) {
 function fillFormFromJson(data) {
   console.log(data); // Log the data for debugging
   const form = document.getElementById('myForm');
-  
+
+  // Function to trigger a change event
+  function triggerChangeEvent(element) {
+    let event = new Event('change', {
+      bubbles: true,
+      cancelable: true,
+    });
+    element.dispatchEvent(event);
+  }
+
   // Handle top-level properties
   Object.keys(data).forEach(key => {
     if (typeof data[key] !== 'object') {
       if (form.elements[key]) {
         form.elements[key].value = data[key];
+        // Trigger change event after setting value
+        triggerChangeEvent(form.elements[key]);
       }
     } else {
       // Handle nested objects like 'recordEquipment'
@@ -839,6 +850,8 @@ function fillFormFromJson(data) {
         // Here, we assume the form element's name matches the nested key directly
         if (form.elements[nestedKey]) {
           form.elements[nestedKey].value = data[key][nestedKey];
+          // Trigger change event after setting value
+          triggerChangeEvent(form.elements[nestedKey]);
         }
       });
     }
@@ -1248,48 +1261,91 @@ function openFullReportXband() {
 
 <h3>2. Record Equipment</h3>
 <table>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.recordEquipment1}</td>
-    <td style="padding-right: 20px;"><strong>Manufacturer:</strong> ${selectedElements.equipmentManufact1}</td>
-    <td style="padding-right: 20px;"><strong>Model:</strong> ${selectedElements.equipmentModel1}</td>
-    <td style="padding-right: 20px;"><strong>Part No:</strong> ${selectedElements.equipmentPartNo1}</td>
-    <td style="padding-right: 20px;"><strong>Serial No:</strong> ${selectedElements.equipmentSerialNo1}</td>
-    <td style="padding-right: 20px;"><strong>Location:</strong> ${selectedElements.equipmentLocation1}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.recordEquipment2}</td>
-    <td style="padding-right: 20px;"><strong>Manufacturer:</strong> ${selectedElements.equipmentManufact2}</td>
-    <td style="padding-right: 20px;"><strong>Model:</strong> ${selectedElements.equipmentModel2}</td>
-    <td style="padding-right: 20px;"><strong>Part No:</strong> ${selectedElements.equipmentPartNo2}</td>
-    <td style="padding-right: 20px;"><strong>Serial No:</strong> ${selectedElements.equipmentSerialNo2}</td>
-    <td style="padding-right: 20px;"><strong>Location:</strong> ${selectedElements.equipmentLocation2}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.recordEquipment3}</td>
-    <td style="padding-right: 20px;"><strong>Manufacturer:</strong> ${selectedElements.equipmentManufact3}</td>
-    <td style="padding-right: 20px;"><strong>Model:</strong> ${selectedElements.equipmentModel3}</td>
-    <td style="padding-right: 20px;"><strong>Part No:</strong> ${selectedElements.equipmentPartNo3}</td>
-    <td style="padding-right: 20px;"><strong>Serial No:</strong> ${selectedElements.equipmentSerialNo3}</td>
-    <td style="padding-right: 20px;"><strong>Location:</strong> ${selectedElements.equipmentLocation3}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.recordEquipment4}</td>
-    <td style="padding-right: 20px;"><strong>Manufacturer:</strong> ${selectedElements.equipmentManufact4}</td>
-    <td style="padding-right: 20px;"><strong>Model:</strong> ${selectedElements.equipmentModel4}</td>
-    <td style="padding-right: 20px;"><strong>Part No:</strong> ${selectedElements.equipmentPartNo4}</td>
-    <td style="padding-right: 20px;"><strong>Serial No:</strong> ${selectedElements.equipmentSerialNo4}</td>
-    <td style="padding-right: 20px;"><strong>Location:</strong> ${selectedElements.equipmentLocation4}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.recordEquipment5}</td>
-    <td style="padding-right: 20px;"><strong>Manufacturer:</strong> ${selectedElements.equipmentManufact5}</td>
-    <td style="padding-right: 20px;"><strong>Model:</strong> ${selectedElements.equipmentModel5}</td>
-    <td style="padding-right: 20px;"><strong>Part No:</strong> ${selectedElements.equipmentPartNo5}</td>
-    <td style="padding-right: 20px;"><strong>Serial No:</strong> ${selectedElements.equipmentSerialNo5}</td>
-    <td style="padding-right: 20px;"><strong>Location:</strong> ${selectedElements.equipmentLocation5}</td>
-  </tr>
-</table>
-<h3>3. Check Equipment</h3>
+  <thead>
+    <tr>
+      <th class="table-cell table-header">Equipment</th>
+      <th class="table-cell table-header">Manufacturer</th>
+      <th class="table-cell table-header">Model</th>
+      <th class="table-cell table-header">Part No</th>
+      <th class="table-cell table-header">Serial No</th>
+      <th class="table-cell table-header">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Equipment row 1 -->
+    <tr>
+      <td class="table-cell">${selectedElements.recordEquipment1}</td>
+      <td class="table-cell">${selectedElements.equipmentManufact1}</td>
+      <td class="table-cell">${selectedElements.equipmentModel1}</td>
+      <td class="table-cell">${selectedElements.equipmentPartNo1}</td>
+      <td class="table-cell">${selectedElements.equipmentSerialNo1}</td>
+      <td class="table-cell">${selectedElements.equipmentLocation1}</td>
+    </tr>
+    <!-- Equipment row 2 -->
+    <tr>
+      <td class="table-cell">${selectedElements.recordEquipment2}</td>
+      <td class="table-cell">${selectedElements.equipmentManufact2}</td>
+      <td class="table-cell">${selectedElements.equipmentModel2}</td>
+      <td class="table-cell">${selectedElements.equipmentPartNo2}</td>
+      <td class="table-cell">${selectedElements.equipmentSerialNo2}</td>
+      <td class="table-cell">${selectedElements.equipmentLocation2}</td>
+    </tr>
+    <!-- Equipment row 3 -->
+    <tr>
+      <td class="table-cell">${selectedElements.recordEquipment3}</td>
+      <td class="table-cell">${selectedElements.equipmentManufact3}</td>
+      <td class="table-cell">${selectedElements.equipmentModel3}</td>
+      <td class="table-cell">${selectedElements.equipmentPartNo3}</td>
+      <td class="table-cell">${selectedElements.equipmentSerialNo3}</td>
+      <td class="table-cell">${selectedElements.equipmentLocation3}</td>
+    </tr>
+    <!-- Equipment row 4 -->
+    <tr>
+      <td class="table-cell">${selectedElements.recordEquipment4}</td>
+      <td class="table-cell">${selectedElements.equipmentManufact4}</td>
+      <td class="table-cell">${selectedElements.equipmentModel4}</td>
+      <td class="table-cell">${selectedElements.equipmentPartNo4}</td>
+      <td class="table-cell">${selectedElements.equipmentSerialNo4}</td>
+      <td class="table-cell">${selectedElements.equipmentLocation4}</td>
+    </tr>
+    <!-- Equipment row 5 -->
+    <tr>
+      <td class="table-cell">${selectedElements.recordEquipment5}</td>
+      <td class="table-cell">${selectedElements.equipmentManufact5}</td>
+      <td class="table-cell">${selectedElements.equipmentModel5}</td>
+      <td class="table-cell">${selectedElements.equipmentPartNo5}</td>
+      <td class="table-cell">${selectedElements.equipmentSerialNo5}</td>
+      <td class="table-cell">${selectedElements.equipmentLocation5}</td>
+    </tr>
+    <!-- Equipment row 6 -->
+    <tr>
+      <td class="table-cell">${selectedElements.recordEquipment6}</td>
+      <td class="table-cell">${selectedElements.equipmentManufact6}</td>
+      <td class="table-cell">${selectedElements.equipmentModel6}</td>
+      <td class="table-cell">${selectedElements.equipmentPartNo6}</td>
+      <td class="table-cell">${selectedElements.equipmentSerialNo6}</td>
+      <td class="table-cell">${selectedElements.equipmentLocation6}</td>
+    </tr>
+    <!-- Equipment row 7 -->
+    <tr>
+      <td class="table-cell">${selectedElements.recordEquipment7}</td>
+      <td class="table-cell">${selectedElements.equipmentManufact7}</td>
+      <td class="table-cell">${selectedElements.equipmentModel7}</td>
+      <td class="table-cell">${selectedElements.equipmentPartNo7}</td>
+      <td class="table-cell">${selectedElements.equipmentSerialNo7}</td>
+      <td class="table-cell">${selectedElements.equipmentLocation7}</td>
+    </tr>
+    <!-- Equipment row 8 -->
+    <tr>
+      <td class="table-cell">${selectedElements.recordEquipment8}</td>
+      <td class="table-cell">${selectedElements.equipmentManufact8}</td>
+      <td class="table-cell">${selectedElements.equipmentModel8}</td>
+      <td class="table-cell">${selectedElements.equipmentPartNo8}</td>
+      <td class="table-cell">${selectedElements.equipmentSerialNo8}</td>
+      <td class="table-cell">${selectedElements.equipmentLocation8}</td>
+    </tr>
+  </tbody>
+</table><h3>3. Check Equipment</h3>
 <h4>3.1 Equipment</h4>
 
 <table>
