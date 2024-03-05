@@ -1956,7 +1956,7 @@ function showExplanation(event) {
   // Prevent the default button action
   event.preventDefault();
 
-  var paragraph = document.getElementById("expandableText");
+  var paragraph = document.getElementsByClassName("expandableText");
   if (paragraph.style.display === "none") {
     paragraph.style.display = "block";
     document.getElementById("showExplanation").textContent = "Hide";

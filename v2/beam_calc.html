@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RangeFinder Mounting Calculator</title>
+    <script>
+        function calculateCoverageWidthAndDistance() {
+            var height = parseFloat(document.getElementById("height").value);
+            var beamAngle = parseFloat(document.getElementById("beamAngle").value);
+
+            // Convert angle from degrees to radians
+            var angleRadians = beamAngle * (Math.PI / 180) / 2; // Half the angle
+
+            // Calculate the coverage width at the given height
+            var coverageWidth = 2 * height * Math.tan(angleRadians);
+
+            // Calculate initial distance from hull, add 10%, then subtract 22cm
+            var adjustedDistanceFromHull = ((coverageWidth / 2) * 1.10) - 0.22;
+
+            // Display the results
+            document.getElementById("coverageWidthResult").innerHTML = "Beam footprint at sea level will be: " + coverageWidth.toFixed(2) + " meters";
+            document.getElementById("distanceFromHullResult").innerHTML = "Ensure the RangeFinder edge is " + adjustedDistanceFromHull.toFixed(2) + " meters away from any vertical surfaces.";
+        }
+    </script>
+</head>
+<body>
+    <h2>RangeFinder Mounting Calculator</h2>
+    <form onsubmit="return false;">
+        <label for="height">Mounting height above MSL (meters):</label><br>
+        <input type="number" id="height" name="height" step="0.01" required><br><br>
+        <label for="beamAngle">Beam Angle:</label><br>
+        <select id="beamAngle" name="beamAngle">
+            <option value="5">Narrow</option>
+            <option value="10">Wide</option>
+        </select><br><br>
+        <input type="button" value="Calculate" onclick="calculateCoverageWidthAndDistance()">
+    </form>
+    <p id="coverageWidthResult"></p>
+    <p id="distanceFromHullResult"></p>
+</body>
+</html>

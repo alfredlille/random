@@ -11,7 +11,7 @@
   <div class="header">
     <!-- INTRODUCTION. -->
     <a href="index.html">
-      <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg">
+      <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 20%;">
     </a>
     <h1>Report Tool</Form>
     </h1>
@@ -41,6 +41,7 @@
         <br>
 
         <!-- OVERVIEW. -->
+
         <h2>1. Overview</h2>
         <p>Please refer to XXX</p>
         <label for="system">System:</label>
@@ -99,19 +100,48 @@
         <button class="show_explanation">Show Explanation</button>
         <div class="expandableText">
           <h2></h2>
-          <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied by Miros. For each installed unit of equipment record the following:</p>
-          <h3>Equipment Details</h3>
+          <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied by
+            Miros. For each installed unit of equipment record the following:</p>
+          <!-- <h3>Equipment Details</h3> -->
           <ul>
-              <li><span>Item Description:</span> Brief description of the item.</li>
-              <li><span>Manufact.:</span> Equipment manufacturer.</li>
-              <li><span>Model:</span> Equipment model.</li>
-              <li><span>PN:</span> Note the equipment part number the equipment is labelled with.</li>
-              <li><span>SN:</span> Note the serial number the equipment is labelled with.</li>
-              <li><span>Location:</span> Describe where the equipment is located.</li>
+            <li>
+              <span>Manufacturer:</span>
+              <!-- Using an ordered list for sub-parts -->
+              <ol>
+                <li>Equipment manufacturer.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Model:</span>
+              <ol>
+                <li>Equipment model.</li>
+              </ol>
+            </li>
+            <li>
+              <span>Part Number:</span>
+              <ol>
+                <li>Note the equipment part number the equipment is labelled with.</li>
+              </ol>
+            </li>
+            <li>
+              <span>Serial Number:</span>
+              <ol>
+                <li>Note the serial number the equipment is labelled with.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Location:</span>
+              <ol>
+                <li>Describe where the equipment is located.
+                </li>
+              </ol>
+            </li>
           </ul>
-      </div>      
-      <br>
-      <br>
+        </div>
+        <br>
+        <br>
 
 
         <table id="equipmentTable">
@@ -369,11 +399,11 @@
                 style="width:100px;">
             </td>
           </tr>
-          
+
           <td>
             <br>
-      
-            <button class="show_hide" button id="toggleButton">Show/Hide Additional Equipment</button>
+
+            <button class="show_hide" button id="toggleButton">Show / Hide Additional Equipment</button>
           </td>
 
 
@@ -387,17 +417,63 @@
         <button class="show_explanation">Show Explanation</button>
         <div class="expandableText">
           <h2></h2>
-          <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied by Miros. For each installed unit of equipment record the following:</p>
-          <h3>Equipment Details</h3>
+          <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied by
+            Miros. For each installed unit of equipment record the following:</p>
+          <!-- <h3>Equipment Installation</h3> -->
           <ul>
-              <li><span>Item Description:</span> Brief description of the item.</li>
-              <li><span>Manufact.:</span> Equipment manufacturer.</li>
-              <li><span>Model:</span> Equipment model.</li>
-              <li><span>PN:</span> Note the equipment part number the equipment is labelled with.</li>
-              <li><span>SN:</span> Note the serial number the equipment is labelled with.</li>
-              <li><span>Location:</span> Describe where the equipment is located.</li>
+            <li>
+              <span>Location:</span>
+              <!-- Using an ordered list for sub-parts -->
+              <ol>
+                <li>Check that equipment has adequate air flow to avoid overheating (especially when
+                  installed in closed cabinets etc.).</li>
+                <li>Verify that distance to magnetic compass is in accordance with compass safe
+                  distances.</li>
+                <li>Verify that radar scanner unit position is satisfactory for system performance. Check
+                  obstacle free view of ocean surface in sector for Wavex default measure area.
+                  Record any obstacles within sector in the Location section for Radar Specific checks.
+              </ol>
+            </li>
+            </ol>
+            </li>
+            <li>
+              <span>Visual:</span>
+              <ol>
+                <li>Check for physical damage of the equipment (i.e., caused by accidents, improper or
+                  rough handling of equipment during installation or transport). Corrosion, paint
+                  damage etc...</li>
+                <li>Verify that equipment is labelled with product no, serial no, tag no etc. as relevant.</li>
+              </ol>
+            </li>
+            <li>
+              <span>Mechanical:</span>
+              <ol>
+                <li>Check that equipment is properly mounted and otherwise correctly installed.</li>
+              </ol>
+            </li>
+            <li>
+              <span>Cabling:</span>
+              <ol>
+                <li>Check that signal cables are correctly installed according to wiring diagrams and
+                  have been properly secured in place.</li>
+              </ol>
+            </li>
+            <li>
+              <span>Power:</span>
+              <ol>
+                <li>Check that incoming power supply voltage and polarity is correct.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Earthing:</span>
+              <ol>
+                <li>Verify that equipment utilizing a signal earth is properly connected to a proper earth
+                  terminal</li>
+              </ol>
+            </li>
           </ul>
-      </div>      
+        </div>
         <br>
         <br>
         <table id="equipmentTable">
@@ -908,20 +984,78 @@
           <td>
             <br>
 
-            <button class="show_hide" button id="toggleButton">Show/Hide Additional Equipment</button>
+            <button class="show_hide" button id="toggleButton">Show / Hide Additional Equipment</button>
           </td>
-          
+
         </table>
         <br>
         <!-- RADAR SECTION. -->
         <div class="line_sub"></div>
         <h3>Radar</h3>
         <button class="show_explanation">Show Explanation</button>
-        <p class="expandableText" style="display: none;" width="100x">XXX.
-        </p>
+        <div class="expandableText">
+          <h2></h2>
+          <p>ADD TEXT:</p>
+          <!-- <h3>Equipment Installation</h3> -->
+          <ul>
+            <li>
+              <span>Radar location:</span>
+              <ol>
+                <li>Take pictures of radar mounting location, from a radar perspective to get an
+                  impression if the radar will have a clear view of the ocean surface in open waters.
+                  Note any obstructions and record any findings regarding radar location.</li>
+              </ol>
+            </li>
+            <li>
+              <span>Hardware configuration:</span>
+              <ol>
+                <li>Some radar systems require extra hardware and specific configurations to integrate
+                  properly with Wavex. Refer to wiring diagrams and documentation supporting specific
+                  radar integration. Verify that the radar hardware configuration is correct for Wavex
+                  integration.</li>
+              </ol>
+            </li>
+            <li>
+              <span>Radar image alignment:</span>i
+              <ol>
+                <li>This section is only relevant when the radar has not been delivered from Miros.
+                  For radars delivered from Miros, proceed to section 6.1 on page 16, for IP radars
+                  proceed to section 6.2 on page 19.</li>
+
+
+                <li>Check bearing and distance to objects visible in the radar image on the navigational
+                  radar system display and compare to map distances or AIS target distances. </li>
+                <li>If you observe large deviations, and if possible/allowed, adjust sync and video
+                  timing in the radar. Consult system radar documentation/manufacturer for how to
+                  adjust radar sensor alignment.</li>
+              </ol>
+            </li>
+            <li>
+              <span>Other radar settings
+                :</span>
+              <ol>
+                <li>This check item is only relevant for Wavex systems connected to a radar where
+                  the radar video output signal is influenced by signal filtering
+                </li>
+
+
+
+                <li>Turn off any user-controlled radar settings affecting radar the radar video output
+                  signal. This refers to settings like receiver gain control, STC (sensitivity time control)
+                  or "swept gain", or clutter suppression filters.
+                </li>
+                <li>Make users aware of this radar’s disadvantage and that radar signal filtering must be
+                  turned off for Wavex to operate properly.
+                </li>
+              </ol>
+            </li>
+          </ul>
+        </div>
+
+
         <br>
         <br>
-        
+
         <table>
           <tr>
             <td>
@@ -971,8 +1105,58 @@
 
         <h3>Sensor Input Checks</h3>
         <button class="show_explanation">Show Explanation</button>
-        <p class="expandableText" style="display: none;" width="100x">XXX.
-        </p>
+        <div class="expandableText">
+          <h2></h2>
+          <p>Confirm signals and correct sentences are present:
+          </p>
+          <ul>
+            <li>
+              <span>GPS:</span>
+              <ol>
+                <li>GGL or GGA for position.</li>
+              </ol>
+              <ol>
+                <li>VTG for speed over ground, course over ground.
+                </li>
+              </ol>
+              <ol>
+                <li>ZDA if clock synch via NTP is not available.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Gyrocompass:</span>
+              <ol>
+                <li>HDT or THS for true heading.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Wind:</span>
+              <ol>
+                <li>MWV for wind speed and angle.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Draught:</span>
+              <ol>
+                <li>XDR for draught if there are large draught variations.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Wave:</span>
+              <ol>
+                <li>PMIRWM for wave parameters.</li>
+              </ol>
+              <ol>
+                <li>PMIRLD for wave spectrums.
+                </li>
+              </ol>
+            </li>
+          </ul>
+        </div>
         <br>
         <br>
         <table>
@@ -1038,8 +1222,168 @@
         <div class="line_sub"></div>
         <h3>EM-129 Connections</h3>
         <button class="show_explanation">Show Explanation</button>
-        <p class="expandableText" style="display: none;" width="100x">XXX.
-        </p>
+        <div class="expandableText">
+          <h2></h2>
+          <p>Confirm XXX:
+          </p>
+          <ul>
+            <li>
+              <span>Video signal:</span>
+              <ol>
+                <li>Check that signal cable have characteristic impedance according to the signal source
+                  output impedance.</li>
+              </ol>
+              <ol>
+                <li>Record signal cable type (e.g., coax)
+                </li>
+              </ol>
+              <ol>
+                <li>Record characteristic impedance (e.g., 75 ohm, 50 ohm, etc.)
+                </li>
+              </ol>
+              <ol>
+                <li>Record any additional comments about the cable (e.g., details if non-standard cable
+                  used, multi-pair vs. single pair, manufacturer, designation, RG-number, part number,
+                  issues etc.).
+                </li>
+              </ol>
+
+
+
+
+            </li>
+            <li>
+              <span>Sync / Trigger signal:</span>
+              <ol>
+                <li>Check that signal cable have characteristic impedance according to the signal source
+                  output impedance.</li>
+              </ol>
+              <ol>
+                <li>Record signal cable type (e.g., coax)
+                </li>
+              </ol>
+              <ol>
+                <li>Record characteristic impedance (e.g., 75 ohm, 50 ohm, etc.)
+                </li>
+              </ol>
+              <ol>
+                <li>Record any additional comments about the cable (e.g., details if non-standard cable
+                  used, multi-pair vs. single pair, manufacturer, designation, RG-number, part number,
+                  issues etc.).
+                </li>
+              </ol>
+
+
+
+
+            </li>
+            <li>
+              <span>Azimuth signal:</span>
+              <ol>
+                <li>Check that signal cable have characteristic impedance according to the signal source
+                  output impedance.</li>
+              </ol>
+              <ol>
+                <li>Record signal cable type (e.g., coax)
+                </li>
+              </ol>
+              <ol>
+                <li>Record characteristic impedance (e.g., 75 ohm, 50 ohm, etc.)
+                </li>
+              </ol>
+              <ol>
+                <li>Record any additional comments about the cable (e.g., details if non-standard cable
+                  used, multi-pair vs. single pair, manufacturer, designation, RG-number, part number,
+                  issues etc.).
+                </li>
+              </ol>
+
+
+
+
+            </li>
+            <li>
+              <span>Heading signal:</span>
+              <ol>
+                <li>Check that signal cable have characteristic impedance according to the signal source
+                  output impedance.</li>
+              </ol>
+              <ol>
+                <li>Record signal cable type (e.g., coax)
+                </li>
+              </ol>
+              <ol>
+                <li>Record characteristic impedance (e.g., 75 ohm, 50 ohm, etc.)
+                </li>
+              </ol>
+              <ol>
+                <li>Record any additional comments about the cable (e.g., details if non-standard cable
+                  used, multi-pair vs. single pair, manufacturer, designation, RG-number, part number,
+                  issues etc.).
+                </li>
+              </ol>
+
+
+
+
+            </li>
+
+
+
+            <li>
+              <span>Video signal termination
+                :</span>
+              <ol>
+                <li>Set EM-129 video signal termination jumper JP1 according to video signal output
+                  impedance and record (50,75 ohm or 1k ohm).
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Sync / Trigger Signal Termination</span>
+              <ol>
+                <li>Set EM-129 sync signal termination jumper JP2 according to video signal output
+                  impedance and record (50,75 ohm or 33k ohm).
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Azimuth signal termination:</span>
+              <ol>
+                <li>Set EM-129 azimuth signal termination jumper JP5 according to radar azimuth signal
+                  specification and record (6 V Zener barrier used, not used).
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Heading signal termination:</span>
+              <ol>
+                <li>Set EM-129 azimuth signal termination jumper JP6 according to radar azimuth signal
+                  specification and record (6 V Zener barrier used, not used).
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Pull-up voltage:</span>
+              <ol>
+                <li>If azimuth/heading signal termination jumper JP3 setting is set to pull-up, set pull-up
+                  voltage jumper according to radar azimuth signal specification and (none, pull-up,
+                  pull-down).
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Pull-down voltage:</span>
+              <ol>
+                <li>If azimuth/heading signal termination jumper JP4 setting is set to pull-down set EM129 azimuth signal termination jumper according to radar azimuth signal specification
+                  and record pull-up/pull voltage (none, pull-up, pull-down).                  
+                </li>
+              </ol>
+            </li>
+
+
+          </ul>
+        </div>
         <br>
         <br>
         <table>
@@ -1216,8 +1560,43 @@
         <div class="line_sub"></div>
         <h3>Miscellaneous Checks</h3>
         <button class="show_explanation">Show Explanation</button>
-        <p class="expandableText" style="display: none;" width="100x">XXX.
-        </p>
+        <div class="expandableText">
+          <h2></h2>
+          <p>Confirm XXX:
+          </p>
+          <ul>
+            <li>
+              <span>Radar Buffer Amplifier:</span>
+              <ol>
+                <li>Ensure the unit is installed, configured, and connected in accordance with the
+                  relevant Radar Buffer Amplifier User Manual.</li>
+              </ol>
+            </li>
+            <li>
+              <span>IP radar firewall:</span>
+              <ol>
+                <li>Ensure that the computer is integrated correctly with any radar network
+                  firewalls.                  
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span>Serial interfacing equipment:</span>
+              <ol>
+                <li>Ensure hardware configurations align with incoming signals. Depending on the make and model of the serial interface equipment, jumper settings
+                  may need to be set in accordance with the serial signal protocol used.
+                </li>
+              </ol>
+              <ol>
+                <li>Ensure software configurations align with incoming signals. Depending on the make and model of the serial interface equipment, software
+                  configuration settings may need to be set in accordance with the serial signal
+                  protocol used.
+                </li>
+              </ol>
+
+            </li>
+          </ul>
+        </div>
         <br>
         <br>
         <table>
@@ -1306,9 +1685,75 @@
           <div class="line"></div>
           <h2>4. Network Details</h2>
           <button class="show_explanation">Show Explanation</button>
-          <p class="expandableText" style="display: none;" width="100x">XXX.
-          </p>
-          <br>
+          <div class="expandableText">
+            <h2></h2>
+            <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied by
+              Miros. For each installed unit of network connected equipment record the following:</p>
+            <!-- <h3>Equipment Details</h3> -->
+            <ul>
+              <li>
+                <span>Equipment:</span>
+                <!-- Using an ordered list for sub-parts -->
+                <ol>
+                  <li>The equipment or device type.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <span>IP address:</span>
+                <ol>
+                  <li>The IPv4 address of the device.</li>
+                </ol>
+              </li>
+              <li>
+                <span>Subnet mask:</span>
+                <ol>
+                  <li>The subnet mask of the device.</li>
+                </ol>
+              </li>
+              <li>
+                <span>Default gateway:</span>
+                <ol>
+                  <li>The default gateway of the device.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <span>MAC address:</span>
+                <ol>
+                  <li>The hardware MAC address of the device.
+                  </li>
+                </ol>
+              </li>
+
+              <li>
+                <span>DNS address:</span>
+                <ol>
+                  <li>The DNS address used for cloud connectivity.
+                  </li>
+                </ol>
+              </li>
+
+              <li>
+                <span>Comments:</span>
+                <ol>
+                  <li>Any comments relating to the network setup.
+                  </li>
+                </ol>
+              </li>
+
+
+
+
+            </ul>
+
+
+
+
+
+            
+          </div>
+            <br>
           <br>
           <table id="equipmentTable">
             <tr>
@@ -1561,20 +2006,20 @@
             </tr>
             <td>
               <br>
-              <button class="show_hide" button id="toggleButton">Show/Hide Additional Equipment</button>
+              <button class="show_hide" button id="toggleButton">Show / Hide Additional Equipment</button>
               <br>
               <br>
               <br>
-  
+
             </td>
 
-            </table>
+          </table>
           <label for="networkDns">DNS Servers:</label>
           <input type="text" name="networkDns" style="width: 200px;">
           <label for="networkComments">Comments:</label>
           <!-- <input type="text" name="networkComments" style="width: 400px;height: 100px;"> -->
           <textarea id="networkComments" name="networkComments" rows="8" cols="40"></textarea>
-        
+
 
           <!-- MIROS CLOUD. -->
           <div class="line_sub"></div>
@@ -1585,7 +2030,7 @@
           </p>
           <br>
           <br>
-            <table>
+          <table>
             <tr>
               <td>
                 <label for="cloudHost1">admin.miros.app:</label>
@@ -1617,7 +2062,7 @@
           </p>
           <br>
           <br>
-            <table>
+          <table>
             <tr>
               <td>
                 <label for="computerStartup">Computer Startup:</label>
@@ -1725,7 +2170,7 @@
           </p>
           <br>
           <br>
-            <table>
+          <table>
             <tr>
               <td>
                 <label for="gpsCheck2">GPS:</label>
@@ -1794,13 +2239,13 @@
           <br>
           <div class="line_sub"></div>
 
-            <h3>6.1 EM-129 Configuration</h3>
-            <button class="show_explanation">Show Explanation</button>
-            <p class="expandableText" style="display: none;" width="100x">XXX.
-            </p>
-            <br>
-            <br>
-              <table>
+          <h3>6.1 EM-129 Configuration</h3>
+          <button class="show_explanation">Show Explanation</button>
+          <p class="expandableText" style="display: none;" width="100x">XXX.
+          </p>
+          <br>
+          <br>
+          <table>
             <tr>
               <td>
                 <label for="em129Version">Version:</label>
@@ -1872,7 +2317,7 @@
           </p>
           <br>
           <br>
-            <h3>Site</h3>
+          <h3>Site</h3>
           <table>
             <tr>
               <td>
@@ -2443,7 +2888,7 @@
             </p>
             <br>
             <br>
-                <table>
+            <table>
               <tr>
                 <td>
                   <label for="finalPowerCycle">Power Cycle:</label>
@@ -2487,7 +2932,7 @@
               </p>
               <br>
               <br>
-                    <table>
+              <table>
                 <tr>
                   <td>
                     <label for="backupWavexJson">Config JSON:</label>
@@ -2531,7 +2976,7 @@
                 </p>
                 <br>
                 <br>
-                        <table>
+                <table>
                   <tr>
                     <td>
                       <label for="loginType1">Type:</label>

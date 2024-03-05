@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coordinate Converter</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .converter-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .converter-container label {
+    margin-right: 10px;
+  }
+
+  .converter-container input,
+  .converter-container button {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  .converter-container button {
+    cursor: pointer;
+  }
+
+  .result-container {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="converter-container">
+  <h3>Coordinate Converter</h3>
+  <form id="coordinateForm">
+    <div>
+      <label for="latitudeDegrees">Latitude Degrees:</label>
+      <input type="number" id="latitudeDegrees" name="latitudeDegrees" step="any" placeholder="Enter latitude degrees">
+      
+      <label for="latitudeMinutes">Latitude Minutes:</label>
+      <input type="number" id="latitudeMinutes" name="latitudeMinutes" step="any" placeholder="Enter latitude minutes">
+    </div>
+    
+    <div>
+      <label for="longitudeDegrees">Longitude Degrees:</label>
+      <input type="number" id="longitudeDegrees" name="longitudeDegrees" step="any" placeholder="Enter longitude degrees">
+      
+      <label for="longitudeMinutes">Longitude Minutes:</label>
+      <input type="number" id="longitudeMinutes" name="longitudeMinutes" step="any" placeholder="Enter longitude minutes">
+    </div>
+    
+    <button type="submit">Convert Coordinates</button>
+  </form>
+  
+  <div class="result-container">
+    <p>Result:</p>
+    <div id="conversionResult"></div>
+  </div>
+</div>
+
+<script>
+// Function to convert DDM to DD
+function ddmToDd(degrees, minutes) {
+  const sign = degrees < 0 ? -1 : 1;
+  return sign * (Math.abs(degrees) + (minutes / 60));
+}
+
+// Function to convert DDM to DMS
+function ddmToDms(degrees, minutes) {
+  const d = Math.floor(degrees);
+  const m = Math.floor(minutes);
+  const s = (minutes - m) * 60;
+  
+  return `${d}° ${m}' ${s.toFixed(2)}"`;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('coordinateForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var latitudeDegrees = parseFloat(document.getElementById('latitudeDegrees').value);
+    var latitudeMinutes = parseFloat(document.getElementById('latitudeMinutes').value);
+    var longitudeDegrees = parseFloat(document.getElementById('longitudeDegrees').value);
+    var longitudeMinutes = parseFloat(document.getElementById('longitudeMinutes').value);
+    
+    var ddLat = ddmToDd(latitudeDegrees, latitudeMinutes);
+    var ddLon = ddmToDd(longitudeDegrees, longitudeMinutes);
+    
+    var dmsLat = ddmToDms(latitudeDegrees, latitudeMinutes);
+    var dmsLon = ddmToDms(longitudeDegrees, longitudeMinutes);
+    
+    document.getElementById('conversionResult').innerHTML = 
+      `<strong>Decimal Degrees (DD):</strong> Latitude: ${ddLat.toFixed(5)}, Longitude: ${ddLon.toFixed(5)}<br>` +
+      `<strong>Degrees, Minutes, and Seconds (DMS):</strong> Latitude: ${dmsLat}, Longitude: ${dmsLon}`;
+  });
+});
+</script>
+
+</body>
+</html>

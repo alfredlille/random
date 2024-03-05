@@ -100,7 +100,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .clear_button {
   background-color: #171C23;
   border-style: none;
-  color: orange;
+  color: lightsalmon;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   float: right;
@@ -120,7 +120,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .show_hide {
   background-color: #232B35;
   border-style: none;
-  color: lightskyblue;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
@@ -128,7 +128,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .show_explanation {
   background-color: #232B35;
   border-style: none;
-  color: lightcyan;
+  color: lightskyblue;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
@@ -184,4 +184,32 @@ input[type="file"]#file-input {
 .line_sub {
   border-top: 1px solid grey; /* Creates a line at the top of the div */
   margin: 20px 0; /* Space above and below the div */
+}
+
+ul {
+  list-style-type: none; /* Remove default bullets/numbers */
+  padding-left: 0px; /* Adjust this value as needed */
+}
+ol {
+  list-style-type: square;
+  padding-left: 30px; /* Adjust this value as needed */
+  line-height: 1.6; /* Adjusts the space between lines of text within each list item */
+
+
+}
+li > span {
+  display: block; /* Makes span behave like block-level elements */
+  margin-bottom: 5px; /* Adds space below the span */
+  margin-top: 5px; /* Adds space below the span */
+  color: lightsalmon;
+}
+
+ /* Style the table to have borders around each cell */
+ .cloudtable table, #cloudtable th, #cloudtable td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+/* Adds some padding inside each cell for better readability */
+.cloudtable th, #cloudtable td {
+  padding: 10px;
 }
