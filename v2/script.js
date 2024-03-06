@@ -1902,7 +1902,7 @@ function openCloudCertificate() {
   
 <div class="header">
   <div class="text-container">
-  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 20%;">
+  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px;">
   <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
     <div class="info"><span class="label">Customer:</span> <span class="value">${selectedElements.customer}</span></div>

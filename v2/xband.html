@@ -2144,24 +2144,82 @@
               </li>
 
               <li>
-                <span>Comments:</span>
+                <span>Third party software start-up:</span>
                 <ol>
-                  <li>Any comments relating to the network setup.
+                  <li>Verify that any third party applications or tools are running as required.
                   </li>
                 </ol>
               </li>
 
+              <li>
+                <span>Storage space:</span>
+                <ol>
+                  <li>Check that there is enough space on hard drives to meet requirements stated in PR017 - Miros
+                    X-band suite computers (Requirement specification)” [6].
+                  </li>
+                </ol>
+              </li>
 
+              <li>
+                <span>Serial mouse script:</span>
+                <ol>
+                  <li>Run the DisableSerialMice script. This ensures automatic detection of a serial mouse is disabled
+                    for all serial ports.
+                  </li>
+                </ol>
+              </li>
 
+              <li>
+                <span>Remote access tool:</span>
+                <ol>
+                  <li>If remote access will be available, verify that remote access can be made to the computer.
+                  </li>
+                </ol>
+              </li>
+
+              <li>
+                <span>Network interface configuration:</span>
+                <ol>
+                  <p>Using Network and sharing center, check properties of network interfaces used to receive or
+                    transmit data, do the following:
+                  </p>
+                  <li>Disable "Client for Microsoft Networks".
+                  </li>
+                  <li>Disable "File and Print Sharing for Microsoft Networks".
+                  </li>
+                </ol>
+              </li>
+
+              <li>
+                <span>Windows firewall configuration:</span>
+                <ol>
+                  <p>Ensure that the firewall is configured to let all software modules and services
+                    receiving or exporting data via network connections.
+                  </p>
+                  <li>Verify that Wavex software applications have the correct rules set here:
+                    Control Panel\System and Security\Windows Defender
+                    Firewall\Allowed apps.
+                  </li>
+                  <li>Go to advanced settings under Control Panel\System and Security\Windows
+                    Defender Firewall. Check that inbound and outbound rules for Wavex software
+                    applications allows the expected network traffic.
+                  </li>
+                  <li>
+                    <span>Virus protection:</span>
+                    <ol>
+                      <li>Ensure no Wavex application or service has been blacklisted by the virus protection
+                        program. The settings for Windows Virus & threat protection are found by searching
+                        for “Virus” on the Windows search bar
+                      </li>
+                    </ol>
+                  </li>
 
             </ul>
 
 
 
-
-
-
           </div>
+
           <br>
           <br>
           <table>
