@@ -11,7 +11,7 @@
   <div class="header">
     <!-- INTRODUCTION. -->
     <a href="index.html">
-      <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 20%;">
+      <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px;">
     </a>
     <h1>Report Tool</Form>
     </h1>
@@ -1375,8 +1375,9 @@
             <li>
               <span>Pull-down voltage:</span>
               <ol>
-                <li>If azimuth/heading signal termination jumper JP4 setting is set to pull-down set EM129 azimuth signal termination jumper according to radar azimuth signal specification
-                  and record pull-up/pull voltage (none, pull-up, pull-down).                  
+                <li>If azimuth/heading signal termination jumper JP4 setting is set to pull-down set EM129 azimuth
+                  signal termination jumper according to radar azimuth signal specification
+                  and record pull-up/pull voltage (none, pull-up, pull-down).
                 </li>
               </ol>
             </li>
@@ -1576,19 +1577,21 @@
               <span>IP radar firewall:</span>
               <ol>
                 <li>Ensure that the computer is integrated correctly with any radar network
-                  firewalls.                  
+                  firewalls.
                 </li>
               </ol>
             </li>
             <li>
               <span>Serial interfacing equipment:</span>
               <ol>
-                <li>Ensure hardware configurations align with incoming signals. Depending on the make and model of the serial interface equipment, jumper settings
+                <li>Ensure hardware configurations align with incoming signals. Depending on the make and model of the
+                  serial interface equipment, jumper settings
                   may need to be set in accordance with the serial signal protocol used.
                 </li>
               </ol>
               <ol>
-                <li>Ensure software configurations align with incoming signals. Depending on the make and model of the serial interface equipment, software
+                <li>Ensure software configurations align with incoming signals. Depending on the make and model of the
+                  serial interface equipment, software
                   configuration settings may need to be set in accordance with the serial signal
                   protocol used.
                 </li>
@@ -1687,7 +1690,8 @@
           <button class="show_explanation">Show Explanation</button>
           <div class="expandableText">
             <h2></h2>
-            <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied by
+            <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied
+              by
               Miros. For each installed unit of network connected equipment record the following:</p>
             <!-- <h3>Equipment Details</h3> -->
             <ul>
@@ -1751,9 +1755,9 @@
 
 
 
-            
+
           </div>
-            <br>
+          <br>
           <br>
           <table id="equipmentTable">
             <tr>
@@ -2058,8 +2062,106 @@
           <h2>5. Startup</h2>
           <h3>Computer & Software Installation Checks</h3>
           <button class="show_explanation">Show Explanation</button>
-          <p class="expandableText" style="display: none;" width="100x">XXX.
-          </p>
+          <div class="expandableText">
+            <h2></h2>
+            <p>The following items shall be checked and recorded in the commissioning report for all hardware supplied
+              by
+              Miros. For each installed unit of network connected equipment record the following:</p>
+            <!-- <h3>Equipment Details</h3> -->
+            <ul>
+              <li>
+                <span>Computer startup:</span>
+                <!-- Using an ordered list for sub-parts -->
+                <ol>
+                  <li>Verify that the computer has booted correctly.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <span>System requirements:</span>
+                <ol>
+                  <li>Verify that the system computer meets latest Wavex SW requirements as stated in
+                    “PR-017 - Miros X-band suite computers (Requirement specification)” [7].</li>
+                </ol>
+              </li>
+              <li>
+                <span>Windows version:</span>
+                <ol>
+                  <li>Open command prompt and run the 'ver' command.
+                </ol>
+              </li>
+              <li>
+                <span>Wavex software version:</span>
+                <ol>
+                  <li>Look up Wavex version in: Control Panel\Programs\Programs and Features. If newer Wavex SW version
+                    is available, run latest WavexInstaller.msi to upgrade to
+                    latest version.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <span>Wavex software startup:</span>
+                <ol>
+                  <p>PARAGRAPH HERE Ensure the following SW applications have started after the computer power-on:
+                  </p>
+                  <li>Wavex configuration manager</li>
+                  <li>MirAdm04</li>
+                  <li>MirRap01</li>
+                  <li>MirSip12</li>
+                  <li>MirSip30</li>
+                  <li>MirAdm14</li>
+                  <li>MirPro10</li>
+                  <p>Ensure the following services have started after the computer power-on through the
+                    Services desktop app:
+                  </p>
+                  <li>Miros Cloud Service</li>
+                  <li>Miros G4 Monitoring</li>
+                  <li>Miros NMEA input</li>
+                  <li>Miros NMEA output</li>
+                  <li>Miros System Monitor</li>
+                  <li>Miros Wavex Web Server</li>
+                </ol>
+
+              </li>
+
+              <li>
+                <span>Wavex software options:</span>
+                <ol>
+                  <li>Verify that license is valid by checking the Wavex status page;
+                    localhost/status-page. Note that this will require a working internet connection
+                    unless your device will be an offline device. Refer to Appendix B on page 24 if you
+                    need to activate the license.
+                  </li>
+                  <li>Verify installed SW match license. Record included options.
+                  </li>
+                  <li>Access to Vessel and Weather page comes with full license.
+                    Access to Wave System option requires license with all options included as well as
+                    an on-site available RangeFinder sensor.
+                  </li>
+
+
+                </ol>
+              </li>
+
+              <li>
+                <span>Comments:</span>
+                <ol>
+                  <li>Any comments relating to the network setup.
+                  </li>
+                </ol>
+              </li>
+
+
+
+
+            </ul>
+
+
+
+
+
+
+          </div>
           <br>
           <br>
           <table>

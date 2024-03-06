@@ -1192,8 +1192,8 @@ function openFullReportXband() {
 
 <div class="header">
   <div class="text-container">
-    <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg" alt="Miros Logo">
-    <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
+  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 20%;">
+  <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
     <div class="info"><span class="label">Customer:</span> <span class="value">${selectedElements.customer}</span></div>
     <div class="info"><span class="label">Date:</span> <span class="value">${selectedElements.date}</span></div>
@@ -1884,7 +1884,7 @@ function openCloudCertificate() {
   <html>
   <head>
       <title>Miros Cloud Certificate</title>
-      <link rel="stylesheet" type="text/css" href="style_report.css">
+      <link rel="stylesheet" type="text/css" href="style_full_report.css">
       <style>
       .image-container {
         display: grid;
@@ -1900,15 +1900,20 @@ function openCloudCertificate() {
   </head>
   <body>
   
-  <div class="header">
-    <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg">
-    <p><span style="font-weight:bold;">System:</span> <span style="font-weight:normal;">${selectedElements.system}</span></p>
-    <p><span style="font-weight:bold;">Site:</span> <span style="font-weight:normal;">${selectedElements.site}</span></p>
-    <p><span style="font-weight:bold;">Customer:</span> <span style="font-weight:normal;">${selectedElements.customer}</span></p>
-    <p><span style="font-weight:bold;">Date:</span> <span style="font-weight:normal;">${selectedElements.date}</span></p>
-    <p><span style="font-weight:bold;">Work Status:</span> <span style="font-weight:normal;">${selectedElements.workStatus}</span></p>
-    <p><span style="font-weight:bold;">Subscription Expiry:</span> <span style="font-weight:normal;">${selectedElements.subscriptionExpiry}</span></p>
+<div class="header">
+  <div class="text-container">
+  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 20%;">
+  <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
+    <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
+    <div class="info"><span class="label">Customer:</span> <span class="value">${selectedElements.customer}</span></div>
+    <div class="info"><span class="label">Date:</span> <span class="value">${selectedElements.date}</span></div>
+    <div class="info"><span class="label">Work Type:</span> <span class="value">${selectedElements.workType}</span></div>
+    <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
+    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span></div>
   </div>
+  <!-- Large image to the right -->
+  <img src="https://www.miros-group.com/wp-content/uploads/2022/12/GOW-Illustration_Hw-or-aaS_rgb-1200x673-1.png" alt="Large Image Description" class="large-image">
+</div>
 
   <div class="container">
     <br>
@@ -1971,14 +1976,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("showExplanation").addEventListener("click", showExplanation);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.addEventListener('click', function(event) {
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('click', function (event) {
     if (event.target.classList.contains('show_explanation')) {
       event.preventDefault(); // Prevent the default button click behavior
 
       // Toggle the visibility of the next sibling element of the button
       var content = event.target.nextElementSibling;
-      while(content && !content.classList.contains('expandableText')){
+      while (content && !content.classList.contains('expandableText')) {
         content = content.nextElementSibling;
       }
 
@@ -1995,26 +2000,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Select all buttons with the 'show_hide' class
   var toggleButtons = document.querySelectorAll('.show_hide');
 
   // Attach a click event listener to each button
-  toggleButtons.forEach(function(button) {
-      button.addEventListener("click", function(event) {
-          event.preventDefault(); // Prevent the default action
+  toggleButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default action
 
-          // Selecting all rows marked as 'hidden' in the table
-          var hiddenRows = document.querySelectorAll('#equipmentTable tr.hidden');
+      // Selecting all rows marked as 'hidden' in the table
+      var hiddenRows = document.querySelectorAll('#equipmentTable tr.hidden');
 
-          // Toggle the display state of each hidden row
-          hiddenRows.forEach(function(row) {
-              if (row.style.display === 'none' || row.style.display === '') {
-                  row.style.display = 'table-row'; // Make the row visible
-              } else {
-                  row.style.display = 'none'; // Hide the row
-              }
-          });
+      // Toggle the display state of each hidden row
+      hiddenRows.forEach(function (row) {
+        if (row.style.display === 'none' || row.style.display === '') {
+          row.style.display = 'table-row'; // Make the row visible
+        } else {
+          row.style.display = 'none'; // Hide the row
+        }
       });
+    });
   });
 });
