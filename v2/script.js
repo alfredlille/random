@@ -1846,9 +1846,97 @@ function openFullReportXband() {
   newWindow.document.close();
 }
 
+async function openCloudCertificate() {
+  const formData = JSON.parse(localStorage.getItem('formData'));
+  const workStatusValue = document.querySelector('select[name="workStatus"]').value;
+
+  if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
+    alert('Check the work status. It is not possible to generate a cloud certificate at this stage.');
+    return;
+  }
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // January is 0!
+    const year = date.getFullYear();
+    return `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
+  };
+
+  const htmlContent = `
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Miros Cloud Certificate</title>
+      <link rel="stylesheet" type="text/css" href="style_report.css">
+      <style>
+      .image-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; /* Adjust spacing between images */
+      }
+      .image-container img {
+        max-width: 100px; /* Ensure images fit within their containers */
+        height: auto;
+      }
+      </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg">
+      <p><span style="font-weight:bold;">System:</span> <span style="font-weight:normal;">${formData.system}</span></p>
+      <p><span style="font-weight:bold;">Site:</span> <span style="font-weight:normal;">${formData.site}</span></p>
+      <p><span style="font-weight:bold;">Customer:</span> <span style="font-weight:normal;">${formData.customer}</span></p>
+      <p><span style="font-weight:bold;">Date:</span> <span style="font-weight:normal;">${formatDate(formData.date)}</span></p>
+      <p><span style="font-weight:bold;">Work Status:</span> <span style="font-weight:normal;">${formData.workStatus}</span></p>
+      <p><span style="font-weight:bold;">Subscription Expiry:</span> <span style="font-weight:normal;">${formatDate(formData.subscriptionExpiry)}</span></p>
+    </div>
+    <div class="container">
+      <h1>Welcome to Miros Cloud</h1>
+      <h2>Congratulations, your Miros system is now up and running and is delivering stable sea-state data to the cloud.</h2>
+      <p>You can access this data using the following link: <a href="https://miros.app" style="color: black;">Miros Cloud</a></p>
+      <p>For any questions relating to the function or operation of the system, please contact <a href="mailto:support@miros-group.com?subject=Support Inquiry: ${formData.system} ${formData.customer}&body=Please provide a detailed description of your inquiry.">Miros Support</a></p>
+      <img src="https://static.seekingalpha.com/uploads/2009/6/12/saupload_stamp_of_approval.jpg" style="max-width: 200px; margin-bottom: 10px;">
+    </div>
+    <footer class="footer">
+      <p>&copy; 2024 Miros Group. All rights reserved.</p>
+      <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
+    </footer>
+  </body>
+  </html>
+  `;
+
+  // Inject HTML into a temporary, invisible div to ensure it's fully rendered
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = htmlContent;
+  tempDiv.style.position = 'absolute';
+  tempDiv.style.left = '-9999px'; // Off-screen
+  document.body.appendChild(tempDiv);
+
+  // Capture the div as a canvas using html2canvas
+  const canvas = await html2canvas(tempDiv, {scrollY: -window.scrollY, useCORS: true});
+  const imgData = canvas.toDataURL('image/png');
+
+  // Generate a PDF using jsPDF
+  const pdf = new jsPDF({
+    orientation: 'portrait',
+    unit: 'pt',
+    format: [canvas.width, canvas.height]
+  });
+
+  pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+  pdf.save('cloud-certificate.pdf');
+
+  // Clean up by removing the temporary div
+  document.body.removeChild(tempDiv);
+}
+
+// You might need to adjust paths to jsPDF and html2canvas depending on how they're included in your project.
 
 
-function openCloudCertificate() {
+
+
+function openCloudCertificateWORKING() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   const workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
