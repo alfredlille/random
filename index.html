@@ -5,13 +5,19 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="script.js"></script>
   <script>
-    function navigate() {
-      var selectedPage = document.getElementById("dropdown").value;
-      if (selectedPage) {
-        window.location.href = selectedPage;
-      }
-    }
-    </script>
+function navigate() {
+  var selectedPage = document.getElementById("dropdown").value;
+  if (selectedPage) {
+    window.location.href = selectedPage;
+  }
+}
+
+window.addEventListener("pageshow", function(event) {
+  var dropdown = document.getElementById("dropdown");
+  if (dropdown) {
+    dropdown.onchange = navigate;
+  }
+});    </script>
     </head>
 <body>
   <div class="header">
