@@ -1192,7 +1192,7 @@ function openFullReportXband() {
 
 <div class="header">
   <div class="text-container">
-    <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg" alt="Miros Logo">
+    <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" alt="Miros Logo">
     <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
     <div class="info"><span class="label">Customer:</span> <span class="value">${selectedElements.customer}</span></div>
