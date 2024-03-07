@@ -4,7 +4,15 @@
   <title>Report Tool</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="script.js"></script>
-</head>
+  <script>
+    function navigate() {
+      var selectedPage = document.getElementById("dropdown").value;
+      if (selectedPage) {
+        window.location.href = selectedPage;
+      }
+    }
+    </script>
+    </head>
 <body>
   <div class="header">
     <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px;">
