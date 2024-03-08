@@ -2034,8 +2034,103 @@
           <h3>Miros Cloud</h3>
           <p>Firewall Exceptions</p>
           <button class="show_explanation">Show Explanation</button>
-          <p class="expandableText" style="display: none;" width="100x">XXX.
-          </p>
+          <div class="expandableText">
+            <h2></h2>
+            <p>The following exceptions ports need to be allowed on the firewall:</p>
+            <ul>
+              <li>
+                <span>Expection details:</span>
+                <ol>
+                  <li>Below is a list of the specific expections that may need applying.
+                  </li>
+                </ol>
+              </li>
+
+
+
+
+
+
+            </ul>
+            <table class="generic-table">
+              <tr>
+                <th>Exception</th>
+                <th>Port</th>
+                <th>Function</th>
+              </tr>
+              <tr>
+                <td>admin.miros.app</td>
+                <td>443</td>
+                <td>For authentication and fetching license</td>
+              </tr>
+              <tr>
+                <td>miros-hub-01.azure-devices.net</td>
+                <td>443</td>
+                <td>For data upload and notifications</td>
+              </tr>
+              <tr>
+                <td>*.blob.core.windows.net </td>
+                <td>443</td>
+                <td>Firmware download</td>
+              </tr>
+              <tr>
+                <td>*.mcr.microsoft.com </td>
+                <td>443</td>
+                <td>Microsoft container registry endpoint</td>
+              </tr>
+              <tr>
+                <td>*.cdn.mscr.io </td>
+                <td>443</td>
+                <td>Microsoft container registry data endpoint (legacy rule)</td>
+              </tr>
+              <tr>
+                <td>*.azurecr.io </td>
+                <td>443</td>
+                <td>Miros SW container registry</td>
+              </tr>
+              <tr>
+                <td>NTP/SNTP time server</td>
+                <td>443</td>
+                <td>Local or remote time server (using UDP) </td>
+              </tr>
+              <tr>
+                <td>TeamViewer</td>
+                <td>443</td>
+                <td>Remote access tool</td>
+              </tr>
+              <tr>
+                <td>*.basemaps.cartocdn.com</td>
+                <td>443</td>
+                <td>Map layer </td>
+              </tr>
+              <tr>
+                <td>*.openstreetmap.org </td>
+                <td>443</td>
+                <td>Map layer </td>
+              </tr>
+              <tr>
+                <td>*.virtualearth.net </td>
+                <td>443</td>
+                <td>Map layer </td>
+              </tr>
+
+
+
+
+
+
+
+
+
+
+
+                
+
+
+              </tr>
+            </table>
+
+          </div>
           <br>
           <br>
           <table>
@@ -2628,7 +2723,7 @@
                 <input type="text" name="wavexGPSSettings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>
@@ -2657,7 +2752,7 @@
                 <input type="text" name="wavexGyroSettings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>
@@ -2685,7 +2780,7 @@
                 <input type="text" name="wavexWindSettings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>
@@ -2713,7 +2808,7 @@
                 <input type="text" name="wavexWaveSettings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>
@@ -2741,7 +2836,7 @@
                 <input type="text" name="wavexDraughtSettings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>
@@ -2769,7 +2864,7 @@
                 <input type="text" name="wavexShaftSettings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>
@@ -2948,7 +3043,7 @@
                 <input type="text" name="wavexOutput1Settings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
             <tr>
@@ -2979,7 +3074,7 @@
                 <input type="text" name="wavexOutput2Settings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
             <tr>
@@ -3010,7 +3105,7 @@
                 <input type="text" name="wavexOutput3Settings" style="width:140px;">
               </td>
               <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM4 4800 8
+                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
                   N 1 or TCP 192.168.73.150 4001</p>
               </td>
           </table>

@@ -204,12 +204,24 @@ li > span {
   color: lightsalmon;
 }
 
- /* Style the table to have borders around each cell */
- .cloudtable table, #cloudtable th, #cloudtable td {
-  border: 1px solid black;
-  border-collapse: collapse;
+.generic-table {
+  width: 800px;
+  border-collapse: collapse; /* Collapses the border between table cells */
+  margin: 20px 0; /* Adds some margin around the table for spacing */
+  background-color: #232B35; /* Sets the background color of the table to blue */
+  color: white; /* Sets the text color of the table to white */
 }
-/* Adds some padding inside each cell for better readability */
-.cloudtable th, #cloudtable td {
-  padding: 10px;
+
+.generic-table th, .generic-table td {
+  border: 1px solid grey; /* Sets the border color of table headers and cells to grey */
+  padding: 8px; /* Adds padding inside table cells */
+  text-align: left; /* Aligns text to the left inside cells */
+}
+
+.generic-table tr:nth-child(even) {
+  background-color: #232B35; /* Adjusts the background color for even rows to a darker shade of blue for contrast */
+}
+
+.generic-table th {
+  background-color: #232B35; /* Adjusts the background color of the table headers to a different shade of blue */
 }
