@@ -176,6 +176,7 @@ function exportToJson() {
   var imoValue = document.querySelector('input[name="imo"]').value;
   var locationValue = document.querySelector('input[name="location"]').value;
   var engineerValue = document.querySelector('select[name="engineer"]').value;
+  var engineer2Value = document.querySelector('select[name="engineer2"]').value;
   var recordEquipment1Value = document.querySelector('select[name="recordEquipment1"]').value;
   var equipmentManufact1Value = document.querySelector('input[name="equipmentManufact1"]').value;
   var equipmentModel1Value = document.querySelector('input[name="equipmentModel1"]').value;
@@ -489,6 +490,9 @@ function exportToJson() {
     imo: imoValue,
     location: locationValue,
     engineer: engineerValue,
+    engineer2: engineer2Value,
+
+
     recordEquipment: {
       recordEquipment1: recordEquipment1Value,
       equipmentManufact1: equipmentManufact1Value,
@@ -881,6 +885,7 @@ function openFullReportXband() {
     imo: formData.imo,
     location: formData.location,
     engineer: formData.engineer,
+    engineer2: formData.engineer2,
     recordEquipment1: formData.recordEquipment1,
     equipmentManufact1: formData.equipmentManufact1,
     equipmentModel1: formData.equipmentModel1,
@@ -1202,7 +1207,7 @@ function openFullReportXband() {
     <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span></div>
   </div>
   <!-- Large image to the right -->
-  <img src="https://www.miros-group.com/wp-content/uploads/2022/12/GOW-Illustration_Hw-or-aaS_rgb-1200x673-1.png" alt="Large Image Description" class="large-image">
+  <img src="header.jpeg" alt="Large Image Description" class="large-image">
 </div>
 
 
@@ -1254,9 +1259,14 @@ function openFullReportXband() {
   </tr>
   <!-- Engineer -->
   <tr>
-    <td class="label">Engineer:</td>
+    <td class="label">Engineer(s):</td>
     <td>${selectedElements.engineer}</td>
   </tr>
+  <tr>
+  <td class="label"></td>
+  <td>${selectedElements.engineer2}</td>
+</tr>
+
 </table>
 
 <h3>2. Record Equipment</h3>
@@ -1832,7 +1842,7 @@ function openFullReportXband() {
   <p>&copy; 2024 Miros Group. All rights reserved.</p>
   <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
   <a href="https://www.miros-group.com">
-  <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg" alt="Miros Logo">
+  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 100px;">
 </a>
 
 </footer>
@@ -1901,7 +1911,7 @@ function openCloudCertificate() {
   <body>
   
   <div class="header">
-    <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg">
+  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px;">
     <p><span style="font-weight:bold;">System:</span> <span style="font-weight:normal;">${selectedElements.system}</span></p>
     <p><span style="font-weight:bold;">Site:</span> <span style="font-weight:normal;">${selectedElements.site}</span></p>
     <p><span style="font-weight:bold;">Customer:</span> <span style="font-weight:normal;">${selectedElements.customer}</span></p>
@@ -1939,8 +1949,8 @@ function openCloudCertificate() {
     <p>&copy; 2024 Miros Group. All rights reserved.</p>
     <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
     <a href="https://www.miros-group.com">
-    <img src="https://miros.app/miros-logo-white.29c65a042d66b0e6d7c74af4490bd133.svg" alt="Miros Logo">
-  </a>
+    <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 100px;">
+    </a>
   </footer>
   
   </body>

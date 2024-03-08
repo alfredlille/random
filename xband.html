@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Report Tool</title>
+  <title>Work Tool</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="script.js"></script>
  
@@ -16,7 +16,7 @@
     <a href="index.html">
       <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px;">
     </a>
-    <h1>Report Tool</Form>
+    <h1>Work Tool</Form>
     </h1>
     <form id="dropdownForm">
       <label for="dropdown"></label>
@@ -43,6 +43,9 @@
         <br>
         <br>
         <br>
+        <br>
+        <br>
+
 
         <!-- OVERVIEW. -->
 
@@ -53,7 +56,6 @@
           <option value=" "> </option>
           <option value="Wavex">Wavex</option>
           <option value="WaveSystem">WaveSystem</option>
-          <option value="OSD">OSD</option>
         </select>
         <label for="workType">Work Type:</label>
         <select name="workType">
@@ -88,7 +90,7 @@
         <input type="text" name="imo">
         <label for="location">Location:</label>
         <input type="text" name="location">
-        <label for="engineer">Engineer:</label>
+        <label for="engineer">Engineer(s):</label>
         <select name="engineer">
           <option value=" "> </option>
           <option value="Daniel Denyer">Daniel Denyer</option>
@@ -97,6 +99,18 @@
           <option value="Kristopher Ganzel">Kristopher Ganzel</option>
           <option value="Vemund Bertelsen">Vermund Bertelsen</option>
           <option value="Sahil Kochhar">Sahil Kochhar</option>
+          <option value="Jaime Nunes">Jaime Nunes</option>
+        </select>
+        <label for="engineer2" style="display: block; margin-top: 20px;"></label> <!-- Inline style added here -->        <select name="engineer2">
+          <option value=" "> </option>
+          <option value="Daniel Denyer">Daniel Denyer</option>
+          <option value="Eirik Tenningen">Eirik Tenningen</option>
+          <option value="Ørjan Kleppe">Ørjan Kleppe</option>
+          <option value="Kristopher Ganzel">Kristopher Ganzel</option>
+          <option value="Vemund Bertelsen">Vermund Bertelsen</option>
+          <option value="Sahil Kochhar">Sahil Kochhar</option>
+          <option value="Jaime Nunes">Jaime Nunes</option>
+
         </select>
         <!-- RECORD EQUIPMENT. -->
         <div class="line"></div>
@@ -2428,8 +2442,62 @@
           <h3>System Startup</h3>
           <p>Prior to configuration:</p>
           <button class="show_explanation">Show Explanation</button>
-          <p class="expandableText" style="display: none;" width="100x">XXX.
-          </p>
+          <div class="expandableText">
+            <h2></h2>
+            
+            <p>Check that all external devices interfaced to Wavex, i.e., are turned on and running
+              normally.</p>
+            <ul>
+              <li>
+                <span>Radar:</span>
+                <ol>
+                  <li>Check that the radar is running in short pulse mode (50 - 80 ns, S1, or choose the
+                    shortest range available on the radar display).
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <span>GPS:</span>
+                <ol>
+                  <li>GPS (Moving site only).</li>
+                </ol>
+              </li>
+              <li>
+                <span>Gyro:</span>
+                <ol>
+                  <li>Gyro (Moving and Rotational sites only).
+                </ol>
+              </li>
+              <li>
+                <span>Wind sensor:</span>
+                <ol>
+                  <li>Hhighly recommended on all sites.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <span>Draught sensor:</span>
+                <ol>
+                  <li>Optional, applies to vessels with large draft variations</li>
+                </ol>
+
+              </li>
+
+              <li>
+                <span>Water level sensor:</span>
+                <ol>
+                  <li>Optional, applies to fixed sites with large water level variations.
+                  </li>
+
+
+                </ol>
+              </li>
+            </ul>
+            <p>Turn on and check that all  Miros hardware is running.</p>
+
+
+
+          </div>
           <br>
           <br>
           <table>
@@ -2495,9 +2563,12 @@
 
           <h2>6. Configuration & Commissioning</h2>
           <button class="show_explanation">Show Explanation</button>
-          <p class="expandableText" style="display: none;" width="100x">XXX.
-          </p>
-          <br>
+          <div class="expandableText">
+            <h2></h2>
+            
+            <p>ADD TEXT.</p>
+</div>          
+<br>
           <br>
           <div class="line_sub"></div>
 
