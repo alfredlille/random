@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Antenna and Wind Sensor Height Calculation</title>
+</head>
+<body>
+
+<h2>Sensor Height Calculator</h2>
+
+<form id="heightForm" onsubmit="event.preventDefault(); calculateDifferences();">
+    
+    <div class="input-group">
+        <label for="antenna_height">Radar antenna height over keel (m):</label>
+        <input type="text" id="antenna_height" name="antenna_height" placeholder="">
+    </div>
+    
+    <div class="input-group">
+        <label for="wind_sensor_height">Wind sensor height over keel (m):</label>
+        <input type="text" id="wind_sensor_height" name="wind_sensor_height" placeholder="">
+    </div>
+    
+    <div class="input-group">
+        <label for="max_draught">Maximum site draught (m):</label>
+        <input type="text" id="max_draught" name="max_draught" placeholder="">
+    </div>
+    
+    <div class="input-group">
+        <label for="min_draught">Minimum site draught (m):</label>
+        <input type="text" id="min_draught" name="min_draught" placeholder="">
+    </div>
+    
+    <button type="submit">Calculate</button>
+    <button type="button" onclick="clearForm()">Clear</button>
+</form>
+
+<div id="antenna_result"></div>
+<div id="wind_sensor_result"></div>
+
+<script>
+function calculateDifferences() {
+    const antennaHeight = parseFloat(document.getElementById('antenna_height').value) || 0;
+    const windSensorHeight = parseFloat(document.getElementById('wind_sensor_height').value) || 0;
+    const maxDraught = parseFloat(document.getElementById('max_draught').value) || 0;
+    const minDraught = parseFloat(document.getElementById('min_draught').value) || 0;
+
+    if (isNaN(antennaHeight) || isNaN(windSensorHeight) || isNaN(maxDraught) || isNaN(minDraught)) {
+        document.getElementById('antenna_result').innerHTML = "Please enter valid numbers for all fields.";
+        document.getElementById('wind_sensor_result').innerHTML = ""; // Clear the wind sensor result in case of invalid input
+        return;
+    }
+
+    const averageDraught = (maxDraught + minDraught) / 2;
+    const antennaResult = antennaHeight - averageDraught;
+    const windSensorResult = windSensorHeight - averageDraught;
+
+    document.getElementById('antenna_result').innerHTML = `The average antenna height above waterline, or antenna fallback height will be ${antennaResult.toFixed(2)} meters.`;
+    document.getElementById('wind_sensor_result').innerHTML = `The average wind sensor height above the waterline will be ${windSensorResult.toFixed(2)} meters.`;
+}
+
+function clearForm() {
+    document.getElementById('antenna_height').value = '';
+    document.getElementById('wind_sensor_height').value = '';
+    document.getElementById('max_draught').value = '';
+    document.getElementById('min_draught').value = '';
+    document.getElementById('antenna_result').innerHTML = '';
+    document.getElementById('wind_sensor_result').innerHTML = '';
+}
+</script>
+
+</body>
+</html>

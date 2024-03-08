@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radar Antenna Form</title>
+    <style>
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .fieldset-horizontal {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Distance to DSP (Defined Site Position)</h2>
+<p>DSP is a reference point on a site that is needed to accurately georeference data such as radar images and GUI elements. A GPS antenna is a common type of DSP, but on larger sites you may need to use another location. </p>
+<div class="form-container">
+    <form id="radarForm" onsubmit="event.preventDefault(); calculateResult();">
+        
+        <div class="input-group">
+            <label for="dropdown">Sensor:</label>
+            <select id="dropdown" name="dropdown">
+                <option value="Radar">Radar</option>
+                <option value="GPS">GPS</option>
+                <option value="FLIR Camera">FLIR Camera</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="fwd_value">Forward (FWD)</label>
+            <input type="text" id="fwd_value" name="fwd_value" placeholder="">
+        </div>
+        
+        <div class="fieldset-horizontal">
+            <div class="input-group">
+                <label for="port_value">Port</label>
+                <input type="text" id="port_value" name="port_value" placeholder="">
+            </div>
+            
+            <div class="input-group">
+                <label for="starboard_value">Starboard</label>
+                <input type="text" id="starboard_value" name="starboard_value" placeholder="">
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <label for="aft_value">Aft</label>
+            <input type="text" id="aft_value" name="aft_value" placeholder="">
+        </div>
+        
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+        <button type="button" onclick="clearForm()">Clear</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function calculateResult() {
+    const fwdValue = document.getElementById('fwd_value').value.trim();
+    const aftValue = document.getElementById('aft_value').value.trim();
+    const portValue = document.getElementById('port_value').value.trim();
+    const starboardValue = document.getElementById('starboard_value').value.trim();
+    const dropdownValue = document.getElementById('dropdown').value;
+    
+    // Check if both FWD and AFT have values
+    if (fwdValue && aftValue) {
+        alert("Please enter a value in either FWD or AFT, not both.");
+        return; // Exit the function early
+    }
+    
+    // Check if both PORT and STARBOARD have values
+    if (portValue && starboardValue) {
+        alert("Please enter a value in either PORT or STARBOARD, not both.");
+        return; // Exit the function early
+    }
+    
+    // Check if all values are "0" or empty
+    if (!fwdValue && !aftValue && !portValue && !starboardValue) {
+        document.getElementById('result').innerText = "Please enter values, all inputs cannot be 0 or empty.";
+        return; // Exit the function early
+    }
+
+    let result = '';
+    if (fwdValue) {
+        result += `X: +${fwdValue} `;
+    } else if (aftValue) {
+        result += `X: -${aftValue} `;
+    }
+    
+    if (starboardValue) {
+        result += `Y: +${starboardValue} `;
+    } else if (portValue) {
+        result += `Y: -${portValue} `;
+    }
+
+    // Constructing the message in the desired order
+    if (result) {
+        result = `The ${dropdownValue} offsets should be set to: ` + result;
+    }
+
+    document.getElementById('result').innerText = result;
+}
+
+function clearForm() {
+        document.getElementById('fwd_value').value = '';
+        document.getElementById('aft_value').value = '';
+        document.getElementById('port_value').value = '';
+        document.getElementById('starboard_value').value = '';
+        document.getElementById('dropdown').selectedIndex = 0; // Reset dropdown to first option
+        document.getElementById('result').innerText = '';
+    }
+</script>
+
+</body>
+</html>
