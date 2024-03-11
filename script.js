@@ -1962,7 +1962,7 @@ function showExplanation(event) {
     document.getElementById("showExplanation").textContent = "Hide";
   } else {
     paragraph.style.display = "none";
-    document.getElementById("showExplanation").textContent = "Show Explanation";
+    document.getElementById("showExplanation").textContent = "Info";
   }
 }
 
@@ -1985,10 +1985,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (content) {
         if (content.style.display === 'none' || content.style.display === '') {
           content.style.display = 'block'; // Show the content
-          event.target.textContent = 'Hide Explanation'; // Optional: Change button text
+          event.target.textContent = 'Hide'; // Optional: Change button text
         } else {
           content.style.display = 'none'; // Hide the content
-          event.target.textContent = 'Show Explanation'; // Reset button text, if desired
+          event.target.textContent = 'Info'; // Reset button text, if desired
         }
       }
     }
