@@ -1264,10 +1264,13 @@ function openFullReportXband() {
   </tr>
   <tr>
   <td class="label"></td>
-  <td>${selectedElements.engineer2}</td>
-</tr>
+  ${selectedElements.engineer2 ? `<td>${selectedElements.engineer2}</td>` : ''}
+  </tr>
 
 </table>
+
+
+
 
 <h3>2. Record Equipment</h3>
 <table>
@@ -1284,153 +1287,163 @@ function openFullReportXband() {
   <tbody>
     <!-- Equipment row 1 -->
     <tr>
-      <td class="table-cell">${selectedElements.recordEquipment1}</td>
-      <td class="table-cell">${selectedElements.equipmentManufact1}</td>
-      <td class="table-cell">${selectedElements.equipmentModel1}</td>
-      <td class="table-cell">${selectedElements.equipmentPartNo1}</td>
-      <td class="table-cell">${selectedElements.equipmentSerialNo1}</td>
-      <td class="table-cell">${selectedElements.equipmentLocation1}</td>
-    </tr>
-    <!-- Equipment row 2 -->
-    <tr>
-      <td class="table-cell">${selectedElements.recordEquipment2}</td>
-      <td class="table-cell">${selectedElements.equipmentManufact2}</td>
-      <td class="table-cell">${selectedElements.equipmentModel2}</td>
-      <td class="table-cell">${selectedElements.equipmentPartNo2}</td>
-      <td class="table-cell">${selectedElements.equipmentSerialNo2}</td>
-      <td class="table-cell">${selectedElements.equipmentLocation2}</td>
-    </tr>
-    <!-- Equipment row 3 -->
-    <tr>
-      <td class="table-cell">${selectedElements.recordEquipment3}</td>
-      <td class="table-cell">${selectedElements.equipmentManufact3}</td>
-      <td class="table-cell">${selectedElements.equipmentModel3}</td>
-      <td class="table-cell">${selectedElements.equipmentPartNo3}</td>
-      <td class="table-cell">${selectedElements.equipmentSerialNo3}</td>
-      <td class="table-cell">${selectedElements.equipmentLocation3}</td>
-    </tr>
-    <!-- Equipment row 4 -->
-    <tr>
-      <td class="table-cell">${selectedElements.recordEquipment4}</td>
-      <td class="table-cell">${selectedElements.equipmentManufact4}</td>
-      <td class="table-cell">${selectedElements.equipmentModel4}</td>
-      <td class="table-cell">${selectedElements.equipmentPartNo4}</td>
-      <td class="table-cell">${selectedElements.equipmentSerialNo4}</td>
-      <td class="table-cell">${selectedElements.equipmentLocation4}</td>
-    </tr>
-    <!-- Equipment row 5 -->
-    <tr>
-      <td class="table-cell">${selectedElements.recordEquipment5}</td>
-      <td class="table-cell">${selectedElements.equipmentManufact5}</td>
-      <td class="table-cell">${selectedElements.equipmentModel5}</td>
-      <td class="table-cell">${selectedElements.equipmentPartNo5}</td>
-      <td class="table-cell">${selectedElements.equipmentSerialNo5}</td>
-      <td class="table-cell">${selectedElements.equipmentLocation5}</td>
-    </tr>
-    <!-- Equipment row 6 -->
-    <tr>
-      <td class="table-cell">${selectedElements.recordEquipment6}</td>
-      <td class="table-cell">${selectedElements.equipmentManufact6}</td>
-      <td class="table-cell">${selectedElements.equipmentModel6}</td>
-      <td class="table-cell">${selectedElements.equipmentPartNo6}</td>
-      <td class="table-cell">${selectedElements.equipmentSerialNo6}</td>
-      <td class="table-cell">${selectedElements.equipmentLocation6}</td>
-    </tr>
-    <!-- Equipment row 7 -->
-    <tr>
-      <td class="table-cell">${selectedElements.recordEquipment7}</td>
-      <td class="table-cell">${selectedElements.equipmentManufact7}</td>
-      <td class="table-cell">${selectedElements.equipmentModel7}</td>
-      <td class="table-cell">${selectedElements.equipmentPartNo7}</td>
-      <td class="table-cell">${selectedElements.equipmentSerialNo7}</td>
-      <td class="table-cell">${selectedElements.equipmentLocation7}</td>
-    </tr>
-    <!-- Equipment row 8 -->
-    <tr>
-      <td class="table-cell">${selectedElements.recordEquipment8}</td>
-      <td class="table-cell">${selectedElements.equipmentManufact8}</td>
-      <td class="table-cell">${selectedElements.equipmentModel8}</td>
-      <td class="table-cell">${selectedElements.equipmentPartNo8}</td>
-      <td class="table-cell">${selectedElements.equipmentSerialNo8}</td>
-      <td class="table-cell">${selectedElements.equipmentLocation8}</td>
-    </tr>
-  </tbody>
-</table><h3>3. Check Equipment</h3>
-<h4>3.1 Equipment</h4>
-
-<table>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.checkEquipment1}</td>
-    <td style="padding-right: 20px;"><strong>Visual:</strong> ${selectedElements.checkVisual1}</td>
-    <td style="padding-right: 20px;"><strong>Mech:</strong> ${selectedElements.checkMech1}</td>
-    <td style="padding-right: 20px;"><strong>Cabling:</strong> ${selectedElements.checkCabling1}</td>
-    <td style="padding-right: 20px;"><strong>Power:</strong> ${selectedElements.checkPower1}</td>
-    <td style="padding-right: 20px;"><strong>Earthing:</strong> ${selectedElements.checkEarthing1}</td>
+    <td class="table-cell">${selectedElements.recordEquipment1 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentManufact1 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentModel1 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentPartNo1 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentSerialNo1 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentLocation1 || ''}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.checkEquipment2}</td>
-    <td style="padding-right: 20px;"><strong>Visual:</strong> ${selectedElements.checkVisual2}</td>
-    <td style="padding-right: 20px;"><strong>Mech:</strong> ${selectedElements.checkMech2}</td>
-    <td style="padding-right: 20px;"><strong>Cabling:</strong> ${selectedElements.checkCabling2}</td>
-    <td style="padding-right: 20px;"><strong>Power:</strong> ${selectedElements.checkPower2}</td>
-    <td style="padding-right: 20px;"><strong>Earthing:</strong> ${selectedElements.checkEarthing2}</td>
+    <td class="table-cell">${selectedElements.recordEquipment2 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentManufact2 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentModel2 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentPartNo2 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentSerialNo2 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentLocation2 || ''}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.checkEquipment3}</td>
-    <td style="padding-right: 20px;"><strong>Visual:</strong> ${selectedElements.checkVisual3}</td>
-    <td style="padding-right: 20px;"><strong>Mech:</strong> ${selectedElements.checkMech3}</td>
-    <td style="padding-right: 20px;"><strong>Cabling:</strong> ${selectedElements.checkCabling3}</td>
-    <td style="padding-right: 20px;"><strong>Power:</strong> ${selectedElements.checkPower3}</td>
-    <td style="padding-right: 20px;"><strong>Earthing:</strong> ${selectedElements.checkEarthing3}</td>
+    <td class="table-cell">${selectedElements.recordEquipment3 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentManufact3 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentModel3 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentPartNo3 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentSerialNo3 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentLocation3 || ''}</td>
   </tr>
   <tr>
-  <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.checkEquipment4}</td>
-  <td style="padding-right: 20px;"><strong>Visual:</strong> ${selectedElements.checkVisual4}</td>
-  <td style="padding-right: 20px;"><strong>Mech:</strong> ${selectedElements.checkMech4}</td>
-  <td style="padding-right: 20px;"><strong>Cabling:</strong> ${selectedElements.checkCabling4}</td>
-  <td style="padding-right: 20px;"><strong>Power:</strong> ${selectedElements.checkPower4}</td>
-  <td style="padding-right: 20px;"><strong>Earthing:</strong> ${selectedElements.checkEarthing4}</td>
-</tr>
-<tr>
-  <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.checkEquipment5}</td>
-  <td style="padding-right: 20px;"><strong>Visual:</strong> ${selectedElements.checkVisual5}</td>
-  <td style="padding-right: 20px;"><strong>Mech:</strong> ${selectedElements.checkMech5}</td>
-  <td style="padding-right: 20px;"><strong>Cabling:</strong> ${selectedElements.checkCabling5}</td>
-  <td style="padding-right: 20px;"><strong>Power:</strong> ${selectedElements.checkPower5}</td>
-  <td style="padding-right: 20px;"><strong>Earthing:</strong> ${selectedElements.checkEarthing5}</td>
-</tr>
-<tr>
-  <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.checkEquipment6}</td>
-  <td style="padding-right: 20px;"><strong>Visual:</strong> ${selectedElements.checkVisual6}</td>
-  <td style="padding-right: 20px;"><strong>Mech:</strong> ${selectedElements.checkMech6}</td>
-  <td style="padding-right: 20px;"><strong>Cabling:</strong> ${selectedElements.checkCabling6}</td>
-  <td style="padding-right: 20px;"><strong>Power:</strong> ${selectedElements.checkPower6}</td>
-  <td style="padding-right: 20px;"><strong>Earthing:</strong> ${selectedElements.checkEarthing6}</td>
-</tr>
-<tr>
-  <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.checkEquipment7}</td>
-  <td style="padding-right: 20px;"><strong>Visual:</strong> ${selectedElements.checkVisual7}</td>
-  <td style="padding-right: 20px;"><strong>Mech:</strong> ${selectedElements.checkMech7}</td>
-  <td style="padding-right: 20px;"><strong>Cabling:</strong> ${selectedElements.checkCabling7}</td>
-  <td style="padding-right: 20px;"><strong>Power:</strong> ${selectedElements.checkPower7}</td>
-  <td style="padding-right: 20px;"><strong>Earthing:</strong> ${selectedElements.checkEarthing7}</td>
-</tr>
-<tr>
-  <td style="padding-right: 20px;"><strong>Equipment:</strong> ${selectedElements.checkEquipment8}</td>
-  <td style="padding-right: 20px;"><strong>Visual:</strong> ${selectedElements.checkVisual8}</td>
-  <td style="padding-right: 20px;"><strong>Mech:</strong> ${selectedElements.checkMech8}</td>
-  <td style="padding-right: 20px;"><strong>Cabling:</strong> ${selectedElements.checkCabling8}</td>
-  <td style="padding-right: 20px;"><strong>Power:</strong> ${selectedElements.checkPower8}</td>
-  <td style="padding-right: 20px;"><strong>Earthing:</strong> ${selectedElements.checkEarthing8}</td>
-</tr>
+    <td class="table-cell">${selectedElements.recordEquipment4 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentManufact4 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentModel4 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentPartNo4 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentSerialNo4 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentLocation4 || ''}</td>
+  </tr>
+  <tr>
+    <td class="table-cell">${selectedElements.recordEquipment5 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentManufact5 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentModel5 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentPartNo5 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentSerialNo5 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentLocation5 || ''}</td>
+  </tr>
+  <tr>
+    <td class="table-cell">${selectedElements.recordEquipment6 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentManufact6 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentModel6 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentPartNo6 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentSerialNo6 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentLocation6 || ''}</td>
+  </tr>
+  <tr>
+    <td class="table-cell">${selectedElements.recordEquipment7 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentManufact7 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentModel7 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentPartNo7 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentSerialNo7 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentLocation7 || ''}</td>
+  </tr>
+  <tr>
+    <td class="table-cell">${selectedElements.recordEquipment8 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentManufact8 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentModel8 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentPartNo8 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentSerialNo8 || ''}</td>
+    <td class="table-cell">${selectedElements.equipmentLocation8 || ''}</td>
+  </tr>
+    </tbody>
 </table>
-  <h4>3.2 Equipment Specific Checks</h4>
+<div class="line_sub"></div>
+
+
+<h3>3. Check Equipment</h3>
+<h4>3.1 Equipment</h4>
+<table>
+
+<thead>
+<tr>
+  <th class="table-cell table-header">Equipment</th>
+  <th class="table-cell table-header">Visual</th>
+  <th class="table-cell table-header">Mechanical</th>
+  <th class="table-cell table-header">Cabling</th>
+  <th class="table-cell table-header">Power</th>
+  <th class="table-cell table-header">Earthing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+  <td class="table-cell">${selectedElements.checkEquipment1 || ''}</td>
+  <td class="table-cell">${selectedElements.checkVisual1 || ''}</td>
+  <td class="table-cell">${selectedElements.checkMech1 || ''}</td>
+  <td class="table-cell">${selectedElements.checkCabling1 || ''}</td>
+  <td class="table-cell">${selectedElements.checkPower1 || ''}</td>
+  <td class="table-cell">${selectedElements.checkEarthing1 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${selectedElements.checkEquipment2 || ''}</td>
+  <td class="table-cell">${selectedElements.checkVisual2 || ''}</td>
+  <td class="table-cell">${selectedElements.checkMech2 || ''}</td>
+  <td class="table-cell">${selectedElements.checkCabling2 || ''}</td>
+  <td class="table-cell">${selectedElements.checkPower2 || ''}</td>
+  <td class="table-cell">${selectedElements.checkEarthing2 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${selectedElements.checkEquipment3 || ''}</td>
+  <td class="table-cell">${selectedElements.checkVisual3 || ''}</td>
+  <td class="table-cell">${selectedElements.checkMech3 || ''}</td>
+  <td class="table-cell">${selectedElements.checkCabling3 || ''}</td>
+  <td class="table-cell">${selectedElements.checkPower3 || ''}</td>
+  <td class="table-cell">${selectedElements.checkEarthing3 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${selectedElements.checkEquipment4 || ''}</td>
+  <td class="table-cell">${selectedElements.checkVisual4 || ''}</td>
+  <td class="table-cell">${selectedElements.checkMech4 || ''}</td>
+  <td class="table-cell">${selectedElements.checkCabling4 || ''}</td>
+  <td class="table-cell">${selectedElements.checkPower4 || ''}</td>
+  <td class="table-cell">${selectedElements.checkEarthing4 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${selectedElements.checkEquipment5 || ''}</td>
+  <td class="table-cell">${selectedElements.checkVisual5 || ''}</td>
+  <td class="table-cell">${selectedElements.checkMech5 || ''}</td>
+  <td class="table-cell">${selectedElements.checkCabling5 || ''}</td>
+  <td class="table-cell">${selectedElements.checkPower5 || ''}</td>
+  <td class="table-cell">${selectedElements.checkEarthing5 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${selectedElements.checkEquipment6 || ''}</td>
+  <td class="table-cell">${selectedElements.checkVisual6 || ''}</td>
+  <td class="table-cell">${selectedElements.checkMech6 || ''}</td>
+  <td class="table-cell">${selectedElements.checkCabling6 || ''}</td>
+  <td class="table-cell">${selectedElements.checkPower6 || ''}</td>
+  <td class="table-cell">${selectedElements.checkEarthing6 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${selectedElements.checkEquipment7 || ''}</td>
+  <td class="table-cell">${selectedElements.checkVisual7 || ''}</td>
+  <td class="table-cell">${selectedElements.checkMech7 || ''}</td>
+  <td class="table-cell">${selectedElements.checkCabling7 || ''}</td>
+  <td class="table-cell">${selectedElements.checkPower7 || ''}</td>
+  <td class="table-cell">${selectedElements.checkEarthing7 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${selectedElements.checkEquipment8 || ''}</td>
+  <td class="table-cell">${selectedElements.checkVisual8 || ''}</td>
+  <td class="table-cell">${selectedElements.checkMech8 || ''}</td>
+  <td class="table-cell">${selectedElements.checkCabling8 || ''}</td>
+  <td class="table-cell">${selectedElements.checkPower8 || ''}</td>
+  <td class="table-cell">${selectedElements.checkEarthing8 || ''}</td>
+</tr>
+</tbody>
+</table>
+<h4>3.2 Equipment Specific Checks</h4>
 
   <h4>Radar</h4>
   <table>
   <tr>
-    <td style="padding-right: 20px;"><strong>Radar Manufacturer:</strong> ${selectedElements.radarManufacturer}</td>
-    <td style="padding-right: 20px;"><strong>Radar Model:</strong> ${selectedElements.radarModel}</td>
+  <td class="table-cell"><span class="emphasis">Radar Manufacturer:</span> ${selectedElements.radarManufacturer}</td>
+  <td style="padding-right: 20px;"><strong>Radar Model:</strong> ${selectedElements.radarModel}</td>
     </tr>
     <tr>  
 
@@ -1526,63 +1539,76 @@ function openFullReportXband() {
 </table>
 <h3>4. Network Information</h3>
 <h4>4.1 Site Network Connections</h4>
+
 <table>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${formData.networkEquipment1}</td>
-    <td style="padding-right: 20px;"><strong>IP Address:</strong> ${formData.equipmentIpAddress1}</td>
-    <td style="padding-right: 20px;"><strong>Subnet Mask:</strong> ${formData.equipmentSubnetMask1}</td>
-    <td style="padding-right: 20px;"><strong>Default Gateway:</strong> ${formData.equipmentDefaultGateway1}</td>
-    <td style="padding-right: 20px;"><strong>MAC Address:</strong> ${formData.equipmentMac1}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${formData.networkEquipment2}</td>
-    <td style="padding-right: 20px;"><strong>IP Address:</strong> ${formData.equipmentIpAddress2}</td>
-    <td style="padding-right: 20px;"><strong>Subnet Mask:</strong> ${formData.equipmentSubnetMask2}</td>
-    <td style="padding-right: 20px;"><strong>Default Gateway:</strong> ${formData.equipmentDefaultGateway2}</td>
-    <td style="padding-right: 20px;"><strong>MAC Address:</strong> ${formData.equipmentMac2}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${formData.networkEquipment3}</td>
-    <td style="padding-right: 20px;"><strong>IP Address:</strong> ${formData.equipmentIpAddress3}</td>
-    <td style="padding-right: 20px;"><strong>Subnet Mask:</strong> ${formData.equipmentSubnetMask3}</td>
-    <td style="padding-right: 20px;"><strong>Default Gateway:</strong> ${formData.equipmentDefaultGateway3}</td>
-    <td style="padding-right: 20px;"><strong>MAC Address:</strong> ${formData.equipmentMac3}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${formData.networkEquipment4}</td>
-    <td style="padding-right: 20px;"><strong>IP Address:</strong> ${formData.equipmentIpAddress4}</td>
-    <td style="padding-right: 20px;"><strong>Subnet Mask:</strong> ${formData.equipmentSubnetMask4}</td>
-    <td style="padding-right: 20px;"><strong>Default Gateway:</strong> ${formData.equipmentDefaultGateway4}</td>
-    <td style="padding-right: 20px;"><strong>MAC Address:</strong> ${formData.equipmentMac4}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${formData.networkEquipment5}</td>
-    <td style="padding-right: 20px;"><strong>IP Address:</strong> ${formData.equipmentIpAddress5}</td>
-    <td style="padding-right: 20px;"><strong>Subnet Mask:</strong> ${formData.equipmentSubnetMask5}</td>
-    <td style="padding-right: 20px;"><strong>Default Gateway:</strong> ${formData.equipmentDefaultGateway5}</td>
-    <td style="padding-right: 20px;"><strong>MAC Address:</strong> ${formData.equipmentMac5}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${formData.networkEquipment6}</td>
-    <td style="padding-right: 20px;"><strong>IP Address:</strong> ${formData.equipmentIpAddress6}</td>
-    <td style="padding-right: 20px;"><strong>Subnet Mask:</strong> ${formData.equipmentSubnetMask6}</td>
-    <td style="padding-right: 20px;"><strong>Default Gateway:</strong> ${formData.equipmentDefaultGateway6}</td>
-    <td style="padding-right: 20px;"><strong>MAC Address:</strong> ${formData.equipmentMac6}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${formData.networkEquipment7}</td>
-    <td style="padding-right: 20px;"><strong>IP Address:</strong> ${formData.equipmentIpAddress7}</td>
-    <td style="padding-right: 20px;"><strong>Subnet Mask:</strong> ${formData.equipmentSubnetMask7}</td>
-    <td style="padding-right: 20px;"><strong>Default Gateway:</strong> ${formData.equipmentDefaultGateway7}</td>
-    <td style="padding-right: 20px;"><strong>MAC Address:</strong> ${formData.equipmentMac7}</td>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Equipment:</strong> ${formData.networkEquipment8}</td>
-    <td style="padding-right: 20px;"><strong>IP Address:</strong> ${formData.equipmentIpAddress8}</td>
-    <td style="padding-right: 20px;"><strong>Subnet Mask:</strong> ${formData.equipmentSubnetMask8}</td>
-    <td style="padding-right: 20px;"><strong>Default Gateway:</strong> ${formData.equipmentDefaultGateway8}</td>
-    <td style="padding-right: 20px;"><strong>MAC Address:</strong> ${formData.equipmentMac8}</td>
-  </tr>
+
+<thead>
+<tr>
+  <th class="table-cell table-header">Equipment</th>
+  <th class="table-cell table-header">IP Address</th>
+  <th class="table-cell table-header">Subnet Mask</th>
+  <th class="table-cell table-header">Default Gateway</th>
+  <th class="table-cell table-header">MAC Address</th>
+</tr>
+</thead>
+
+
+<tr>
+  <td class="table-cell">${formData.networkEquipment1 || ''}</td>
+  <td class="table-cell">${formData.equipmentIpAddress1 || ''}</td>
+  <td class="table-cell">${formData.equipmentSubnetMask1 || ''}</td>
+  <td class="table-cell">${formData.equipmentDefaultGateway1 || ''}</td>
+  <td class="table-cell">${formData.equipmentMac1 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.networkEquipment2 || ''}</td>
+  <td class="table-cell">${formData.equipmentIpAddress2 || ''}</td>
+  <td class="table-cell">${formData.equipmentSubnetMask2 || ''}</td>
+  <td class="table-cell">${formData.equipmentDefaultGateway2 || ''}</td>
+  <td class="table-cell">${formData.equipmentMac2 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.networkEquipment3 || ''}</td>
+  <td class="table-cell">${formData.equipmentIpAddress3 || ''}</td>
+  <td class="table-cell">${formData.equipmentSubnetMask3 || ''}</td>
+  <td class="table-cell">${formData.equipmentDefaultGateway3 || ''}</td>
+  <td class="table-cell">${formData.equipmentMac3 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.networkEquipment4 || ''}</td>
+  <td class="table-cell">${formData.equipmentIpAddress4 || ''}</td>
+  <td class="table-cell">${formData.equipmentSubnetMask4 || ''}</td>
+  <td class="table-cell">${formData.equipmentDefaultGateway4 || ''}</td>
+  <td class="table-cell">${formData.equipmentMac4 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.networkEquipment5 || ''}</td>
+  <td class="table-cell">${formData.equipmentIpAddress5 || ''}</td>
+  <td class="table-cell">${formData.equipmentSubnetMask5 || ''}</td>
+  <td class="table-cell">${formData.equipmentDefaultGateway5 || ''}</td>
+  <td class="table-cell">${formData.equipmentMac5 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.networkEquipment6 || ''}</td>
+  <td class="table-cell">${formData.equipmentIpAddress6 || ''}</td>
+  <td class="table-cell">${formData.equipmentSubnetMask6 || ''}</td>
+  <td class="table-cell">${formData.equipmentDefaultGateway6 || ''}</td>
+  <td class="table-cell">${formData.equipmentMac6 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.networkEquipment7 || ''}</td>
+  <td class="table-cell">${formData.equipmentIpAddress7 || ''}</td>
+  <td class="table-cell">${formData.equipmentSubnetMask7 || ''}</td>
+  <td class="table-cell">${formData.equipmentDefaultGateway7 || ''}</td>
+  <td class="table-cell">${formData.equipmentMac7 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.networkEquipment8 || ''}</td>
+  <td class="table-cell">${formData.equipmentIpAddress8 || ''}</td>
+  <td class="table-cell">${formData.equipmentSubnetMask8 || ''}</td>
+  <td class="table-cell">${formData.equipmentDefaultGateway8 || ''}</td>
+  <td class="table-cell">${formData.equipmentMac8 || ''}</td>
+</tr>
   </table>
 <h4>4.2 Cloud Configuration</h4>
 <table>
@@ -1801,26 +1827,36 @@ function openFullReportXband() {
   </tr>
   </table>
   <h3>9. Login Details</h3>
+
   <table>
+
+  <thead>
   <tr>
-    <td style="padding-right: 20px;"><strong>Login Type 1:</strong> ${formData.loginType1}</td>
-    <td style="padding-right: 20px;"><strong>Login Username 1:</strong> ${formData.loginUsername1}</td>
-    <td style="padding-right: 20px;"><strong>Login Password 1:</strong> ${formData.loginPassword1}</td>
-    <td style="padding-right: 20px;"><strong>Login Comments 1:</strong> ${formData.loginComments1}</td>
+    <th class="table-cell table-header">Type</th>
+    <th class="table-cell table-header">Username</th>
+    <th class="table-cell table-header">Password</th>
+    <th class="table-cell table-header">Comments</th>
   </tr>
-  <tr>
-  </tr>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Login Type 2:</strong> ${formData.loginType2}</td>
-    <td style="padding-right: 20px;"><strong>Login Username 2:</strong> ${formData.loginUsername2}</td>
-    <td style="padding-right: 20px;"><strong>Login Password 2:</strong> ${formData.loginPassword2}</td>
-    <td style="padding-right: 20px;"><strong>Login Comments 2:</strong> ${formData.loginComments2}</td>
-  </tr>
-  <tr>
-  <td style="padding-right: 20px;"><strong>Login Type 3:</strong> ${formData.loginType3}</td>
-  <td style="padding-right: 20px;"><strong>Login Username 3:</strong> ${formData.loginUsername3}</td>
-  <td style="padding-right: 20px;"><strong>Login Password 3:</strong> ${formData.loginPassword3}</td>
-  <td style="padding-right: 20px;"><strong>Login Comments 3:</strong> ${formData.loginComments3}</td>
+</thead>
+
+
+<tr>
+  <td class="table-cell">${formData.loginType1 || ''}</td>
+  <td class="table-cell">${formData.loginUsername1 || ''}</td>
+  <td class="table-cell">${formData.loginPassword1 || ''}</td>
+  <td class="table-cell">${formData.loginComments1 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.loginType2 || ''}</td>
+  <td class="table-cell">${formData.loginUsername2 || ''}</td>
+  <td class="table-cell">${formData.loginPassword2 || ''}</td>
+  <td class="table-cell">${formData.loginComments2 || ''}</td>
+</tr>
+<tr>
+  <td class="table-cell">${formData.loginType3 || ''}</td>
+  <td class="table-cell">${formData.loginUsername3 || ''}</td>
+  <td class="table-cell">${formData.loginPassword3 || ''}</td>
+  <td class="table-cell">${formData.loginComments3 || ''}</td>
 </tr>
 </table>
 
@@ -1981,14 +2017,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("showExplanation").addEventListener("click", showExplanation);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.addEventListener('click', function(event) {
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('click', function (event) {
     if (event.target.classList.contains('show_explanation')) {
       event.preventDefault(); // Prevent the default button click behavior
 
       // Toggle the visibility of the next sibling element of the button
       var content = event.target.nextElementSibling;
-      while(content && !content.classList.contains('expandableText')){
+      while (content && !content.classList.contains('expandableText')) {
         content = content.nextElementSibling;
       }
 
@@ -2005,26 +2041,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Select all buttons with the 'show_hide' class
   var toggleButtons = document.querySelectorAll('.show_hide');
 
   // Attach a click event listener to each button
-  toggleButtons.forEach(function(button) {
-      button.addEventListener("click", function(event) {
-          event.preventDefault(); // Prevent the default action
+  toggleButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default action
 
-          // Selecting all rows marked as 'hidden' in the table
-          var hiddenRows = document.querySelectorAll('#equipmentTable tr.hidden');
+      // Selecting all rows marked as 'hidden' in the table
+      var hiddenRows = document.querySelectorAll('#equipmentTable tr.hidden');
 
-          // Toggle the display state of each hidden row
-          hiddenRows.forEach(function(row) {
-              if (row.style.display === 'none' || row.style.display === '') {
-                  row.style.display = 'table-row'; // Make the row visible
-              } else {
-                  row.style.display = 'none'; // Hide the row
-              }
-          });
+      // Toggle the display state of each hidden row
+      hiddenRows.forEach(function (row) {
+        if (row.style.display === 'none' || row.style.display === '') {
+          row.style.display = 'table-row'; // Make the row visible
+        } else {
+          row.style.display = 'none'; // Hide the row
+        }
       });
+    });
   });
 });
