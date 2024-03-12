@@ -67,6 +67,29 @@ a:visited {
   margin-bottom: 10px;
 }
 
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Adjust spacing between images */
+}
+
+.image-container img {
+  max-width: 100px; /* Ensure images fit within their containers */
+  height: auto;
+  display: block; /* Ensure images are block level for proper layout */
+  margin: 0 auto; /* Center images */
+}
+
+.image-text {
+  text-align: center; /* Center text descriptions */
+  font-family: 'Arial', sans-serif; /* Set font family */
+  font-size: 14px; /* Set font size */
+  color: #333; /* Set font color */
+  font-weight: bold; /* Set font weight, e.g., bold */
+  /* Add any other font styling here */
+}
+
+
 <style>
     /* Define a class or target the element directly */
     #generalComments {

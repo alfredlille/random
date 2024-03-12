@@ -85,10 +85,17 @@ function handleImageFiles(event) {
     // Check if the file type is JPEG, JPG, or PNG
     if (file.type === 'image/jpeg' || file.type === 'image/jpg' || file.type === 'image/png') {
       const reader = new FileReader();
-    
+
       // Closure to capture the file information.
-      reader.onload = (function (file) {
-        return function (e) {
+      reader.onload = (function(file) {
+        return function(e) {
+          // Create a wrapper div for each image
+          const wrapper = document.createElement('div');
+          wrapper.classList.add('image-wrapper'); // Add a class for styling
+          wrapper.style.display = 'flex';
+          wrapper.style.alignItems = 'center';
+          wrapper.style.marginBottom = '20px';
+
           // Create an image element and set its attributes
           const image = document.createElement('img');
           image.src = e.target.result;
@@ -98,13 +105,20 @@ function handleImageFiles(event) {
           // Set thumbnail size
           image.style.width = '100px'; // Adjust as needed
           image.style.height = '100px'; // Adjust as needed
-
-          // Add margin to create gap between thumbnails
           image.style.marginRight = '20px';
-          image.style.marginBottom = '20px';
 
-          // Append the image to the container
-          imageContainer.appendChild(image);
+          // Create a text input element for the image
+          const textField = document.createElement('input');
+          textField.type = 'text';
+          textField.placeholder = 'Enter description...';
+          textField.style.marginLeft = '10px'; // Space between the image and the text field
+
+          // Append the image and text field to the wrapper
+          wrapper.appendChild(image);
+          wrapper.appendChild(textField);
+
+          // Append the wrapper to the container
+          imageContainer.appendChild(wrapper);
 
           // Show the uploaded images label
           uploadedImagesLabel.style.display = 'block';
@@ -112,7 +126,7 @@ function handleImageFiles(event) {
           // Scroll down slightly after displaying images
           window.scrollBy(0, 150); // Adjust the scroll amount as needed
 
-          // Save image data to local storage
+          // Save image data to local storage (optional)
           localStorage.setItem(file.name, e.target.result);
         };
       })(file);
@@ -140,24 +154,27 @@ function populateImagesFromLocalStorage() {
   // Iterate through the items in local storage
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    const imageUrl = localStorage.getItem(key);
+    // Check if the key ends with .jpeg, .jpg, or .png
+    if (/\.(jpeg|jpg|png)$/.test(key.toLowerCase())) {
+      const imageUrl = localStorage.getItem(key);
 
-    // Create an image element and set its attributes
-    const image = document.createElement('img');
-    image.src = imageUrl;
-    image.alt = key;
-    image.title = key;
+      // Create an image element and set its attributes
+      const image = document.createElement('img');
+      image.src = imageUrl;
+      image.alt = key;
+      image.title = key;
 
-    // Set thumbnail size
-    image.style.width = '100px'; // Adjust as needed
-    image.style.height = '100px'; // Adjust as needed
+      // Set thumbnail size
+      image.style.width = '100px'; // Adjust as needed
+      image.style.height = '100px'; // Adjust as needed
 
-    // Add margin to create gap between thumbnails
-    image.style.marginRight = '20px';
-    image.style.marginBottom = '20px';
+      // Add margin to create gap between thumbnails
+      image.style.marginRight = '20px';
+      image.style.marginBottom = '20px';
 
-    // Append the image to the container
-    imageContainer.appendChild(image);
+      // Append the image to the container
+      imageContainer.appendChild(image);
+    }
   }
 
   // Show the uploaded images label if there are images in local storage
@@ -1941,6 +1958,10 @@ function openCloudCertificate() {
   const uploadedImages = document.querySelectorAll('.uploaded-images img');
   const imageUrls = Array.from(uploadedImages).map(img => img.src);
 
+  // Placeholder: You'll need to collect these descriptions from your application
+  const imageDescriptions = Array.from(document.querySelectorAll('.image-wrapper input')).map(input => input.value);
+
+
   const html = `
   <!DOCTYPE html>
   <html>
@@ -1991,10 +2012,14 @@ function openCloudCertificate() {
   <div style="text-align: center;">
     <br>
     <!-- Display uploaded images in a grid layout -->
-    <div class="image-container">
-      ${imageUrls.map(url => `<div><img src="${url}" style="max-width: 100%;"></div>`).join('')}
-    </div>
-  </div>
+<div class="image-container">
+      ${imageUrls.map((url, index) => `
+        <div>
+          <img src="${url}" style="max-width: 100%;">
+          <p class="image-text">${imageDescriptions[index] || ''}</p>
+        </div>
+      `).join('')}
+    </div>  </div>
   
   <footer class="footer">
     <!-- Footer content -->
