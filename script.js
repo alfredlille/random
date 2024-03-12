@@ -81,41 +81,48 @@ function handleImageFiles(event) {
   // Iterate through the selected files
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
-    const reader = new FileReader();
 
-    // Closure to capture the file information.
-    reader.onload = (function (file) {
-      return function (e) {
-        // Create an image element and set its attributes
-        const image = document.createElement('img');
-        image.src = e.target.result;
-        image.alt = file.name;
-        image.title = file.name;
+    // Check if the file type is JPEG, JPG, or PNG
+    if (file.type === 'image/jpeg' || file.type === 'image/jpg' || file.type === 'image/png') {
+      const reader = new FileReader();
+    
+      // Closure to capture the file information.
+      reader.onload = (function (file) {
+        return function (e) {
+          // Create an image element and set its attributes
+          const image = document.createElement('img');
+          image.src = e.target.result;
+          image.alt = file.name;
+          image.title = file.name;
 
-        // Set thumbnail size
-        image.style.width = '100px'; // Adjust as needed
-        image.style.height = '100px'; // Adjust as needed
+          // Set thumbnail size
+          image.style.width = '100px'; // Adjust as needed
+          image.style.height = '100px'; // Adjust as needed
 
-        // Add margin to create gap between thumbnails
-        image.style.marginRight = '20px';
-        image.style.marginBottom = '20px';
+          // Add margin to create gap between thumbnails
+          image.style.marginRight = '20px';
+          image.style.marginBottom = '20px';
 
-        // Append the image to the container
-        imageContainer.appendChild(image);
+          // Append the image to the container
+          imageContainer.appendChild(image);
 
-        // Show the uploaded images label
-        uploadedImagesLabel.style.display = 'block';
+          // Show the uploaded images label
+          uploadedImagesLabel.style.display = 'block';
 
-        // Scroll down slightly after displaying images
-        window.scrollBy(0, 150); // Adjust the scroll amount as needed
+          // Scroll down slightly after displaying images
+          window.scrollBy(0, 150); // Adjust the scroll amount as needed
 
-        // Save image data to local storage
-        localStorage.setItem(file.name, e.target.result);
-      };
-    })(file);
+          // Save image data to local storage
+          localStorage.setItem(file.name, e.target.result);
+        };
+      })(file);
 
-    // Read in the image file as a data URL.
-    reader.readAsDataURL(file);
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(file);
+    } else {
+      // Optionally, alert the user that the file format is not supported
+      alert("Unsupported file format. Please upload JPEG, JPG, or PNG images.");
+    }
   }
 
   // Hide the uploaded images label if no files are selected
