@@ -823,14 +823,23 @@ function exportToJson() {
 // Function to handle the JSON file selection
 function handleJsonFile(event) {
   const file = event.target.files[0];
-  const reader = new FileReader();
 
-  reader.onload = function (e) {
-    const data = JSON.parse(e.target.result);
-    fillFormFromJson(data);
-  };
+  // Check if the file is a JSON file
+  if (file.type === 'application/json') {
+    const reader = new FileReader();
 
-  reader.readAsText(file);
+    reader.onload = function (e) {
+      // Parse the JSON and use the data
+      const data = JSON.parse(e.target.result);
+      fillFormFromJson(data);
+    };
+
+    // Read the file as text
+    reader.readAsText(file);
+  } else {
+    // Optionally, inform the user that the file is not a JSON file
+    alert("Please select a JSON file.");
+  }
 }
 
 
