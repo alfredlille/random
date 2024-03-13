@@ -83,5 +83,6 @@ a:visited {
 
 .image-description-pair p {
   text-align: center; /* Center-align the description text */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
