@@ -69,8 +69,104 @@ function toggleScroll() {
   }
 }
 
-// Function to handle image files
+// Function to handle the image file input and save images and descriptions to Local Storage
 function handleImageFiles(event) {
+  const files = event.target.files;
+  const imageContainer = document.getElementById('image-container');
+  imageContainer.innerHTML = ''; // Clear existing images and descriptions
+
+  Array.from(files).forEach((file, index) => {
+      if (/image\/(jpeg|jpg|png)/i.test(file.type)) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+              // Create image wrapper
+              const wrapper = document.createElement('div');
+              wrapper.classList.add('image-wrapper');
+              wrapper.style.display = 'flex';
+              wrapper.style.alignItems = 'center';
+              wrapper.style.marginBottom = '20px';
+
+              // Create and configure the image element
+              const image = document.createElement('img');
+              image.src = e.target.result;
+              image.alt = file.name;
+              image.title = file.name;
+              image.style.width = '100px';
+              image.style.height = '100px';
+              image.style.marginRight = '20px';
+
+              // Create and configure the description text input
+              const textField = document.createElement('input');
+              textField.type = 'text';
+              textField.placeholder = 'Enter description...';
+              textField.style.marginLeft = '10px';
+
+              textField.addEventListener('change', () => {
+                  saveImageDataAndDescription('image_' + file.name, e.target.result, textField.value);
+              });
+
+              wrapper.appendChild(image);
+              wrapper.appendChild(textField);
+              imageContainer.appendChild(wrapper);
+          };
+
+          reader.readAsDataURL(file);
+      } else {
+          alert("Unsupported file format. Please upload JPEG, JPG, or PNG images.");
+      }
+  });
+}
+
+// Function to save image data and description to Local Storage
+function saveImageDataAndDescription(key, imageData, description) {
+  const imagesData = JSON.parse(localStorage.getItem('imagesData')) || [];
+  imagesData.push({ key, imageData, description });
+  localStorage.setItem('imagesData', JSON.stringify(imagesData));
+}
+
+// Function to load and display images and descriptions from Local Storage
+function populateImagesFromLocalStorage() {
+  const imageContainer = document.getElementById('image-container');
+  const uploadedImagesLabel = document.getElementById('uploaded-images-label');
+  imageContainer.innerHTML = ''; // Clear existing content
+
+  const imagesData = JSON.parse(localStorage.getItem('imagesData')) || [];
+  
+  imagesData.forEach(({ imageData, description }) => {
+      const wrapper = document.createElement('div');
+      wrapper.style.display = 'flex';
+      wrapper.style.alignItems = 'center';
+      wrapper.style.marginBottom = '20px';
+
+      const image = document.createElement('img');
+      image.src = imageData;
+      image.style.width = '100px';
+      image.style.height = '100px';
+      image.style.marginRight = '20px';
+
+      const descParagraph = document.createElement('p');
+      descParagraph.textContent = description;
+
+      wrapper.appendChild(image);
+      wrapper.appendChild(descParagraph);
+      imageContainer.appendChild(wrapper);
+  });
+
+  uploadedImagesLabel.style.display = imagesData.length > 0 ? 'block' : 'none';
+}
+
+window.onload = function() {
+  populateImagesFromLocalStorage();
+};
+
+
+
+
+
+
+// Function to handle image files
+function handleImageFilesOLD(event) {
   const files = event.target.files;
   const imageContainer = document.getElementById('image-container');
   const uploadedImagesLabel = document.getElementById('uploaded-images-label');
@@ -144,7 +240,7 @@ function handleImageFiles(event) {
 }
 
 // Function to handle populating images from local storage
-function populateImagesFromLocalStorage() {
+function populateImagesFromLocalStorageOLD() {
   const imageContainer = document.getElementById('image-container');
   const uploadedImagesLabel = document.getElementById('uploaded-images-label');
 
@@ -174,6 +270,7 @@ function populateImagesFromLocalStorage() {
 
       // Append the image to the container
       imageContainer.appendChild(image);
+
     }
   }
 
@@ -185,6 +282,14 @@ function populateImagesFromLocalStorage() {
 window.onload = function () {
   populateImagesFromLocalStorage();
 };
+
+function saveImageDataAndDescriptionOLD(key, imageData, description) {
+  const imageInfo = {
+      imageData: imageData,
+      description: description
+  };
+  localStorage.setItem(key, JSON.stringify(imageInfo));
+}
 
 
 
@@ -1927,7 +2032,7 @@ function openFullReportXband() {
 
 
 
-function openCloudCertificate() {
+function openCloudCertificateOLD() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   const workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
@@ -2012,16 +2117,9 @@ function openCloudCertificate() {
   <div style="text-align: center;">
     <br>
     <!-- Display uploaded images in a grid layout -->
-<div class="image-container">
-      ${imageUrls.map((url, index) => `
-        <div>
-          <img src="${url}" style="max-width: 100%;">
-          <p class="image-text">${imageDescriptions[index] || ''}</p>
-        </div>
-      `).join('')}
-    </div>  </div>
-  
-  <footer class="footer">
+    <div class="image-container">
+    ${imagesHtml} <!-- Insert dynamic images and descriptions HTML -->
+  </div>  <footer class="footer">
     <!-- Footer content -->
     <p>&copy; 2024 Miros Group. All rights reserved.</p>
     <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
@@ -2038,6 +2136,104 @@ function openCloudCertificate() {
   newWindow.document.write(html);
   newWindow.document.close();
 }
+
+function openCloudCertificate() {
+  const formData = JSON.parse(localStorage.getItem('formData'));
+  const workStatusValue = document.querySelector('select[name="workStatus"]').value;
+
+  if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
+    alert('Check the work status. It is not possible to generate a cloud certificate at this stage.');
+    return;
+  }
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return `${date.getDate() < 10 ? '0' : ''}${date.getDate()} ${date.getMonth() + 1 < 10 ? '0' : ''}${date.getMonth() + 1} ${date.getFullYear()}`;
+  };
+
+  const selectedElements = {
+    system: formData.system,
+    site: formData.site,
+    customer: formData.customer,
+    date: formatDate(formData.date),
+    workStatus: formData.workStatus,
+    subscriptionExpiry: formatDate(formData.subscriptionExpiry),
+  };
+
+  // Retrieve uploaded images and their descriptions
+  const uploadedImages = document.querySelectorAll('.uploaded-images img');
+  const imageUrls = Array.from(uploadedImages).map(img => img.src);
+  const imageDescriptions = Array.from(document.querySelectorAll('.image-wrapper input')).map(input => input.value);
+
+  // Dynamically create HTML for each image and description
+  let imagesHtml = imageUrls.map((url, index) => {
+    const description = imageDescriptions[index] || 'No description provided';
+    return `
+    <div class="image-description-pair">
+    <img src="${url}" alt="Uploaded Image">
+    <p>${description}</p>
+  </div>
+      `;
+  }).join('');
+
+  const html = `
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Miros Cloud Certificate</title>
+      <link rel="stylesheet" type="text/css" href="style_report.css">
+  </head>
+  <body>
+  
+  <div class="header">
+  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px;">
+    <p><span style="font-weight:bold;">System:</span> <span style="font-weight:normal;">${selectedElements.system}</span></p>
+    <p><span style="font-weight:bold;">Site:</span> <span style="font-weight:normal;">${selectedElements.site}</span></p>
+    <p><span style="font-weight:bold;">Customer:</span> <span style="font-weight:normal;">${selectedElements.customer}</span></p>
+    <p><span style="font-weight:bold;">Date:</span> <span style="font-weight:normal;">${selectedElements.date}</span></p>
+    <p><span style="font-weight:bold;">Work Status:</span> <span style="font-weight:normal;">${selectedElements.workStatus}</span></p>
+    <p><span style="font-weight:bold;">Subscription Expiry:</span> <span style="font-weight:normal;">${selectedElements.subscriptionExpiry}</span></p>
+  </div>
+
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Welcome to Miros Cloud</h1>
+    <h2>Congratulations, your Miros system is now up and running and is delivering stable sea-state data to the cloud.</h2>
+    <p>You can access this data using the following link: <a href="https://miros.app" style="color: black;">Miros Cloud</a></p>
+    <p>For any questions relating to the function or operation of the system, please contact <a href="mailto:support@miros-group.com?subject=${selectedElements.system} ${selectedElements.customer}&body=${selectedElements.system}%0D%0A${selectedElements.customer}%0D%0APlease summarise your query below:" style="color: black;">Miros Support</a></p>
+    <img src="https://static.seekingalpha.com/uploads/2009/6/12/saupload_stamp_of_approval.jpg" style="max-width: 200px; margin-bottom: 10px;">
+  </div>
+
+  <div style="text-align: center;">
+    <br>
+    <!-- Display uploaded images in a grid layout -->
+    <div class="image-container">
+    ${imagesHtml} <!-- Insert dynamic images and descriptions HTML -->
+  </div>  <footer class="footer">
+    <!-- Footer content -->
+    <p>&copy; 2024 Miros Group. All rights reserved.</p>
+    <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
+    <a href="https://www.miros-group.com">
+    <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 100px;">
+    </a>
+  </footer>
+  
+  </body>
+  </html>
+  `;
+
+  const newWindow = window.open('', '_blank');
+  newWindow.document.write(html);
+  newWindow.document.close();
+}
+
 
 function showExplanation(event) {
   // Prevent the default button action

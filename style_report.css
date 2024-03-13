@@ -69,31 +69,19 @@ a:visited {
 
 .image-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px; /* Adjust spacing between images */
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Adjust minmax() for desired image width */
+  gap: 20px; /* Space between grid items */
 }
 
-.image-container img {
-  max-width: 100px; /* Ensure images fit within their containers */
+
+.image-description-pair img {
+  max-width: 500px; /* Adjust the max-width as needed */
   height: auto;
-  display: block; /* Ensure images are block level for proper layout */
-  margin: 0 auto; /* Center images */
+  display: block;
+  margin: 0 auto; /* Center the image */
 }
 
-.image-text {
-  text-align: center; /* Center text descriptions */
-  font-family: 'Arial', sans-serif; /* Set font family */
-  font-size: 14px; /* Set font size */
-  color: #333; /* Set font color */
-  font-weight: bold; /* Set font weight, e.g., bold */
-  /* Add any other font styling here */
+.image-description-pair p {
+  text-align: center; /* Center-align the description text */
 }
 
-
-<style>
-    /* Define a class or target the element directly */
-    #generalComments {
-        font-family: Arial, sans-serif; /* Change the font to Arial or any other font you prefer */
-        /* You can also adjust other font properties like font-size, font-weight, etc. */
-    }
-</style>

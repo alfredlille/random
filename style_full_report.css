@@ -162,3 +162,7 @@ padding-left: 0;
   margin: 20px 0; /* Space above and below the div */
 }
 
+.image-container {
+  margin-bottom: 50px; /* Adjust the value as needed */
+}
+
