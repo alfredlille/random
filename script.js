@@ -1335,7 +1335,7 @@ function openFullReportXband() {
 
 <div class="header">
   <div class="text-container">
-  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px;">
+  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px; padding-bottom: 10px;">
   <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
     <div class="info"><span class="label">Customer:</span> <span class="value">${selectedElements.customer}</span></div>
@@ -1418,7 +1418,7 @@ function openFullReportXband() {
       <th class="table-cell table-header">Manufacturer</th>
       <th class="table-cell table-header">Model</th>
       <th class="table-cell table-header">Part No</th>
-      <th class="table-cell table-header">Serial No</th>
+      <th class="table-cell table-header">Serial No.</th>
       <th class="table-cell table-header">Location</th>
     </tr>
   </thead>
