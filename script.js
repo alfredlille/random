@@ -73,92 +73,126 @@ function toggleScroll() {
 function handleImageFiles(event) {
   const files = event.target.files;
   const imageContainer = document.getElementById('image-container');
-  imageContainer.innerHTML = ''; // Clear existing images and descriptions
+  const uploadedImagesLabel = document.getElementById('uploaded-images-label');
 
-  Array.from(files).forEach((file, index) => {
-      if (/image\/(jpeg|jpg|png)/i.test(file.type)) {
-          const reader = new FileReader();
-          
-          reader.onload = function(e) {
-              // Create image wrapper
-              const wrapper = document.createElement('div');
-              wrapper.classList.add('image-wrapper');
-              wrapper.style.display = 'flex';
-              wrapper.style.alignItems = 'center';
-              wrapper.style.marginBottom = '20px';
+  // Clear existing images and descriptions
+  imageContainer.innerHTML = '';
 
-              // Create and configure the image element
-              const image = document.createElement('img');
-              image.src = e.target.result;
-              image.alt = file.name;
-              image.title = file.name;
-              image.style.width = '100px';
-              image.style.height = '100px';
-              image.style.marginRight = '20px';
+  // Check if any files were selected
+  if (files.length > 0) {
+    uploadedImagesLabel.style.display = 'block';
+  } else {
+    uploadedImagesLabel.style.display = 'none';
+    return; // Exit the function if no files
+  }
 
-              // Create and configure the description text input
-              const textField = document.createElement('input');
-              textField.type = 'text';
-              textField.placeholder = 'Enter description...';
-              textField.style.marginLeft = '10px';
+  Array.from(files).forEach((file) => {
+    if (/image\/(jpeg|jpg|png)/i.test(file.type)) {
+      const reader = new FileReader();
 
-              textField.addEventListener('change', () => {
-                  saveImageDataAndDescription('image_' + file.name, e.target.result, textField.value);
-              });
+      reader.onload = function(e) {
+        const uniqueKey = 'image_' + file.name + '_' + new Date().getTime();
+        
+        // Create image wrapper
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('image-wrapper');
+        wrapper.style.display = 'flex';
+        wrapper.style.alignItems = 'center';
+        wrapper.style.marginBottom = '20px';
 
-              wrapper.appendChild(image);
-              wrapper.appendChild(textField);
-              imageContainer.appendChild(wrapper);
-          };
+        // Create and configure the image element
+        const image = document.createElement('img');
+        image.src = e.target.result;
+        image.alt = file.name;
+        image.title = file.name;
+        image.style.width = '100px';
+        image.style.height = '100px';
+        image.style.marginRight = '20px';
 
-          reader.readAsDataURL(file);
-      } else {
-          alert("Unsupported file format. Please upload JPEG, JPG, or PNG images.");
-      }
+        // Create and configure the description text input
+        const textField = document.createElement('input');
+        textField.type = 'text';
+        textField.placeholder = 'Enter description...';
+        textField.style.marginLeft = '10px';
+
+        // Initially save the image data with an empty description
+        saveImageDataAndDescription(uniqueKey, e.target.result, '');
+
+        textField.addEventListener('change', () => {
+          // Update the saved data with the new description when it changes
+          saveImageDataAndDescription(uniqueKey, e.target.result, textField.value);
+        });
+
+        wrapper.appendChild(image);
+        wrapper.appendChild(textField);
+        imageContainer.appendChild(wrapper);
+
+        // Scroll adjustment to ensure the last element is fully visible
+        setTimeout(() => {
+          wrapper.scrollIntoView({ behavior: 'auto', block: 'end' });
+          setTimeout(() => {
+            window.scrollBy(0, 200); // Additional scroll to fine-tune the position
+          }, 10); // Short delay to ensure smooth completion
+        }, 10);
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      alert("Unsupported file format. Please upload JPEG, JPG, or PNG images.");
+    }
   });
 }
 
-// Function to save image data and description to Local Storage
 function saveImageDataAndDescription(key, imageData, description) {
   const imagesData = JSON.parse(localStorage.getItem('imagesData')) || [];
-  imagesData.push({ key, imageData, description });
+  const index = imagesData.findIndex((data) => data.key === key);
+  if (index !== -1) {
+    imagesData[index] = { key, imageData, description };
+  } else {
+    imagesData.push({ key, imageData, description });
+  }
   localStorage.setItem('imagesData', JSON.stringify(imagesData));
 }
 
-// Function to load and display images and descriptions from Local Storage
 function populateImagesFromLocalStorage() {
   const imageContainer = document.getElementById('image-container');
   const uploadedImagesLabel = document.getElementById('uploaded-images-label');
-  imageContainer.innerHTML = ''; // Clear existing content
 
+  // Clear existing content
+  imageContainer.innerHTML = '';
   const imagesData = JSON.parse(localStorage.getItem('imagesData')) || [];
-  
-  imagesData.forEach(({ imageData, description }) => {
-      const wrapper = document.createElement('div');
-      wrapper.style.display = 'flex';
-      wrapper.style.alignItems = 'center';
-      wrapper.style.marginBottom = '20px';
 
-      const image = document.createElement('img');
-      image.src = imageData;
-      image.style.width = '100px';
-      image.style.height = '100px';
-      image.style.marginRight = '20px';
+  if (imagesData.length > 0) {
+    uploadedImagesLabel.style.display = 'block';
+  } else {
+    uploadedImagesLabel.style.display = 'none';
+  }
 
-      const descParagraph = document.createElement('p');
-      descParagraph.textContent = description;
+  imagesData.forEach(({ key, imageData, description }) => {
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.marginBottom = '20px';
 
-      wrapper.appendChild(image);
-      wrapper.appendChild(descParagraph);
-      imageContainer.appendChild(wrapper);
+    const image = document.createElement('img');
+    image.src = imageData;
+    image.style.width = '100px';
+    image.style.height = '100px';
+    image.style.marginRight = '20px';
+
+    const descParagraph = document.createElement('p');
+    descParagraph.textContent = description;
+
+    wrapper.appendChild(image);
+    wrapper.appendChild(descParagraph);
+    imageContainer.appendChild(wrapper);
   });
-
-  uploadedImagesLabel.style.display = imagesData.length > 0 ? 'block' : 'none';
 }
 
 window.onload = function() {
   populateImagesFromLocalStorage();
 };
+
 
 
 
@@ -183,8 +217,8 @@ function handleImageFilesOLD(event) {
       const reader = new FileReader();
 
       // Closure to capture the file information.
-      reader.onload = (function(file) {
-        return function(e) {
+      reader.onload = (function (file) {
+        return function (e) {
           // Create a wrapper div for each image
           const wrapper = document.createElement('div');
           wrapper.classList.add('image-wrapper'); // Add a class for styling
@@ -278,15 +312,11 @@ function populateImagesFromLocalStorageOLD() {
   uploadedImagesLabel.style.display = localStorage.length > 0 ? 'block' : 'none';
 }
 
-// Call the function to populate images from local storage when the page loads
-window.onload = function () {
-  populateImagesFromLocalStorage();
-};
 
 function saveImageDataAndDescriptionOLD(key, imageData, description) {
   const imageInfo = {
-      imageData: imageData,
-      description: description
+    imageData: imageData,
+    description: description
   };
   localStorage.setItem(key, JSON.stringify(imageInfo));
 }
