@@ -90,9 +90,9 @@ function handleImageFiles(event) {
     if (/image\/(jpeg|jpg|png)/i.test(file.type)) {
       const reader = new FileReader();
 
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         const uniqueKey = 'image_' + file.name + '_' + new Date().getTime();
-        
+
         // Create image wrapper
         const wrapper = document.createElement('div');
         wrapper.classList.add('image-wrapper');
@@ -189,7 +189,7 @@ function populateImagesFromLocalStorage() {
   });
 }
 
-window.onload = function() {
+window.onload = function () {
   populateImagesFromLocalStorage();
 };
 
@@ -1373,10 +1373,10 @@ function openFullReportXband() {
     <div class="info"><span class="label">Work Type:</span> <span class="value">${selectedElements.workType}</span></div>
     <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
     <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span></div>
-//   </div>
-//   <!-- Large image to the right -->
-//   <img src="header.jpeg" alt="Large Image Description" class="large-image">
-// </div>
+</div>
+<!-- Large image to the right -->
+<EDITimg src="header.jpeg" alt="Large Image Description" class="large-image">
+</div>
 
 
 <div class="container">
