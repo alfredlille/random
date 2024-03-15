@@ -1373,10 +1373,10 @@ function openFullReportXband() {
     <div class="info"><span class="label">Work Type:</span> <span class="value">${selectedElements.workType}</span></div>
     <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
     <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span></div>
-  </div>
-  <!-- Large image to the right -->
-  <img src="header.jpeg" alt="Large Image Description" class="large-image">
-</div>
+//   </div>
+//   <!-- Large image to the right -->
+//   <img src="header.jpeg" alt="Large Image Description" class="large-image">
+// </div>
 
 
 <div class="container">
