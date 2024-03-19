@@ -2450,7 +2450,7 @@ function openFullReportMocean() {
 
 <div class="header">
   <div class="text-container">
-  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px; padding-bottom: 10px;">
+  <img src="https://mocean.miros.app/miros-mocean-logo.6761c3f7e4f32ff93e9fa5cb0303d3dd.svg" style="width: 200px; padding-bottom: 10px;">
   <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
     <div class="info"><span class="label">Customer:</span> <span class="value">${selectedElements.customer}</span></div>
@@ -3151,9 +3151,9 @@ function openFullReportMocean() {
   <footer class="footer">
   <!-- Footer content -->
   <p>&copy; 2024 Miros Group. All rights reserved.</p>
-  <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
-  <a href="https://www.miros-group.com">
-  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 100px;">
+  <p><a href="https://www.mirosmocean.com/" style="color: white;">Miros Cloud Terms & Conditions</a></p>
+  <a href="https://www.mirosmocean.com/">
+  <img src="https://mocean.miros.app/miros-mocean-logo.6761c3f7e4f32ff93e9fa5cb0303d3dd.svg" style="width: 100px;">
 </a>
 
 </footer>
@@ -3390,7 +3390,7 @@ function openReportXband() {
 
 <div class="header">
   <div class="text-container">
-  <img src="https://mocean.miros.app/miros-mocean-logo.6761c3f7e4f32ff93e9fa5cb0303d3dd.svg" style="width: 200px; padding-bottom: 10px;">
+  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px; padding-bottom: 10px;">
   <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
     <div class="info"><span class="label">Customer:</span> <span class="value">${selectedElements.customer}</span></div>
@@ -4552,9 +4552,9 @@ function openReportMocean() {
   <footer class="footer">
   <!-- Footer content -->
   <p>&copy; 2024 Miros Group. All rights reserved.</p>
-  <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
-  <a href="https://www.miros-group.com">
-  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 100px;">
+  <p><a href="https://www.mirosmocean.com/" style="color: white;">Miros Cloud Terms & Conditions</a></p>
+  <a href="https://www.mirosmocean.com/">
+  <img src="https://mocean.miros.app/miros-mocean-logo.6761c3f7e4f32ff93e9fa5cb0303d3dd.svg" style="width: 100px;">
 </a>
 
 </footer>
