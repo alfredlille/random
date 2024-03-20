@@ -15,6 +15,10 @@ function navigate() {
 window.addEventListener("pageshow", function(event) {
   var dropdown = document.getElementById("dropdown");
   if (dropdown) {
+    // Reset the dropdown to its default state
+    dropdown.selectedIndex = 0;
+
+    // Re-bind the onchange event handler
     dropdown.onchange = navigate;
   }
 });    </script>
