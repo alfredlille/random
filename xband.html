@@ -1241,15 +1241,6 @@
             </td>
 
 
-            <td>
-              <label for="shaftCheck">Shaft:</label>
-              <select name="shaftCheck" style="width:100px;">
-                <option value=" "> </option>
-                <option value="OK">OK</option>
-                <option value="Not OK">Not OK</option>
-                <option value="NA">NA</option>
-              </select>
-            </td>
           </tr>
         </table>
         <br>
@@ -2515,15 +2506,6 @@
                 </select>
               </td>
 
-              <td>
-                <label for="shaftCheck2">Shaft:</label>
-                <select name="shaftCheck2" style="width:100px;">
-                  <option value=" "> </option>
-                  <option value="OK">OK</option>
-                  <option value="Not OK">Not OK</option>
-                  <option value="NA">NA</option>
-                </select>
-              </td>
             </tr>
           </table>
           <!-- COMMISSIONING. -->
@@ -2908,34 +2890,6 @@
               </td>
           </table>
 
-          <p> Shaft:</p>
-          <table>
-            <tr>
-              <td>
-                <label for="wavexShaft">Configuration:</label>
-                <select name="wavexShaft" style="width: 150px;">
-                  <option value=" "> </option>
-                  <option value="OK">OK</option>
-                  <option value="Not OK">Not OK</option>
-                  <option value="NA">NA</option>
-                </select>
-              </td>
-              <td>
-                <label for="wavexShaftSentence">Shaft Sentence:</label>
-                <select name="wavexShaftSentence" style="width: 150px;">
-                  <option value=" "> </option>
-                  <option value="XXX">XXX</option>
-                </select>
-              </td>
-              <td>
-                <label for="wavexShaftSettings">Settings:</label>
-                <input type="text" name="wavexShaftSettings" style="width:140px;">
-              </td>
-              <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
-                  N 1 or TCP 192.168.73.150 4001</p>
-              </td>
-          </table>
           <div class="line_sub"></div>
 
           <h3>Processing</h3>
@@ -3411,8 +3365,8 @@
     <input type="file" id="imageFileInput" multiple accept="image/*" style="display: none;"
       onchange="handleImageFiles(event)">
     <button class="img_button" onclick="document.getElementById('imageFileInput').click()">Add Images</button>
-    <button class="button" onclick="openReportXband()">Standard Report</button>
-    <button class="button" onclick="openFullReportXband()">Detailed Report</button>
+    <button class="button" onclick="openReport()">Standard Report</button>
+    <button class="button" onclick="openFullReport()">Detailed Report</button>
     <button class="button" onclick="openCloudCertificate()">Miros Cloud Certificate</button>
     <button class="button" onclick="exportToJson()">Download</button>
     <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">

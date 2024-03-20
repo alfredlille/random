@@ -322,9 +322,675 @@ function saveImageDataAndDescriptionOLD(key, imageData, description) {
 }
 
 
-
-
 function exportToJson() {
+  // Get the form element values
+  var systemValue = document.querySelector('select[name="system"]').value;
+  var workTypeValue = document.querySelector('select[name="workType"]').value;
+  var siteValue = document.querySelector('input[name="site"]').value;
+  var siteTypeValue = document.querySelector('select[name="siteType"]').value;
+  var customerValue = document.querySelector('input[name="customer"]').value;
+  var dateValue = document.querySelector('input[name="date"]').value;
+  var imoValue = document.querySelector('input[name="imo"]').value;
+  var locationValue = document.querySelector('input[name="location"]').value;
+  var engineerValue = document.querySelector('select[name="engineer"]').value;
+  var engineer2Value = document.querySelector('select[name="engineer2"]').value;
+  var recordEquipment1Value = document.querySelector('select[name="recordEquipment1"]').value;
+  var equipmentManufact1Value = document.querySelector('input[name="equipmentManufact1"]').value;
+  var equipmentModel1Value = document.querySelector('input[name="equipmentModel1"]').value;
+  var equipmentPartNo1Value = document.querySelector('input[name="equipmentPartNo1"]').value;
+  var equipmentSerialNo1Value = document.querySelector('input[name="equipmentSerialNo1"]').value;
+  var equipmentLocation1Value = document.querySelector('input[name="equipmentLocation1"]').value;
+  var recordEquipment2Value = document.querySelector('select[name="recordEquipment2"]').value;
+  var equipmentManufact2Value = document.querySelector('input[name="equipmentManufact2"]').value;
+  var equipmentModel2Value = document.querySelector('input[name="equipmentModel2"]').value;
+  var equipmentPartNo2Value = document.querySelector('input[name="equipmentPartNo2"]').value;
+  var equipmentSerialNo2Value = document.querySelector('input[name="equipmentSerialNo2"]').value;
+  var equipmentLocation2Value = document.querySelector('input[name="equipmentLocation2"]').value;
+  var recordEquipment3Value = document.querySelector('select[name="recordEquipment3"]').value;
+  var equipmentManufact3Value = document.querySelector('input[name="equipmentManufact3"]').value;
+  var equipmentModel3Value = document.querySelector('input[name="equipmentModel3"]').value;
+  var equipmentPartNo3Value = document.querySelector('input[name="equipmentPartNo3"]').value;
+  var equipmentSerialNo3Value = document.querySelector('input[name="equipmentSerialNo3"]').value;
+  var equipmentLocation3Value = document.querySelector('input[name="equipmentLocation3"]').value;
+  var recordEquipment4Value = document.querySelector('select[name="recordEquipment4"]').value;
+  var equipmentManufact4Value = document.querySelector('input[name="equipmentManufact4"]').value;
+  var equipmentModel4Value = document.querySelector('input[name="equipmentModel4"]').value;
+  var equipmentPartNo4Value = document.querySelector('input[name="equipmentPartNo4"]').value;
+  var equipmentSerialNo4Value = document.querySelector('input[name="equipmentSerialNo4"]').value;
+  var equipmentLocation4Value = document.querySelector('input[name="equipmentLocation4"]').value;
+  var recordEquipment5Value = document.querySelector('select[name="recordEquipment5"]').value;
+  var equipmentManufact5Value = document.querySelector('input[name="equipmentManufact5"]').value;
+  var equipmentModel5Value = document.querySelector('input[name="equipmentModel5"]').value;
+  var equipmentPartNo5Value = document.querySelector('input[name="equipmentPartNo5"]').value;
+  var equipmentSerialNo5Value = document.querySelector('input[name="equipmentSerialNo5"]').value;
+  var equipmentLocation5Value = document.querySelector('input[name="equipmentLocation5"]').value;
+  var recordEquipment6Value = document.querySelector('select[name="recordEquipment6"]').value;
+  var equipmentManufact6Value = document.querySelector('input[name="equipmentManufact6"]').value;
+  var equipmentModel6Value = document.querySelector('input[name="equipmentModel6"]').value;
+  var equipmentPartNo6Value = document.querySelector('input[name="equipmentPartNo6"]').value;
+  var equipmentSerialNo6Value = document.querySelector('input[name="equipmentSerialNo6"]').value;
+  var equipmentLocation6Value = document.querySelector('input[name="equipmentLocation6"]').value;
+  var recordEquipment7Value = document.querySelector('select[name="recordEquipment7"]').value;
+  var equipmentManufact7Value = document.querySelector('input[name="equipmentManufact7"]').value;
+  var equipmentModel7Value = document.querySelector('input[name="equipmentModel7"]').value;
+  var equipmentPartNo7Value = document.querySelector('input[name="equipmentPartNo7"]').value;
+  var equipmentSerialNo7Value = document.querySelector('input[name="equipmentSerialNo7"]').value;
+  var equipmentLocation7Value = document.querySelector('input[name="equipmentLocation7"]').value;
+  var recordEquipment8Value = document.querySelector('select[name="recordEquipment8"]').value;
+  var equipmentManufact8Value = document.querySelector('input[name="equipmentManufact8"]').value;
+  var equipmentModel8Value = document.querySelector('input[name="equipmentModel8"]').value;
+  var equipmentPartNo8Value = document.querySelector('input[name="equipmentPartNo8"]').value;
+  var equipmentSerialNo8Value = document.querySelector('input[name="equipmentSerialNo8"]').value;
+  var equipmentLocation8Value = document.querySelector('input[name="equipmentLocation8"]').value;
+  var checkEquipment1Value = document.querySelector('select[name="checkEquipment1"]').value;
+  var checkVisual1Value = document.querySelector('select[name="checkVisual1"]').value;
+  var checkMech1Value = document.querySelector('select[name="checkMech1"]').value;
+  var checkCabling1Value = document.querySelector('select[name="checkCabling1"]').value;
+  var checkPower1Value = document.querySelector('select[name="checkPower1"]').value;
+  var checkEarthing1Value = document.querySelector('select[name="checkEarthing1"]').value;
+  var checkEquipment2Value = document.querySelector('select[name="checkEquipment2"]').value;
+  var checkVisual2Value = document.querySelector('select[name="checkVisual2"]').value;
+  var checkMech2Value = document.querySelector('select[name="checkMech2"]').value;
+  var checkCabling2Value = document.querySelector('select[name="checkCabling2"]').value;
+  var checkPower2Value = document.querySelector('select[name="checkPower2"]').value;
+  var checkEarthing2Value = document.querySelector('select[name="checkEarthing2"]').value;
+  var checkEquipment3Value = document.querySelector('select[name="checkEquipment3"]').value;
+  var checkVisual3Value = document.querySelector('select[name="checkVisual3"]').value;
+  var checkMech3Value = document.querySelector('select[name="checkMech3"]').value;
+  var checkCabling3Value = document.querySelector('select[name="checkCabling3"]').value;
+  var checkPower3Value = document.querySelector('select[name="checkPower3"]').value;
+  var checkEarthing3Value = document.querySelector('select[name="checkEarthing3"]').value;
+  var checkEquipment3Value = document.querySelector('select[name="checkEquipment3"]').value;
+  var checkVisual3Value = document.querySelector('select[name="checkVisual3"]').value;
+  var checkMech3Value = document.querySelector('select[name="checkMech3"]').value;
+  var checkCabling3Value = document.querySelector('select[name="checkCabling3"]').value;
+  var checkPower3Value = document.querySelector('select[name="checkPower3"]').value;
+  var checkEarthing3Value = document.querySelector('select[name="checkEarthing3"]').value;
+  var checkEquipment4Value = document.querySelector('select[name="checkEquipment4"]').value;
+  var checkVisual4Value = document.querySelector('select[name="checkVisual4"]').value;
+  var checkMech4Value = document.querySelector('select[name="checkMech4"]').value;
+  var checkCabling4Value = document.querySelector('select[name="checkCabling4"]').value;
+  var checkPower4Value = document.querySelector('select[name="checkPower4"]').value;
+  var checkEarthing4Value = document.querySelector('select[name="checkEarthing4"]').value;
+  var checkEquipment5Value = document.querySelector('select[name="checkEquipment5"]').value;
+  var checkVisual5Value = document.querySelector('select[name="checkVisual5"]').value;
+  var checkMech5Value = document.querySelector('select[name="checkMech5"]').value;
+  var checkCabling5Value = document.querySelector('select[name="checkCabling5"]').value;
+  var checkPower5Value = document.querySelector('select[name="checkPower5"]').value;
+  var checkEarthing5Value = document.querySelector('select[name="checkEarthing5"]').value;
+  var checkEquipment6Value = document.querySelector('select[name="checkEquipment6"]').value;
+  var checkVisual6Value = document.querySelector('select[name="checkVisual6"]').value;
+  var checkMech6Value = document.querySelector('select[name="checkMech6"]').value;
+  var checkCabling6Value = document.querySelector('select[name="checkCabling6"]').value;
+  var checkPower6Value = document.querySelector('select[name="checkPower6"]').value;
+  var checkEarthing6Value = document.querySelector('select[name="checkEarthing6"]').value;
+  var checkEquipment7Value = document.querySelector('select[name="checkEquipment7"]').value;
+  var checkVisual7Value = document.querySelector('select[name="checkVisual7"]').value;
+  var checkMech7Value = document.querySelector('select[name="checkMech7"]').value;
+  var checkCabling7Value = document.querySelector('select[name="checkCabling7"]').value;
+  var checkPower7Value = document.querySelector('select[name="checkPower7"]').value;
+  var checkEarthing7Value = document.querySelector('select[name="checkEarthing7"]').value;
+  var checkEquipment8Value = document.querySelector('select[name="checkEquipment8"]').value;
+  var checkVisual8Value = document.querySelector('select[name="checkVisual8"]').value;
+  var checkMech8Value = document.querySelector('select[name="checkMech8"]').value;
+  var checkCabling8Value = document.querySelector('select[name="checkCabling8"]').value;
+  var checkPower8Value = document.querySelector('select[name="checkPower8"]').value;
+  var checkEarthing8Value = document.querySelector('select[name="checkEarthing8"]').value;
+  var radarManufacturerValue = document.querySelector('select[name="radarManufacturer"]').value;
+  var radarModelValue = document.querySelector('input[name="radarModel"]').value;
+  var radarUseValue = document.querySelector('select[name="radarUse"]').value;
+  var radarTxtimeValue = document.querySelector('input[name="radarTxtime"]').value;
+  var radarLocationValue = document.querySelector('textarea[name="radarLocation"]').value;
+  var radarSettingsValue = document.querySelector('textarea[name="radarSettings"]').value;
+  var gpsCheckValue = document.querySelector('select[name="gpsCheck"]').value;
+  var gyroCheckValue = document.querySelector('select[name="gyroCheck"]').value;
+  var windCheckValue = document.querySelector('select[name="windCheck"]').value;
+  var draughtCheckValue = document.querySelector('select[name="draughtCheck"]').value;
+  var waveCheckValue = document.querySelector('select[name="waveCheck"]').value;
+  var speedlogCheckValue = document.querySelector('select[name="speedlogCheck"]').value;
+  var videoCableTypeValue = document.querySelector('select[name="videoCableType"]').value;
+  var videoCableImpedanceValue = document.querySelector('select[name="videoCableImpedance"]').value;
+  var videoCableCommentsValue = document.querySelector('input[name="videoCableComments"]').value;
+  var syncCableTypeValue = document.querySelector('select[name="syncCableType"]').value;
+  var syncCableImpedanceValue = document.querySelector('select[name="syncCableImpedance"]').value;
+  var syncCableCommentsValue = document.querySelector('input[name="syncCableComments"]').value;
+  var azimuthCableTypeValue = document.querySelector('select[name="azimuthCableType"]').value;
+  var azimuthCableImpedanceValue = document.querySelector('select[name="azimuthCableImpedance"]').value;
+  var azimuthCableCommentsValue = document.querySelector('input[name="azimuthCableComments"]').value;
+  var headingCableTypeValue = document.querySelector('select[name="headingCableType"]').value;
+  var headingCableImpedanceValue = document.querySelector('select[name="headingCableImpedance"]').value;
+  var headingCableCommentsValue = document.querySelector('input[name="headingCableComments"]').value;
+  var videoJumperValue = document.querySelector('select[name="videoJumper"]').value;
+  var syncJumperValue = document.querySelector('select[name="syncJumper"]').value;
+  var azimuthJumperValue = document.querySelector('select[name="azimuthJumper"]').value;
+  var headingJumperValue = document.querySelector('select[name="headingJumper"]').value;
+  var pullupJumperValue = document.querySelector('select[name="pullupJumper"]').value;
+  var pulldownJumperValue = document.querySelector('select[name="pulldownJumper"]').value;
+  var amplifierTypeValue = document.querySelector('select[name="amplifierType"]').value;
+  var amplifierCheckValue = document.querySelector('select[name="amplifierCheck"]').value;
+  var amplifierCommentsValue = document.querySelector('input[name="amplifierComments"]').value;
+  var radarFirewallTypeValue = document.querySelector('select[name="radarFirewallType"]').value;
+  var radarFirewallCheckValue = document.querySelector('select[name="radarFirewallCheck"]').value;
+  var radarFirewallCommentsValue = document.querySelector('input[name="radarFirewallComments"]').value;
+  var serialInterfaceTypeValue = document.querySelector('select[name="serialInterfaceType"]').value;
+  var serialInterfaceCheckValue = document.querySelector('select[name="serialInterfaceCheck"]').value;
+  var serialInterfaceCommentsValue = document.querySelector('input[name="serialInterfaceComments"]').value;
+  var networkEquipment1Value = document.querySelector('select[name="networkEquipment1"]').value;
+  var equipmentIpAddress1Value = document.querySelector('input[name="equipmentIpAddress1"]').value;
+  var equipmentSubnetMask1Value = document.querySelector('input[name="equipmentSubnetMask1"]').value;
+  var equipmentDefaultGateway1Value = document.querySelector('input[name="equipmentDefaultGateway1"]').value;
+  var equipmentMac1Value = document.querySelector('input[name="equipmentMac1"]').value;
+  var networkEquipment2Value = document.querySelector('select[name="networkEquipment2"]').value;
+  var equipmentIpAddress2Value = document.querySelector('input[name="equipmentIpAddress2"]').value;
+  var equipmentSubnetMask2Value = document.querySelector('input[name="equipmentSubnetMask2"]').value;
+  var equipmentDefaultGateway2Value = document.querySelector('input[name="equipmentDefaultGateway2"]').value;
+  var equipmentMac2Value = document.querySelector('input[name="equipmentMac2"]').value;
+  var networkEquipment3Value = document.querySelector('select[name="networkEquipment3"]').value;
+  var equipmentIpAddress3Value = document.querySelector('input[name="equipmentIpAddress3"]').value;
+  var equipmentSubnetMask3Value = document.querySelector('input[name="equipmentSubnetMask3"]').value;
+  var equipmentDefaultGateway3Value = document.querySelector('input[name="equipmentDefaultGateway3"]').value;
+  var equipmentMac3Value = document.querySelector('input[name="equipmentMac3"]').value;
+  var networkEquipment4Value = document.querySelector('select[name="networkEquipment4"]').value;
+  var equipmentIpAddress4Value = document.querySelector('input[name="equipmentIpAddress4"]').value;
+  var equipmentSubnetMask4Value = document.querySelector('input[name="equipmentSubnetMask4"]').value;
+  var equipmentDefaultGateway4Value = document.querySelector('input[name="equipmentDefaultGateway4"]').value;
+  var equipmentMac4Value = document.querySelector('input[name="equipmentMac4"]').value;
+  var networkEquipment5Value = document.querySelector('select[name="networkEquipment5"]').value;
+  var equipmentIpAddress5Value = document.querySelector('input[name="equipmentIpAddress5"]').value;
+  var equipmentSubnetMask5Value = document.querySelector('input[name="equipmentSubnetMask5"]').value;
+  var equipmentDefaultGateway5Value = document.querySelector('input[name="equipmentDefaultGateway5"]').value;
+  var equipmentMac5Value = document.querySelector('input[name="equipmentMac5"]').value;
+  var networkEquipment6Value = document.querySelector('select[name="networkEquipment6"]').value;
+  var equipmentIpAddress6Value = document.querySelector('input[name="equipmentIpAddress6"]').value;
+  var equipmentSubnetMask6Value = document.querySelector('input[name="equipmentSubnetMask6"]').value;
+  var equipmentDefaultGateway6Value = document.querySelector('input[name="equipmentDefaultGateway6"]').value;
+  var equipmentMac6Value = document.querySelector('input[name="equipmentMac6"]').value;
+  var networkEquipment7Value = document.querySelector('select[name="networkEquipment7"]').value;
+  var equipmentIpAddress7Value = document.querySelector('input[name="equipmentIpAddress7"]').value;
+  var equipmentSubnetMask7Value = document.querySelector('input[name="equipmentSubnetMask7"]').value;
+  var equipmentDefaultGateway7Value = document.querySelector('input[name="equipmentDefaultGateway7"]').value;
+  var equipmentMac7Value = document.querySelector('input[name="equipmentMac7"]').value;
+  var networkEquipment8Value = document.querySelector('select[name="networkEquipment8"]').value;
+  var equipmentIpAddress8Value = document.querySelector('input[name="equipmentIpAddress8"]').value;
+  var equipmentSubnetMask8Value = document.querySelector('input[name="equipmentSubnetMask8"]').value;
+  var equipmentDefaultGateway8Value = document.querySelector('input[name="equipmentDefaultGateway8"]').value;
+  var equipmentMac8Value = document.querySelector('input[name="equipmentMac8"]').value;
+  var networkDnsValue = document.querySelector('input[name="networkDns"]').value;
+  var networkCommentsValue = document.querySelector('textarea[name="networkComments"]').value;
+  var cloudHost1Value = document.querySelector('select[name="cloudHost1"]').value;
+  var cloudHost2Value = document.querySelector('select[name="cloudHost2"]').value;
+  var computerStartupValue = document.querySelector('select[name="computerStartup"]').value;
+  var systemRequirementsValue = document.querySelector('select[name="systemRequirements"]').value;
+  var windowsVersionValue = document.querySelector('input[name="windowsVersion"]').value;
+  var wavexStartupValue = document.querySelector('select[name="wavexStartup"]').value;
+  var wavexOptionsValue = document.querySelector('select[name="wavexOptions"]').value;
+  var thirdPartyStartupValue = document.querySelector('select[name="thirdPartyStartup"]').value;
+  var storageSpaceValue = document.querySelector('input[name="storageSpace"]').value;
+  var remoteAccessToolsValue = document.querySelector('select[name="remoteAccessTools"]').value;
+  var serialMouseFixValue = document.querySelector('select[name="serialMouseFix"]').value;
+  var networkInterfaceConfigValue = document.querySelector('select[name="networkInterfaceConfig"]').value;
+  var windowsFirewallValue = document.querySelector('select[name="windowsFirewall"]').value;
+  var antiVirusValue = document.querySelector('select[name="antiVirus"]').value;
+  var gpsCheck2Value = document.querySelector('select[name="gpsCheck2"]').value;
+  var gyroCheck2Value = document.querySelector('select[name="gyroCheck2"]').value;
+  var windCheck2Value = document.querySelector('select[name="windCheck2"]').value;
+  var draughtCheck2Value = document.querySelector('select[name="draughtCheck2"]').value;
+  var waveCheck2Value = document.querySelector('select[name="waveCheck2"]').value;
+  var speedlogCheck2Value = document.querySelector('select[name="speedlogCheck2"]').value;
+  var em129VersionValue = document.querySelector('select[name="em129Version"]').value;
+  var em129SettingsValue = document.querySelector('select[name="em129Settings"]').value;
+  var em129SignalStatusValue = document.querySelector('select[name="em129SignalStatus"]').value;
+  var em129NetworkSettingsValue = document.querySelector('select[name="em129NetworkSettings"]').value;
+  var em129InterfaceConfigValue = document.querySelector('select[name="em129InterfaceConfig"]').value;
+  var em129ScopeValue = document.querySelector('select[name="em129Scope"]').value;
+  var em129CommentsValue = document.querySelector('textarea[name="em129Comments"]').value;
+  var wavexDescriptionValue = document.querySelector('select[name="wavexDescription"]').value;
+  var wavexMovementValue = document.querySelector('select[name="wavexMovement"]').value;
+  var wavexLatValue = document.querySelector('input[name="wavexLat"]').value;
+  var wavexLongValue = document.querySelector('input[name="wavexLong"]').value;
+  var wavexHeadingValue = document.querySelector('input[name="wavexHeading"]').value;
+  var wavexRadarValue = document.querySelector('select[name="wavexRadar"]').value;
+  var wavexMulticastValue = document.querySelector('input[name="wavexMulticast"]').value;
+  var wavexTransceiverValue = document.querySelector('input[name="wavexTransceiver"]').value;
+  var wavexRinIdValue = document.querySelector('select[name="wavexRinId"]').value;
+  var wavexRinNetworkValue = document.querySelector('select[name="wavexRinNetwork"]').value;
+  var wavexImageStorageValue = document.querySelector('select[name="wavexImageStorage"]').value;
+  var wavexGPSValue = document.querySelector('select[name="wavexGPS"]').value;
+  var wavexGPSPositionSentenceValue = document.querySelector('select[name="wavexGPSPositionSentence"]').value;
+  var wavexGPSTrackSpeedSentenceValue = document.querySelector('select[name="wavexGPSTrackSpeedSentence"]').value;
+  var wavexGPSTimeSentenceValue = document.querySelector('select[name="wavexGPSTimeSentence"]').value;
+  var wavexGPSSettingsValue = document.querySelector('input[name="wavexGPSSettings"]').value;
+  var wavexGyroValue = document.querySelector('select[name="wavexGyro"]').value;
+  var wavexGyroSentenceValue = document.querySelector('select[name="wavexGyroSentence"]').value;
+  var wavexGyroSettingsValue = document.querySelector('input[name="wavexGyroSettings"]').value;
+  var wavexWindValue = document.querySelector('select[name="wavexWind"]').value;
+  var wavexWindSentenceValue = document.querySelector('select[name="wavexWindSentence"]').value;
+  var wavexWindSettingsValue = document.querySelector('input[name="wavexWindSettings"]').value;
+  var wavexDraughtValue = document.querySelector('select[name="wavexDraught"]').value;
+  var wavexDraughtSentenceValue = document.querySelector('select[name="wavexDraughtSentence"]').value;
+  var wavexDraughtSettingsValue = document.querySelector('input[name="wavexDraughtSettings"]').value;
+  var wavexWaveValue = document.querySelector('select[name="wavexWave"]').value;
+  var wavexWaveSentenceValue = document.querySelector('select[name="wavexWaveSentence"]').value;
+  var wavexWaveSettingsValue = document.querySelector('input[name="wavexWaveSettings"]').value;
+
+  var wavexSpeedlogValue = document.querySelector('select[name="wavexSpeedlog"]').value;
+  var wavexSpeedlogSentenceValue = document.querySelector('select[name="wavexSpeedlogSentence"]').value;
+  var wavexSpeedlogSettingsValue = document.querySelector('input[name="wavexSpeedlogSettings"]').value;
+
+
+
+
+  var wavexGeometryRadarXValue = document.querySelector('input[name="wavexGeometryRadarX"]').value;
+  var wavexGeometryRadarYValue = document.querySelector('input[name="wavexGeometryRadarY"]').value;
+  var wavexGeometryRadarZValue = document.querySelector('input[name="wavexGeometryRadarZ"]').value;
+  var wavexGeometryGPSXValue = document.querySelector('input[name="wavexGeometryGPSX"]').value;
+  var wavexGeometryGPSYValue = document.querySelector('input[name="wavexGeometryGPSY"]').value;
+  var wavexGeometryWindHeadingOffsetValue = document.querySelector('input[name="wavexGeometryWindHeadingOffset"]').value;
+  var wavexGeometryWindZValue = document.querySelector('input[name="wavexGeometryWindZ"]').value;
+  var wavexRadarRangeOffsetValue = document.querySelector('input[name="wavexRadarRangeOffset"]').value;
+  var wavexRadarAzimuthOffsetValue = document.querySelector('input[name="wavexRadarAzimuthOffset"]').value;
+  var wavexRadarStartAngleValue = document.querySelector('input[name="wavexRadarStartAngle"]').value;
+  var wavexRadarSectorSizeValue = document.querySelector('input[name="wavexRadarSectorSize"]').value;
+  var wavexRadarStartRangeValue = document.querySelector('input[name="wavexRadarStartRange"]').value;
+  var wavexRadarStopRangeValue = document.querySelector('input[name="wavexRadarStopRange"]').value;
+  var wavexRadarImageCheckValue = document.querySelector('select[name="wavexRadarImageCheck"]').value;
+  var wavexAdvancedWaveAntennaMeanHeightValue = document.querySelector('select[name="wavexAdvancedWaveAntennaMeanHeight"]').value;
+  var wavexAdvancedWaveCartesianSectionsValue = document.querySelector('select[name="wavexAdvancedWaveCartesianSections"]').value;
+  var wavexAdvancedCurrentAntennaMeanHeightValue = document.querySelector('select[name="wavexAdvancedCurrentAntennaMeanHeight"]').value;
+  var wavexAdvancedCurrentCartesianSectionsValue = document.querySelector('select[name="wavexAdvancedCurrentCartesianSections"]').value;
+  var wavexOutput1Value = document.querySelector('select[name="wavexOutput1"]').value;
+  var wavexOutput1SentenceValue = document.querySelector('select[name="wavexOutput1Sentence"]').value;
+  var wavexOutput1UpdateIntervalValue = document.querySelector('input[name="wavexOutput1UpdateInterval"]').value;
+  var wavexOutput1SettingsValue = document.querySelector('input[name="wavexOutput1Settings"]').value;
+  var wavexOutput2Value = document.querySelector('select[name="wavexOutput2"]').value;
+  var wavexOutput2SentenceValue = document.querySelector('select[name="wavexOutput2Sentence"]').value;
+  var wavexOutput2UpdateIntervalValue = document.querySelector('input[name="wavexOutput2UpdateInterval"]').value;
+  var wavexOutput2SettingsValue = document.querySelector('input[name="wavexOutput2Settings"]').value;
+  var wavexOutput3Value = document.querySelector('select[name="wavexOutput3"]').value;
+  var wavexOutput3SentenceValue = document.querySelector('select[name="wavexOutput3Sentence"]').value;
+  var wavexOutput3UpdateIntervalValue = document.querySelector('input[name="wavexOutput3UpdateInterval"]').value;
+  var wavexOutput3SettingsValue = document.querySelector('input[name="wavexOutput3Settings"]').value;
+  var cloudEnabledValue = document.querySelector('select[name="cloudEnabled"]').value;
+  var finalConfigValue = document.querySelector('select[name="finalConfig"]').value;
+  var finalPowerCycleValue = document.querySelector('select[name="finalPowerCycle"]').value;
+  var finalStartupValue = document.querySelector('select[name="finalStartup"]').value;
+  var final20MinuteValue = document.querySelector('select[name="final20Minute"]').value;
+  var finalDataOutputValue = document.querySelector('select[name="finalDataOutput"]').value;
+  var backupWavexJsonValue = document.querySelector('select[name="backupWavexJson"]').value;
+  var backupDF047Value = document.querySelector('select[name="backupDF047"]').value;
+  var backupEM129Value = document.querySelector('select[name="backupEM129"]').value;
+  var backupMiscValue = document.querySelector('select[name="backupMisc"]').value;
+  var loginType1Value = document.querySelector('select[name="loginType1"]').value;
+  var loginUsername1Value = document.querySelector('input[name="loginUsername1"]').value;
+  var loginPassword1Value = document.querySelector('input[name="loginPassword1"]').value;
+  var loginComments1Value = document.querySelector('input[name="loginComments1"]').value;
+  var loginType2Value = document.querySelector('select[name="loginType2"]').value;
+  var loginUsername2Value = document.querySelector('input[name="loginUsername2"]').value;
+  var loginPassword2Value = document.querySelector('input[name="loginPassword2"]').value;
+  var loginComments2Value = document.querySelector('input[name="loginComments2"]').value;
+  var loginType3Value = document.querySelector('select[name="loginType3"]').value;
+  var loginUsername3Value = document.querySelector('input[name="loginUsername3"]').value;
+  var loginPassword3Value = document.querySelector('input[name="loginPassword3"]').value;
+  var loginComments3Value = document.querySelector('input[name="loginComments3"]').value;
+  var workStatusValue = document.querySelector('select[name="workStatus"]').value;
+  var subscriptionExpiryValue = document.querySelector('input[name="subscriptionExpiry"]').value;
+  var generalCommentsValue = document.querySelector('textarea[name="generalComments"]').value;
+
+
+  // Check if workTypeValue is "-"
+  if (workStatusValue === "-") {
+    alert('Please select a valid work status before downloading.');
+    return;
+  }
+  // Create the JSON object
+  var data = {
+    site: siteValue,
+    system: systemValue,
+    workType: workTypeValue,
+    workStatus: workStatusValue,
+    subscriptionExpiry: subscriptionExpiryValue,
+    generalComments: generalCommentsValue,
+    siteType: siteTypeValue,
+    customer: customerValue,
+    date: dateValue,
+    imo: imoValue,
+    location: locationValue,
+    engineer: engineerValue,
+    engineer2: engineer2Value,
+
+
+    recordEquipment: {
+      recordEquipment1: recordEquipment1Value,
+      equipmentManufact1: equipmentManufact1Value,
+      equipmentModel1: equipmentModel1Value,
+      equipmentPartNo1: equipmentPartNo1Value,
+      equipmentSerialNo1: equipmentSerialNo1Value,
+      equipmentLocation1: equipmentLocation1Value,
+      recordEquipment2: recordEquipment2Value,
+      equipmentManufact2: equipmentManufact2Value,
+      equipmentModel2: equipmentModel2Value,
+      equipmentPartNo2: equipmentPartNo2Value,
+      equipmentSerialNo2: equipmentSerialNo2Value,
+      equipmentLocation2: equipmentLocation2Value,
+      recordEquipment3: recordEquipment3Value,
+      equipmentManufact3: equipmentManufact3Value,
+      equipmentModel3: equipmentModel3Value,
+      equipmentPartNo3: equipmentPartNo3Value,
+      equipmentSerialNo3: equipmentSerialNo3Value,
+      equipmentLocation3: equipmentLocation3Value,
+      recordEquipment4: recordEquipment4Value,
+      equipmentManufact4: equipmentManufact4Value,
+      equipmentModel4: equipmentModel4Value,
+      equipmentPartNo4: equipmentPartNo4Value,
+      equipmentSerialNo4: equipmentSerialNo4Value,
+      equipmentLocation4: equipmentLocation4Value,
+      recordEquipment5: recordEquipment5Value,
+      equipmentManufact5: equipmentManufact5Value,
+      equipmentModel5: equipmentModel5Value,
+      equipmentPartNo5: equipmentPartNo5Value,
+      equipmentSerialNo5: equipmentSerialNo5Value,
+      equipmentLocation5: equipmentLocation5Value,
+      recordEquipment6: recordEquipment6Value,
+      equipmentManufact6: equipmentManufact6Value,
+      equipmentModel6: equipmentModel6Value,
+      equipmentPartNo6: equipmentPartNo6Value,
+      equipmentSerialNo6: equipmentSerialNo6Value,
+      equipmentLocation6: equipmentLocation6Value,
+      recordEquipment7: recordEquipment7Value,
+      equipmentManufact7: equipmentManufact7Value,
+      equipmentModel7: equipmentModel7Value,
+      equipmentPartNo7: equipmentPartNo7Value,
+      equipmentSerialNo7: equipmentSerialNo7Value,
+      equipmentLocation7: equipmentLocation7Value,
+      recordEquipment8: recordEquipment8Value,
+      equipmentManufact8: equipmentManufact8Value,
+      equipmentModel8: equipmentModel8Value,
+      equipmentPartNo8: equipmentPartNo8Value,
+      equipmentSerialNo8: equipmentSerialNo8Value,
+      equipmentLocation8: equipmentLocation8Value,
+    },
+    checkEquipment: {
+      checkEquipment1: checkEquipment1Value,
+      checkVisual1: checkVisual1Value,
+      checkMech1: checkMech1Value,
+      checkCabling1: checkCabling1Value,
+      checkPower1: checkPower1Value,
+      checkEarthing1: checkEarthing1Value,
+      checkEquipment2: checkEquipment2Value,
+      checkVisual2: checkVisual2Value,
+      checkMech2: checkMech2Value,
+      checkCabling2: checkCabling2Value,
+      checkPower2: checkPower2Value,
+      checkEarthing2: checkEarthing2Value,
+      checkEquipment3: checkEquipment3Value,
+      checkVisual3: checkVisual3Value,
+      checkMech3: checkMech3Value,
+      checkCabling3: checkCabling3Value,
+      checkPower3: checkPower3Value,
+      checkEarthing3: checkEarthing3Value,
+      checkEquipment4: checkEquipment4Value,
+      checkVisual4: checkVisual4Value,
+      checkMech4: checkMech4Value,
+      checkCabling4: checkCabling4Value,
+      checkPower4: checkPower4Value,
+      checkEarthing4: checkEarthing4Value,
+
+      checkEquipment5: checkEquipment5Value,
+      checkVisual5: checkVisual5Value,
+      checkMech5: checkMech5Value,
+      checkCabling5: checkCabling5Value,
+      checkPower5: checkPower5Value,
+      checkEarthing5: checkEarthing5Value,
+
+      checkEquipment6: checkEquipment6Value,
+      checkVisual6: checkVisual6Value,
+      checkMech6: checkMech6Value,
+      checkCabling6: checkCabling6Value,
+      checkPower6: checkPower6Value,
+      checkEarthing6: checkEarthing6Value,
+
+      checkEquipment7: checkEquipment7Value,
+      checkVisual7: checkVisual7Value,
+      checkMech7: checkMech7Value,
+      checkCabling7: checkCabling7Value,
+      checkPower7: checkPower7Value,
+      checkEarthing7: checkEarthing7Value,
+
+      checkEquipment8: checkEquipment8Value,
+      checkVisual8: checkVisual8Value,
+      checkMech8: checkMech8Value,
+      checkCabling8: checkCabling8Value,
+      checkPower8: checkPower8Value,
+      checkEarthing8: checkEarthing8Value,
+      radarManufacturer: radarManufacturerValue,
+      radarModel: radarModelValue,
+      radarUse: radarUseValue,
+      radarTxtime: radarTxtimeValue,
+      radarLocation: radarLocationValue,
+      radarSettings: radarSettingsValue,
+      gpsCheck: gpsCheckValue,
+      gyroCheck: gyroCheckValue,
+      windCheck: windCheckValue,
+      draughtCheck: draughtCheckValue,
+      waveCheck: waveCheckValue,
+      speedlogCheck: speedlogCheckValue,
+
+
+
+      videoCableType: videoCableTypeValue,
+      videoCableImpedance: videoCableImpedanceValue,
+      videoCableComments: videoCableCommentsValue,
+      syncCableType: syncCableTypeValue,
+      syncCableImpedance: syncCableImpedanceValue,
+      syncCableComments: syncCableCommentsValue,
+      azimuthCableType: azimuthCableTypeValue,
+      azimuthCableImpedance: azimuthCableImpedanceValue,
+      azimuthCableComments: azimuthCableCommentsValue,
+      headingCableType: headingCableTypeValue,
+      headingCableImpedance: headingCableImpedanceValue,
+      headingCableComments: headingCableCommentsValue,
+      videoJumper: videoJumperValue,
+      syncJumper: syncJumperValue,
+      azimuthJumper: azimuthJumperValue,
+      headingJumper: headingJumperValue,
+      pullupJumper: pullupJumperValue,
+      pulldownJumper: pulldownJumperValue,
+      amplifierType: amplifierTypeValue,
+      amplifierCheck: amplifierCheckValue,
+      amplifierComments: amplifierCommentsValue,
+      radarFirewallType: radarFirewallTypeValue,
+      radarFirewallCheck: radarFirewallCheckValue,
+      radarFirewallComments: radarFirewallCommentsValue,
+      serialInterfaceType: serialInterfaceTypeValue,
+      serialInterfaceCheck: serialInterfaceCheckValue,
+      serialInterfaceComments: serialInterfaceCommentsValue,
+    },
+    network: {
+      networkEquipment1: networkEquipment1Value,
+      equipmentIpAddress1: equipmentIpAddress1Value,
+      equipmentSubnetMask1: equipmentSubnetMask1Value,
+      equipmentDefaultGateway1: equipmentDefaultGateway1Value,
+      equipmentMac1: equipmentMac1Value,
+      networkEquipment2: networkEquipment2Value,
+      equipmentIpAddress2: equipmentIpAddress2Value,
+      equipmentSubnetMask2: equipmentSubnetMask2Value,
+      equipmentDefaultGateway2: equipmentDefaultGateway2Value,
+      equipmentMac2: equipmentMac2Value,
+      networkEquipment3: networkEquipment3Value,
+      equipmentIpAddress3: equipmentIpAddress3Value,
+      equipmentSubnetMask3: equipmentSubnetMask3Value,
+      equipmentDefaultGateway3: equipmentDefaultGateway3Value,
+      equipmentMac3: equipmentMac3Value,
+      networkEquipment4: networkEquipment4Value,
+      equipmentIpAddress4: equipmentIpAddress4Value,
+      equipmentSubnetMask4: equipmentSubnetMask4Value,
+      equipmentDefaultGateway4: equipmentDefaultGateway4Value,
+      equipmentMac4: equipmentMac4Value,
+      networkEquipment5: networkEquipment5Value,
+      equipmentIpAddress5: equipmentIpAddress5Value,
+      equipmentSubnetMask5: equipmentSubnetMask5Value,
+      equipmentDefaultGateway5: equipmentDefaultGateway5Value,
+      equipmentMac5: equipmentMac5Value,
+      networkEquipment6: networkEquipment6Value,
+      equipmentIpAddress6: equipmentIpAddress6Value,
+      equipmentSubnetMask6: equipmentSubnetMask6Value,
+      equipmentDefaultGateway6: equipmentDefaultGateway6Value,
+      equipmentMac6: equipmentMac6Value,
+      networkEquipment7: networkEquipment7Value,
+      equipmentIpAddress7: equipmentIpAddress7Value,
+      equipmentSubnetMask7: equipmentSubnetMask7Value,
+      equipmentDefaultGateway7: equipmentDefaultGateway7Value,
+      equipmentMac7: equipmentMac7Value,
+      networkEquipment8: networkEquipment8Value,
+      equipmentIpAddress8: equipmentIpAddress8Value,
+      equipmentSubnetMask8: equipmentSubnetMask8Value,
+      equipmentDefaultGateway8: equipmentDefaultGateway8Value,
+      equipmentMac8: equipmentMac8Value,
+      networkDns: networkDnsValue,
+      networkComments: networkCommentsValue,
+      cloudHost1: cloudHost1Value,
+      cloudHost2: cloudHost2Value,
+    },
+    startup: {
+      computerStartup: computerStartupValue,
+      systemRequirements: systemRequirementsValue,
+      windowsVersion: windowsVersionValue,
+      wavexStartup: wavexStartupValue,
+      wavexOptions: wavexOptionsValue,
+      thirdPartyStartup: thirdPartyStartupValue,
+      storageSpace: storageSpaceValue,
+      remoteAccessTools: remoteAccessToolsValue,
+      serialMouseFix: serialMouseFixValue,
+      networkInterfaceConfig: networkInterfaceConfigValue,
+      windowsFirewall: windowsFirewallValue,
+      antiVirus: antiVirusValue,
+      gpsCheck2: gpsCheck2Value,
+      gyroCheck2: gyroCheck2Value,
+      windCheck2: windCheck2Value,
+      draughtCheck2: draughtCheck2Value,
+      waveCheck2: waveCheck2Value,
+    },
+    configuration: {
+      em129Version: em129VersionValue,
+      em129Settings: em129SettingsValue,
+      em129SignalStatus: em129SignalStatusValue,
+      em129NetworkSettings: em129NetworkSettingsValue,
+      em129InterfaceConfig: em129InterfaceConfigValue,
+      em129Scope: em129ScopeValue,
+      em129Comments: em129CommentsValue,
+      wavexDescription: wavexDescriptionValue,
+      wavexMovement: wavexMovementValue,
+      wavexLat: wavexLatValue,
+      wavexLong: wavexLongValue,
+      wavexHeading: wavexHeadingValue,
+      wavexRadar: wavexRadarValue,
+      wavexMulticast: wavexMulticastValue,
+      wavexTransceiver: wavexTransceiverValue,
+      wavexRinId: wavexRinIdValue,
+      wavexRinNetwork: wavexRinNetworkValue,
+      wavexImageStorage: wavexImageStorageValue,
+      wavexGPS: wavexGPSValue,
+      wavexGPSPositionSentence: wavexGPSPositionSentenceValue,
+      wavexGPSTrackSpeedSentence: wavexGPSTrackSpeedSentenceValue,
+      wavexGPSTimeSentence: wavexGPSTimeSentenceValue,
+      wavexGPSSettings: wavexGPSSettingsValue,
+      wavexGyro: wavexGyroValue,
+      wavexGyroSentence: wavexGyroSentenceValue,
+      wavexGyroSettings: wavexGyroSettingsValue,
+      wavexWind: wavexWindValue,
+      wavexWindSentence: wavexWindSentenceValue,
+      wavexWindSettings: wavexWindSettingsValue,
+      wavexWave: wavexWaveValue,
+      wavexWaveSentence: wavexWaveSentenceValue,
+      wavexWaveSettings: wavexWaveSettingsValue,
+      wavexDraught: wavexDraughtValue,
+      wavexDraughtSentence: wavexDraughtSentenceValue,
+      wavexDraughtSettings: wavexDraughtSettingsValue,
+      wavexSpeedlog: wavexSpeedlogValue,
+      wavexSpeedlogSentence: wavexSpeedlogSentenceValue,
+      wavexSpeedlogSettings: wavexSpeedlogSettingsValue,
+
+
+
+
+      wavexGeometryRadarX: wavexGeometryRadarXValue,
+      wavexGeometryRadarY: wavexGeometryRadarYValue,
+      wavexGeometryRadarZ: wavexGeometryRadarZValue,
+      wavexGeometryGPSX: wavexGeometryGPSXValue,
+      wavexGeometryGPSY: wavexGeometryGPSYValue,
+      wavexGeometryWindHeadingOffset: wavexGeometryWindHeadingOffsetValue,
+      wavexGeometryWindZ: wavexGeometryWindZValue,
+      wavexRadarRangeOffset: wavexRadarRangeOffsetValue,
+      wavexRadarAzimuthOffset: wavexRadarAzimuthOffsetValue,
+      wavexRadarStartAngle: wavexRadarStartAngleValue,
+      wavexRadarSectorSize: wavexRadarSectorSizeValue,
+      wavexRadarStartRange: wavexRadarStartRangeValue,
+      wavexRadarStopRange: wavexRadarStopRangeValue,
+      wavexRadarImageCheck: wavexRadarImageCheckValue,
+      wavexAdvancedWaveAntennaMeanHeight: wavexAdvancedWaveAntennaMeanHeightValue,
+      wavexAdvancedWaveCartesianSections: wavexAdvancedWaveCartesianSectionsValue,
+      wavexAdvancedCurrentAntennaMeanHeight: wavexAdvancedCurrentAntennaMeanHeightValue,
+      wavexAdvancedCurrentCartesianSections: wavexAdvancedCurrentCartesianSectionsValue,
+      wavexOutput1: wavexOutput1Value,
+      wavexOutput1Sentence: wavexOutput1SentenceValue,
+      wavexOutput1UpdateInterval: wavexOutput1UpdateIntervalValue,
+      wavexOutput1Settings: wavexOutput1SettingsValue,
+      wavexOutput2: wavexOutput2Value,
+      wavexOutput2Sentence: wavexOutput2SentenceValue,
+      wavexOutput2UpdateInterval: wavexOutput2UpdateIntervalValue,
+      wavexOutput2Settings: wavexOutput2SettingsValue,
+      wavexOutput3: wavexOutput3Value,
+      wavexOutput3Sentence: wavexOutput3SentenceValue,
+      wavexOutput3UpdateInterval: wavexOutput3UpdateIntervalValue,
+      wavexOutput3Settings: wavexOutput3SettingsValue,
+      cloudEnabled: cloudEnabledValue,
+      finalConfig: finalConfigValue,
+    },
+    finalStartup: {
+      finalPowerCycle: finalPowerCycleValue,
+      finalStartup: finalStartupValue,
+      final20Minute: final20MinuteValue,
+      finalDataOutput: finalDataOutputValue,
+    },
+    backup: {
+      backupWavexJson: backupWavexJsonValue,
+      backupDF047: backupDF047Value,
+      backupEM129: backupEM129Value,
+      backupMisc: backupMiscValue,
+    },
+    loginDetails: {
+      loginType1: loginType1Value,
+      loginUsername1: loginUsername1Value,
+      loginPassword1: loginPassword1Value,
+      loginComments1: loginComments1Value,
+      loginType2: loginType2Value,
+      loginUsername2: loginUsername2Value,
+      loginPassword2: loginPassword2Value,
+      loginComments2: loginComments2Value,
+      loginType3: loginType3Value,
+      loginUsername3: loginUsername3Value,
+      loginPassword3: loginPassword3Value,
+      loginComments3: loginComments3Value,
+    },
+  }
+
+  // Convert the data to JSON string
+  var jsonData = JSON.stringify(data, null, 2);
+
+  // Create the filename using the form element values
+  var filename = systemValue + "_" + customerValue + "_" + "_" + workTypeValue + "_" + workStatusValue + '.json';
+
+  // Create a temporary <a> element to trigger the download
+  var link = document.createElement('a');
+  link.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonData);
+  link.download = filename;
+
+  // Trigger the download
+  link.click();
+}
+
+
+function exportToJsonMocean() {
   // Get the form element values
   var systemValue = document.querySelector('select[name="system"]').value;
   var workTypeValue = document.querySelector('select[name="workType"]').value;
@@ -1063,7 +1729,7 @@ function fillFormFromJson(data) {
 
 
 
-function openFullReportXband() {
+function openFullReport() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
@@ -1325,7 +1991,7 @@ function openFullReportXband() {
     wavexSpeedlog: formData.wavexSpeedlog,
     wavexSpeedlogSentence: formData.wavexSpeedlogSentence,
     wavexSpeedlogSettings: formData.wavexSpeedlogSettings,
-    
+
     wavexGeometryRadarX: formData.wavexGeometryRadarX,
     wavexGeometryRadarY: formData.wavexGeometryRadarY,
     wavexGeometryRadarZ: formData.wavexGeometryRadarZ,
@@ -1395,7 +2061,7 @@ function openFullReportXband() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miros Site Report</title>
-  <link rel="stylesheet" type="text/css" href="style_full_report.css">
+  <link rel="stylesheet" type="text/css" href="style_report.css">
 </head>  
 <body>
 
@@ -2444,7 +3110,7 @@ function openFullReportMocean() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miros Site Report</title>
-  <link rel="stylesheet" type="text/css" href="style_full_report.css">
+  <link rel="stylesheet" type="text/css" href="style_report.css">
 </head>  
 <body>
 
@@ -3168,7 +3834,7 @@ function openFullReportMocean() {
 }
 
 
-function openReportXband() {
+function openReport() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
@@ -3384,7 +4050,7 @@ function openReportXband() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miros Site Report</title>
-  <link rel="stylesheet" type="text/css" href="style_full_report.css">
+  <link rel="stylesheet" type="text/css" href="style_report.css">
 </head>  
 <body>
 
@@ -3406,7 +4072,7 @@ function openReportXband() {
 
 <div class="container">
   <h2>Site Report</h2>
-  <h3>1. Overview</h3>
+  <h3>Overview</h3>
   <p style="max-width: 750px;">${selectedElements.generalComments}</p>
 
   <table class="info-table">
@@ -3465,7 +4131,7 @@ function openReportXband() {
 
 
 
-<h3>2. Record Equipment</h3>
+<h3>Record of Equipment</h3>
 <table>
   <thead>
     <tr>
@@ -3548,8 +4214,8 @@ function openReportXband() {
 <div class="line_sub"></div>
 
 
-<h3>3. Check Equipment</h3>
-<h4>3.1 Equipment</h4>
+<h3>Equipment Checks</h3>
+<h4>Delivered Equipment</h4>
 <table>
 
 <thead>
@@ -3630,33 +4296,34 @@ function openReportXband() {
 </tr>
 </tbody>
 </table>
-<h4>3.2 Equipment Specific Checks</h4>
+<h4>Special Equipment Checks</h4>
 
   <h4>Radar</h4>
   <table>
+  
   <tr>
-  <td class="table-cell"><span class="emphasis">Radar Manufacturer:</span> ${selectedElements.radarManufacturer}</td>
-  <td style="padding-right: 20px;"><strong>Radar Model:</strong> ${selectedElements.radarModel}</td>
-    </tr>
-    <tr>  
-
+    <td style="padding-right: 20px;"><strong>Radar Manufacturer:</strong> ${selectedElements.radarManufacturer}</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 20px;"><strong>Radar Model:</strong> ${selectedElements.radarModel}</td>
+  </tr>
+  <tr>
     <td style="padding-right: 20px;"><strong>Radar Use:</strong> ${selectedElements.radarUse}</td>
+  </tr>
+  <tr>
     <td style="padding-right: 20px;"><strong>Radar Txtime:</strong> ${selectedElements.radarTxtime}</td>
-    </tr>
-    <tr>  
-
+  </tr>
+  <tr>
     <td style="padding-right: 20px;"><strong>Radar Settings:</strong> ${selectedElements.radarSettings}</td>
   </tr>
-  <tr>  
-
-  <td style="padding-right: 20px;"><strong>Radar Location:</strong> ${selectedElements.radarLocation}</td>
-</tr>
-
-
-  </table>
+  <tr>
+    <td style="padding-right: 20px;"><strong>Radar Location:</strong> ${selectedElements.radarLocation}</td>
+  </tr>
+  
+</table>
   <div class="line_sub"></div>
-  <h3>4. Network Information</h3>
-<h4>4.1 Site Network Connections</h4>
+  <h3>Network Information</h3>
+<h4>Site Network Connections</h4>
 
 <table>
 
@@ -3728,23 +4395,26 @@ function openReportXband() {
   <td class="table-cell">${formData.equipmentMac8 || ''}</td>
 </tr>
   </table>
-<h4>4.2 Cloud Configuration</h4>
+<h4>Cloud Firewall Exceptions</h4>
 <table>
   <tr>
-  <td style="padding-right: 20px;"><strong>Cloud Host 1:</strong> ${formData.cloudHost1}</td>
-  <td style="padding-right: 20px;"><strong>Cloud Host 2:</strong> ${formData.cloudHost2}</td>
+  <td style="padding-right: 20px;"><strong>admin.miros.app:</strong> ${formData.cloudHost1}</td>
+  <td style="padding-right: 20px;"><strong>azure-devices.net:</strong> ${formData.cloudHost2}</td>
 </tr>
 
 
 </table>
 <div class="line_sub"></div>
 
-<h3>5. Startup</h3>
-<h4>5.1 Computer and Software Installation Check</h4>
+<h3>System Startup</h3>
+<h4>Computer and Software Installation Check</h4>
 <table>
   
   <tr>
     <td style="padding-right: 20px;"><strong>Wavex Options:</strong> ${formData.wavexOptions}</td>
+    </tr>
+    <tr>
+
     <td style="padding-right: 20px;"><strong>Third Party Startup:</strong> ${formData.thirdPartyStartup}</td>
   </tr>
   
@@ -3771,7 +4441,7 @@ function openReportXband() {
   </tr>
 </thead>
 
-
+<h4>Outputs</h4>
 <tr>
   <td class="table-cell">${formData.wavexOutput1 || ''}</td>
   <td class="table-cell">${formData.wavexOutput1Sentence || ''}</td>
@@ -4084,7 +4754,7 @@ function openReportMocean() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miros Site Report</title>
-  <link rel="stylesheet" type="text/css" href="style_full_report.css">
+  <link rel="stylesheet" type="text/css" href="style_report.css">
 </head>  
 <body>
 
@@ -4612,7 +5282,7 @@ function openCloudCertificateOLD() {
   <html>
   <head>
       <title>Miros Cloud Certificate</title>
-      <link rel="stylesheet" type="text/css" href="style_report.css">
+      <link rel="stylesheet" type="text/css" href="style_cs.css">
       <style>
       .image-container {
         display: grid;
