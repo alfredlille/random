@@ -4464,7 +4464,7 @@ function openReport() {
 
 <br>
 <div class="line_sub"></div>
-  <h3>7. Final Start-up</h3>
+  <h3>Final Start-up</h3>
   <table>
   <tr>
     <td style="padding-right: 20px;"><strong>Final 20 Minute:</strong> ${formData.final20Minute}</td>
@@ -4472,7 +4472,7 @@ function openReport() {
   </tr>
   </table>
   <div class="line_sub"></div>
-  <h3>9. Login Details</h3>
+  <h3>Login Details</h3>
 
   <table>
 
