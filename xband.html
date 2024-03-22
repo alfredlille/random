@@ -85,7 +85,7 @@
           <option value="Dry Cargo">Dry Cargo</option>
           <option value="Construction Vessel">Construction Vessel</option>
           <option value="Work & Repair Vessel">Work & Repair Vessel</option>
-          <option value="FPSO">FPSO</option>
+          <option value="Multi Purpose Vessel">Multi Purpose Vessel</option>
           <option value="FPSO">FPSO</option>
         </select>
         <label for="customer">Customer:</label>
@@ -2821,7 +2821,12 @@
                 <label for="wavexWaveSentence">Wave Sentence:</label>
                 <select name="wavexWaveSentence" style="width: 150px;">
                   <option value=" "> </option>
-                  <option value="PMIRW">PMIRW</option>
+                  <option value="PMIRWM">PMIRWM</option>
+                  <option value="PMIRLD">PMIRLD</option>
+                  <option value="PMIRWM + PMIRLD">PMIRWM + PMIRLD</option>
+
+
+
                 </select>
               </td>
               <td>
@@ -2908,7 +2913,7 @@
                 <input type="text" name="wavexGeometryRadarY" style="width:70px;">
               </td>
               <td>
-                <label for="wavexGeometryRadarZ">Height above MSL:</label>
+                <label for="wavexGeometryRadarZ">Height above MSL or keel:</label>
                 <input type="text" name="wavexGeometryRadarZ" style="width:140px;">
               </td>
           </table>
@@ -3201,6 +3206,7 @@
                     <option value=" "> </option>
                     <option value="OK">OK</option>
                     <option value="Not OK">Not OK</option>
+                    <option value="NA">NA</option>
                   </select>
                 </td>
             </table>
@@ -3237,6 +3243,7 @@
                       <option value=" "> </option>
                       <option value="OK">OK</option>
                       <option value="Not OK">Not OK</option>
+                      <option value="NA">NA</option>
                     </select>
                   </td>
                   <td>
