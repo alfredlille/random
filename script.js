@@ -978,7 +978,7 @@ function exportToJson() {
   var jsonData = JSON.stringify(data, null, 2);
 
   // Create the filename using the form element values
-  var filename = systemValue + "_" + customerValue + "_" + "_" + workTypeValue + "_" + workStatusValue + '.json';
+  var filename = systemValue + "_" + siteValue + "_" + customerValue + "_" + "_" + workTypeValue + "_" + workStatusValue + '.json';
 
   // Create a temporary <a> element to trigger the download
   var link = document.createElement('a');
@@ -1656,7 +1656,7 @@ function exportToJsonMocean() {
   var jsonData = JSON.stringify(data, null, 2);
 
   // Create the filename using the form element values
-  var filename = systemValue + "_" + customerValue + "_" + "_" + workTypeValue + "_" + workStatusValue + '.json';
+  var filename = systemValue + "_" + siteValue + "_" + customerValue + "_" + "_" + workTypeValue + "_" + workStatusValue + '.json';
 
   // Create a temporary <a> element to trigger the download
   var link = document.createElement('a');
