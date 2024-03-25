@@ -5002,29 +5002,30 @@ function openReportMocean() {
 </table>
 <h4>3.2 Equipment Specific Checks</h4>
 
-  <h4>Radar</h4>
-  <table>
-  <tr>
-  <td class="table-cell"><span class="emphasis">Radar Manufacturer:</span> ${selectedElements.radarManufacturer}</td>
+<h4>Radar</h4>
+<table>
+
+<tr>
+  <td style="padding-right: 20px;"><strong>Radar Manufacturer:</strong> ${selectedElements.radarManufacturer}</td>
+</tr>
+<tr>
   <td style="padding-right: 20px;"><strong>Radar Model:</strong> ${selectedElements.radarModel}</td>
-    </tr>
-    <tr>  
-
-    <td style="padding-right: 20px;"><strong>Radar Use:</strong> ${selectedElements.radarUse}</td>
-    <td style="padding-right: 20px;"><strong>Radar Txtime:</strong> ${selectedElements.radarTxtime}</td>
-    </tr>
-    <tr>  
-
-    <td style="padding-right: 20px;"><strong>Radar Settings:</strong> ${selectedElements.radarSettings}</td>
-  </tr>
-  <tr>  
-
+</tr>
+<tr>
+  <td style="padding-right: 20px;"><strong>Radar Use:</strong> ${selectedElements.radarUse}</td>
+</tr>
+<tr>
+  <td style="padding-right: 20px;"><strong>Radar Txtime:</strong> ${selectedElements.radarTxtime}</td>
+</tr>
+<tr>
+  <td style="padding-right: 20px;"><strong>Radar Settings:</strong> ${selectedElements.radarSettings}</td>
+</tr>
+<tr>
   <td style="padding-right: 20px;"><strong>Radar Location:</strong> ${selectedElements.radarLocation}</td>
 </tr>
 
-
-  </table>
-  <div class="line_sub"></div>
+</table>
+<div class="line_sub"></div>
   <h3>4. Network Information</h3>
 <h4>4.1 Site Network Connections</h4>
 
