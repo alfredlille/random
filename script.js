@@ -2,6 +2,19 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0); // Scroll to the top
 }
 
+// Function to set today's date in the input field
+function setDates() {
+  var today = new Date();
+  var nextYear = new Date();
+  nextYear.setFullYear(today.getFullYear() + 1); // Add one year to the current date
+
+  var dateStr = today.toISOString().substring(0, 10);
+  var nextYearDateStr = nextYear.toISOString().substring(0, 10);
+
+  document.getElementById('dateInput').value = dateStr;
+  document.getElementById('dateInputNextYear').value = nextYearDateStr;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('myForm');
   const formElements = form.elements;
@@ -190,7 +203,7 @@ function populateImagesFromLocalStorage() {
 }
 
 window.onload = function () {
-  populateImagesFromLocalStorage();
+  populateImagesFromLocalStorage();  
 };
 
 
@@ -4129,7 +4142,7 @@ function openReport() {
 </table>
 
 
-
+<div style="break-after:page"></div>
 
 <h3>Record of Equipment</h3>
 <table>
@@ -4405,6 +4418,9 @@ function openReport() {
 
 </table>
 <div class="line_sub"></div>
+
+<div style="break-after:page"></div>
+
 
 <h3>System Startup</h3>
 <h4>Computer and Software Installation Check</h4>

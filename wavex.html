@@ -22,7 +22,8 @@
       <label for="dropdown"></label>
       <select id="dropdown" onchange="navigate()">
         <option value=" ">Choose a System</option>
-        <option value="xband.html">Wavex & WaveSystem</option>
+        <option value="wavex.html">Wavex & WaveSystem</option>
+        <option value="osd.html">Oil Spill Detection</option>
         <option value="rangefinder.html">RangeFinder</option>
         <option value="waveradar.html">Wave & Current Radar</option>
         <option value="other.html">Other</option>
@@ -91,7 +92,7 @@
         <label for="customer">Customer:</label>
         <input type="text" name="customer">
         <label for="date">Date:</label>
-        <input type="date" name="date">
+        <input type="date" id="dateInput" name="date">
         <label for="imo">IMO:</label>
         <input type="text" name="imo">
         <label for="location">Location:</label>
@@ -3356,7 +3357,7 @@
                   </td>
                   <td>
                     <label for="subscriptionExpiry">aaS Subscription Expiry:</label>
-                    <input type="date" name="subscriptionExpiry" style="width:200px">
+                    <input type="date" id="dateInputNextYear" name="subscriptionExpiry" style="width:200px">
                   </td>
                 </table>
                 <label for="generalComments">Summary:</label>
