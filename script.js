@@ -4534,8 +4534,10 @@ function openReport() {
 
  
   </div>
-  
-  <footer class="footer">
+</div>
+<div class="blank-space">
+</div>
+<div class="footer">
   <!-- Footer content -->
   <p>&copy; 2024 Miros Group. All rights reserved.</p>
   <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
@@ -4543,8 +4545,7 @@ function openReport() {
   <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 100px;">
 </a>
 
-</footer>
-  
+</div>  
   </body>
   </html>
   `;
