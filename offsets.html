@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<h2 style="text-align: center;">Distance to DSP (Defined Site Position)</h2>
+<h2 style="text-align: center;">Distance from DSP (Defined Site Position)</h2>
 <p>DSP is a reference point on a site that is needed to accurately georeference data such as radar images and GUI elements. A GPS antenna is a common type of DSP, but on larger sites you may need to use another location. </p>
 <div class="form-container">
     <form id="radarForm" onsubmit="event.preventDefault(); calculateResult();">
@@ -34,7 +34,7 @@
             <label for="dropdown">Sensor:</label>
             <select id="dropdown" name="dropdown">
                 <option value="Radar">Radar</option>
-                <option value="GPS">GPS</option>
+                <option value="Other">Other</option>
                 <option value="FLIR Camera">FLIR Camera</option>
                 <!-- Add more options as needed -->
             </select>
