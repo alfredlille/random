@@ -70,7 +70,7 @@ function clearForm() {
   }
 }
 
-
+let isScrollToBottom = true;
 
 function toggleScroll() {
   if (isScrollToBottom) {
@@ -205,8 +205,6 @@ function populateImagesFromLocalStorage() {
 window.onload = function () {
   populateImagesFromLocalStorage();  
 };
-
-let isScrollToBottom = true;
 
 
 
