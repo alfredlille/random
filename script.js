@@ -2781,6 +2781,8 @@ function openFullReport() {
   newWindow.document.close();
 }
 
+
+
 function openFullReportMocean() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
@@ -4427,16 +4429,9 @@ function openReport() {
 <table>
   
   <tr>
-    <td style="padding-right: 20px;"><strong>Wavex Options:</strong> ${formData.wavexOptions}</td>
+    <td style="padding-right: 20px;"><strong>System Options:</strong> ${formData.wavexOptions}</td>
     </tr>
-    <tr>
-
-    <td style="padding-right: 20px;"><strong>Third Party Startup:</strong> ${formData.thirdPartyStartup}</td>
-  </tr>
   
-  <tr>
-    <td style="padding-right: 20px;"><strong>Wavex Advanced Current Cartesian Sections:</strong> ${formData.wavexAdvancedCurrentCartesianSections}</td>
-  </tr>
   <tr>
     <td style="padding-right: 20px;"><strong>Cloud Enabled:</strong> ${formData.cloudEnabled}</td>
   </tr>
@@ -4554,6 +4549,7 @@ function openReport() {
   newWindow.document.write(html);
   newWindow.document.close();
 }
+
 
 function openReportMocean() {
   const formData = JSON.parse(localStorage.getItem('formData'));
