@@ -4081,7 +4081,7 @@ function openReport() {
     <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span></div>
 </div>
 <!-- Large image to the right -->
-<img src="header.jpeg" alt="Large Image Description" class="large-image">
+<EDITimg src="header.jpeg" alt="Large Image Description" class="large-image">
 </div>
 
 
@@ -4431,7 +4431,6 @@ function openReport() {
   <tr>
     <td style="padding-right: 20px;"><strong>System Options:</strong> ${formData.wavexOptions}</td>
     </tr>
-  
   <tr>
     <td style="padding-right: 20px;"><strong>Cloud Enabled:</strong> ${formData.cloudEnabled}</td>
   </tr>
