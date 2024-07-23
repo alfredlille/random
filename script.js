@@ -4081,7 +4081,7 @@ function openReport() {
     <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span></div>
 </div>
 <!-- Large image to the right -->
-// <img src="header.jpeg" alt="Large Image Description" class="large-image">
+<img src="none.png" alt="Large Image Description" class="large-image">
 </div>
 
 
