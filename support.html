@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Draft Generator</title>
+</head>
+<body>
+
+    <h2>Email Draft Generator</h2>
+    
+    <form id="emailForm">
+        <label for="siteName">Name of Site:</label>
+        <input type="text" id="siteName" placeholder="Enter site name" required>
+        
+        <label for="systemName">System:</label>
+        <input type="text" id="systemName" placeholder="Enter system name" required>
+        
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" placeholder="Enter email subject" required>
+
+        <label for="senderName">Your Name:</label>
+        <input type="text" id="senderName" placeholder="Enter your name" required>
+
+        <button type="submit">Generate Email</button>
+    </form>
+
+    <div class="email-output" id="emailOutput" style="display: none;">
+        <h3>Generated Email:</h3>
+        <p><strong>Subject:</strong> <span id="emailSubject"></span></p>
+        <p><strong>Body:</strong></p>
+        <p>Dear Team,</p>
+        <p>We are currently monitoring the data for <span id="emailSite"></span> on the <span id="emailSystem"></span> system. During our analysis, we noticed a period of downtime.</p>
+        <p>Could you please confirm if there may be any reason for this downtime or if further investigation is needed on our end?</p>
+        <p>Thank you for your assistance.</p>
+        <p>Best regards,</p>
+        <p><span id="emailSender"></span> at Miros</p>
+    </div>
+
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get values from form inputs
+            const siteName = document.getElementById('siteName').value;
+            const systemName = document.getElementById('systemName').value;
+            const subject = document.getElementById('subject').value;
+            const senderName = document.getElementById('senderName').value;
+
+            // Set email content
+            document.getElementById('emailSite').textContent = siteName;
+            document.getElementById('emailSystem').textContent = systemName;
+            document.getElementById('emailSubject').textContent = subject;
+            document.getElementById('emailSender').textContent = senderName;
+
+            // Show the generated email
+            document.getElementById('emailOutput').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
