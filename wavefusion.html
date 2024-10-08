@@ -5,16 +5,16 @@
   <title>Work Tool</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="script.js"></script>
-
-
-
+ 
+  
+  
 </head>
 
 <body>
   <div class="header">
     <!-- INTRODUCTION. -->
     <a href="index.html">
-      <img src="https://mocean.miros.app/miros-mocean-logo.6761c3f7e4f32ff93e9fa5cb0303d3dd.svg" style="width: 200px;">
+      <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px;">
     </a>
     <h1>Work Tool</Form>
     </h1>
@@ -31,15 +31,14 @@
         <option value="archive.html">Site Archive</option>        
         <option value="beam_calc.html">RangeFinder mounting calculator</option>    
         <option value="offsets.html">Offset calculator</option>        
-        <option value="height_calc.html">Sensor height calculator</option>   
+        <option value="height_calc.html">Sensor height calculator</option>  
         <option value="support.html">Support Templates</option>    
-     
+      
       </select>
     </form>
-    <h2></h2>
-    <h3>Core, VTI and Charter Party Performance</h3>
-    <p>The following page should be used to ensure the system is commissioned correctly and all the relevant site
-      information is captured.</p>
+    <h2>X Band Suite</h2>
+    <h3>Wavex & WaveSystem</h3>
+    <p>The following page should be used to ensure the system is commissioned correctly and all the relevant site information is captured.</p>
   </div>
   <div class="container">
     <div class="form-container">
@@ -64,9 +63,8 @@
         <label for="system">System:</label>
         <select name="system">
           <option value=" "> </option>
-          <option value="Core">Core</option>
-          <option value="VTI">VTI</option>
-          <option value="CPP">CPP</option>
+          <option value="Wavex">Wavex</option>
+          <option value="WaveSystem">WaveSystem</option>
         </select>
         <label for="workType">Work Type:</label>
         <select name="workType">
@@ -81,15 +79,22 @@
         <label for="siteType">Site Type:</label>
         <select name="siteType">
           <option value=" "> </option>
+          <option value="Platform">Platform</option>
+          <option value="Supply Vessel">Supply Vessel</option>
+          <option value="Cable Layer">Cable Layer</option>
           <option value="Tanker">Tanker</option>
+          <option value="Cruise Vessel">Cruise Vessel</option>
+          <option value="FPSO">FPSO</option>
           <option value="Dry Cargo">Dry Cargo</option>
-          <option value="LNG Carrier">LNG Carrier</option>
-          <option value="Bulk Carrier">Bulk Carrier</option>
+          <option value="Construction Vessel">Construction Vessel</option>
+          <option value="Work & Repair Vessel">Work & Repair Vessel</option>
+          <option value="Multi Purpose Vessel">Multi Purpose Vessel</option>
+          <option value="FPSO">FPSO</option>
         </select>
         <label for="customer">Customer:</label>
         <input type="text" name="customer">
         <label for="date">Date:</label>
-        <input type="date" name="date">
+        <input type="date" id="dateInput" name="date">
         <label for="imo">IMO:</label>
         <input type="text" name="imo">
         <label for="location">Location:</label>
@@ -104,9 +109,11 @@
           <option value="Vemund Bertelsen">Vermund Bertelsen</option>
           <option value="Sahil Kochhar">Sahil Kochhar</option>
           <option value="Jaime Nunes">Jaime Nunes</option>
+          <option value="Ari Claudio">Ari Claudio</option>         
+          <option value="Vitor Bernardo">Vitor Bernardo</option>
+          <option value="Anderson Coutinho">Anderson Coutinho</option>
         </select>
-        <label for="engineer2" style="display: block; margin-top: 20px;"></label> <!-- Inline style added here -->
-        <select name="engineer2">
+        <label for="engineer2" style="display: block; margin-top: 20px;"></label> <!-- Inline style added here -->        <select name="engineer2">
           <option value=" "> </option>
           <option value="Daniel Denyer">Daniel Denyer</option>
           <option value="Eirik Tenningen">Eirik Tenningen</option>
@@ -115,7 +122,9 @@
           <option value="Vemund Bertelsen">Vermund Bertelsen</option>
           <option value="Sahil Kochhar">Sahil Kochhar</option>
           <option value="Jaime Nunes">Jaime Nunes</option>
-
+          <option value="Ari Claudio">Ari Claudio</option>         
+          <option value="Vitor Bernardo">Vitor Bernardo</option>
+          <option value="Anderson Coutinho">Anderson Coutinho</option>
         </select>
         <!-- RECORD EQUIPMENT. -->
         <div class="line"></div>
@@ -177,6 +186,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -208,6 +218,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -238,6 +249,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -268,6 +280,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -302,6 +315,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -332,6 +346,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -362,6 +377,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -392,6 +408,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -500,6 +517,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -562,6 +580,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -624,6 +643,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -686,6 +706,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -748,6 +769,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -810,6 +832,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -872,6 +895,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -934,6 +958,7 @@
                 <option value="Computer">Computer</option>
                 <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                 <option value="RangeFinder">RangeFinder</option>
+                <option value="FLIR Camera">FLIR Camera</option>
                 <option value="Multi-Parameter Sensor">Multi-Parameter Sensor</option>
                 <option value="Monitor">Monitor</option>
                 <option value="Mouse & Keyboard">Mouse & Keyboard</option>
@@ -1223,15 +1248,6 @@
               </select>
             </td>
 
-            <td>
-              <label for="shaftCheck">Shaft:</label>
-              <select name="shaftCheck" style="width:100px;">
-                <option value=" "> </option>
-                <option value="OK">OK</option>
-                <option value="Not OK">Not OK</option>
-                <option value="NA">NA</option>
-              </select>
-            </td>
 
           </tr>
         </table>
@@ -1786,6 +1802,7 @@
                   <option value="Computer">Computer</option>
                   <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                   <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
                   <option value="Switch">Switch</option>
                   <option value="NPort">NPort</option>
                   <option value="MGate">MGate</option>
@@ -1816,6 +1833,7 @@
                   <option value="Computer">Computer</option>
                   <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                   <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
                   <option value="Switch">Switch</option>
                   <option value="NPort">NPort</option>
                   <option value="MGate">MGate</option>
@@ -1846,6 +1864,7 @@
                   <option value="Computer">Computer</option>
                   <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                   <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
                   <option value="Switch">Switch</option>
                   <option value="NPort">NPort</option>
                   <option value="MGate">MGate</option>
@@ -1876,6 +1895,7 @@
                   <option value="Computer">Computer</option>
                   <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                   <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
                   <option value="Switch">Switch</option>
                   <option value="NPort">NPort</option>
                   <option value="MGate">MGate</option>
@@ -1906,6 +1926,7 @@
                   <option value="Computer">Computer</option>
                   <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                   <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
                   <option value="Switch">Switch</option>
                   <option value="NPort">NPort</option>
                   <option value="MGate">MGate</option>
@@ -1936,6 +1957,7 @@
                   <option value="Computer">Computer</option>
                   <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                   <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
                   <option value="Switch">Switch</option>
                   <option value="NPort">NPort</option>
                   <option value="MGate">MGate</option>
@@ -1966,6 +1988,7 @@
                   <option value="Computer">Computer</option>
                   <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                   <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
                   <option value="Switch">Switch</option>
                   <option value="NPort">NPort</option>
                   <option value="MGate">MGate</option>
@@ -1996,6 +2019,7 @@
                   <option value="Computer">Computer</option>
                   <option value="EM-129 Integrated Video Digitiser">EM-129 Integrated Video Digitiser</option>
                   <option value="RangeFinder">RangeFinder</option>
+                  <option value="FLIR Camera">FLIR Camera</option>
                   <option value="Switch">Switch</option>
                   <option value="NPort">NPort</option>
                   <option value="MGate">MGate</option>
@@ -2128,7 +2152,7 @@
 
 
 
-
+                
 
 
               </tr>
@@ -2490,15 +2514,6 @@
                 </select>
               </td>
 
-              <td>
-                <label for="shaftCheck2">Shaft:</label>
-                <select name="shaftCheck2" style="width:100px;">
-                  <option value=" "> </option>
-                  <option value="OK">OK</option>
-                  <option value="Not OK">Not OK</option>
-                  <option value="NA">NA</option>
-                </select>
-              </td>
             </tr>
           </table>
           <!-- COMMISSIONING. -->
@@ -2728,7 +2743,7 @@
                 <label for="wavexGPSTimeSentence">Time Sentence:</label>
                 <select name="wavexGPSTimeSentence" style="width: 150px;">
                   <option value=" "> </option>
-                  <option value="ZDA">VTG</option>
+                  <option value="ZDA">ZDA</option>
                   <option value="NA">NA</option>
                 </select>
               </td>
@@ -2814,7 +2829,12 @@
                 <label for="wavexWaveSentence">Wave Sentence:</label>
                 <select name="wavexWaveSentence" style="width: 150px;">
                   <option value=" "> </option>
-                  <option value="PMIRW">PMIRW</option>
+                  <option value="PMIRWM">PMIRWM</option>
+                  <option value="PMIRLD">PMIRLD</option>
+                  <option value="PMIRWM + PMIRLD">PMIRWM + PMIRLD</option>
+
+
+
                 </select>
               </td>
               <td>
@@ -2884,38 +2904,6 @@
               </td>
           </table>
 
-          <p> Shaft:</p>
-          <table>
-            <tr>
-              <td>
-                <label for="wavexShaft">Configuration:</label>
-                <select name="wavexShaft" style="width: 150px;">
-                  <option value=" "> </option>
-                  <option value="OK">OK</option>
-                  <option value="Not OK">Not OK</option>
-                  <option value="NA">NA</option>
-                </select>
-              </td>
-              <td>
-                <label for="wavexShaftSentence">Shaft Sentence:</label>
-                <select name="wavexShaftSentence" style="width: 150px;">
-                  <option value=" "> </option>
-                  <option value="XDR">XDR</option>
-                  <option value="SPM">SPM</option>
-
-                  <option value="LSP">LSP</option>
-
-                </select>
-              </td>
-              <td>
-                <label for="wavexShaftSettings">Settings:</label>
-                <input type="text" name="wavexShaftSettings" style="width:140px;">
-              </td>
-              <td>
-                <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
-                  N 1 or TCP 192.168.73.150 4001</p>
-              </td>
-          </table>
           <div class="line_sub"></div>
 
           <h3>Processing</h3>
@@ -2934,7 +2922,7 @@
                 <input type="text" name="wavexGeometryRadarY" style="width:70px;">
               </td>
               <td>
-                <label for="wavexGeometryRadarZ">Height above MSL:</label>
+                <label for="wavexGeometryRadarZ">Height above MSL or keel:</label>
                 <input type="text" name="wavexGeometryRadarZ" style="width:140px;">
               </td>
           </table>
@@ -3228,8 +3216,6 @@
                     <option value="OK">OK</option>
                     <option value="Not OK">Not OK</option>
                     <option value="NA">NA</option>
-
-
                   </select>
                 </td>
             </table>
@@ -3266,6 +3252,7 @@
                       <option value=" "> </option>
                       <option value="OK">OK</option>
                       <option value="Not OK">Not OK</option>
+                      <option value="NA">NA</option>
                     </select>
                   </td>
                   <td>
@@ -3377,7 +3364,7 @@
                   </td>
                   <td>
                     <label for="subscriptionExpiry">aaS Subscription Expiry:</label>
-                    <input type="date" name="subscriptionExpiry" style="width:200px">
+                    <input type="date" id="dateInputNextYear" name="subscriptionExpiry" style="width:200px">
                   </td>
                 </table>
                 <label for="generalComments">Summary:</label>
@@ -3394,10 +3381,10 @@
     <input type="file" id="imageFileInput" multiple accept="image/*" style="display: none;"
       onchange="handleImageFiles(event)">
     <button class="img_button" onclick="document.getElementById('imageFileInput').click()">Add Images</button>
-    <button class="button" onclick="openReportMocean()">Standard Report</button>
-    <button class="button" onclick="openFullReportMocean()">Detailed Report</button>
+    <button class="button" onclick="openReport()">Standard Report</button>
+    <button class="button" onclick="openFullReportWavex()">Detailed Report</button>
     <button class="button" onclick="openCloudCertificate()">Miros Cloud Certificate</button>
-    <button class="button" onclick="exportToJsonMocean()">Download</button>
+    <button class="button" onclick="exportToJson()">Download</button>
     <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">
     <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload</button>
     <button class="clear_button" onclick="clearForm()">Clear Data</button>
