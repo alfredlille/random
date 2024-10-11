@@ -2092,7 +2092,8 @@
               <input type="text" name="sensorDepthfootprint" style="width:140px;">
             </td>
             <td>
-              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. Water depth	Water depth on site (at footprint location). If water depth is >300 m use 300 m.</p>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. Water depth Water
+                depth on site (at footprint location). If water depth is >300 m use 300 m.</p>
             </td>
 
           </tr>
@@ -2100,42 +2101,304 @@
 
           <tr>
             <td>
-              <label for="em129SignalStatus">Signal Status:</label>
-              <select name="em129SignalStatus" style="width: 150px;">
+              <label for="sensorTimesync">Time Sync:</label>
+              <select name="sensorTimesync" style="width: 150px;">
                 <option value=" "> </option>
-                <option value="OK">OK</option>
-                <option value="Not OK">Not OK</option>
-                <option value="NA">NA</option>
+                <option value="Automatic">Automatic</option>
+                <option value="Manual">Manual</option>
               </select>
             </td>
             <td>
-              <label for="em129NetworkSettings">Network Settings:</label>
-              <select name="em129NetworkSettings" style="width: 150px;">
-                <option value=" "> </option>
-                <option value="OK">OK</option>
-                <option value="Not OK">Not OK</option>
-                <option value="NA">NA</option>
-              </select>
+              <label for="sensorTimeserver">Time Server:</label>
+              <input type="text" name="sensorTimeserver" style="width:140px;">
             </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. dd the time
+                manually
+                Time server Pool.ntp.org (recommended) or.</p>
+            </td>
+
           <tr>
             <td>
-              <label for="em129InterfaceConfig">Interface Config:</label>
-              <select name="em129InterfaceConfig" style="width: 150px;">
+              <label for="sensorHeadinginput">Heading Input:</label>
+              <select name="sensorHeadinginput" style="width: 150px;">
                 <option value=" "> </option>
-                <option value="OK">OK</option>
-                <option value="Not OK">Not OK</option>
-                <option value="NA">NA</option>
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
               </select>
             </td>
             <td>
-              <label for="em129Scope">Oscilloscope Check</label>
-              <select name="em129Scope" style="width: 150px;">
+              <label for="sensorHeadingsource">Settings:</label>
+              <input type="text" name="sensorHeadingsource" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">If Heading input is
+                manual Heading of the site referring to true north
+                If Heading is UDP/TCP Client - server “gyro data input server address “
+                If Heading is UDP/TCP Client - port 4001</p>
+            </td>
+
+          <tr>
+
+            <td>
+              <label for="sensorMinrange">Minimum Range:</label>
+              <input type="text" name="sensorMinrange" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">3-20m (default is 3)
+                should be always less than the installation height. Enough to capture all the waves heights.</p>
+            </td>
+          </tr>
+
+          <tr>
+
+            <td>
+              <label for="sensorMaxrange">Maximum Range:</label>
+              <input type="text" name="sensorMaxrange" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">15-40m (default is 15)
+                but should be above the mounting height</p>
+            </td>
+          </tr>
+          <tr>
+
+            <td>
+              <label for="sensorWaterref">Water Level Reference:</label>
+              <input type="text" name="sensorWaterref" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">difference between
+                reference and MSL (average sea level)</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorTracking">Tracking:</label>
+              <select name="sensorTracking" style="width: 150px;">
                 <option value=" "> </option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                <option value="NA">NA</option>
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
               </select>
             </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">ON - in low
+                installations or moving vessels</p>
+            </td>
+
+          </tr>
+          <tr>
+
+            <td>
+              <label for="sensorWindowsize">Window Size:</label>
+              <input type="text" name="sensorWindowsize" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">6m (should be large
+                enough to cover max wave heights possible at the location)
+          </tr>
+
+          <tr>
+
+            <td>
+              <label for="sensorTimeconstant">Time Constant:</label>
+              <input type="text" name="sensorTimeconstant" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">4s plus explanation</p>
+            </td>
+          </tr>
+          </p>
+          </td>
+
+
+          <tr>
+            <td>
+              <label for="sensorScantoaverage">Scan To Average:</label>
+              <input type="text" name="sensorScantoaverage" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">3 plus explanation</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorScantoaveragephase">Scan To Average Phase:</label>
+              <input type="text" name="sensorScantoaveragephase" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">6 plus explanation</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorHeadingserver">Sensor Heading Server:</label>
+              <input type="text" name="sensorHeadingserver" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">4 plus explanation</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorHeadingport">Sensor Heading Port:</label>
+              <input type="text" name="sensorHeadingport" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">63 plus explanation</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorMotioncompensation">Motion Compensation:</label>
+              <select name="sensorMotioncompensation" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">ON (moving installations). This should not be present if the site is fixed type and HW is not equipped with MRU</p>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorRangesensor">Range Sensor:</label>
+              <select name="sensorRangesensor" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">ON plus explanation</p>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorFmnoisefilter">FM Noise Filter:</label>
+              <select name="sensorFmnoisefilter" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">ON plus explanation</p>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorLowfreqnoisefilter">Low Frequency Noise Removal:</label>
+              <select name="sensorLowfreqnoisefilter" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">N (Turn off for fixed platforms where there is deep water (>200 m)</p>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorEnergylevelcheck">Energy Level Check:</label>
+              <select name="sensorEnergylevelcheck" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">ON plus explanation</p>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorEnergyleveltimeconstant">Energy Level Time Constant:</label>
+              <input type="text" name="sensorEnergyleveltimeconstant" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">10 plus explanation</p>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <label for="sensorEnergylevelthreshold">Energy Level Threshold:</label>
+              <input type="text" name="sensorEnergylevelthreshold" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">3 plus explanation</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorEnergyleveloldvaluetimeout">Energy Level Old Value Timeout:</label>
+              <input type="text" name="sensorEnergyleveloldvaluetimeout" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">8 plus explanation</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorCoolingfan">Cooling Fan:</label>
+              <input type="text" name="sensorCoolingfan" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">55 deg plus explanation</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorSamplegain">Sample Gain:</label>
+              <input type="text" name="sensorSamplegain" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">70 dB plus explanation</p>
+            </td>
+          </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </table>
         <label for="em129Comments">Comments:</label>
         <!-- <input type="text" name="em129Comments" style="width:300px; height: 100px;"> -->
