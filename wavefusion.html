@@ -2117,6 +2117,7 @@
                 manually
                 Time server Pool.ntp.org (recommended) or.</p>
             </td>
+          </tr>
 
           <tr>
             <td>
@@ -2137,6 +2138,9 @@
                 If Heading is UDP/TCP Client - server “gyro data input server address “
                 If Heading is UDP/TCP Client - port 4001</p>
             </td>
+          </tr>
+
+
 
           <tr>
 
@@ -2263,7 +2267,8 @@
               </select>
             </td>
             <td>
-              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">ON (moving installations). This should not be present if the site is fixed type and HW is not equipped with MRU</p>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">ON (moving
+                installations). This should not be present if the site is fixed type and HW is not equipped with MRU</p>
             </td>
 
           </tr>
@@ -2308,7 +2313,8 @@
               </select>
             </td>
             <td>
-              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">N (Turn off for fixed platforms where there is deep water (>200 m)</p>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">N (Turn off for fixed
+                platforms where there is deep water (>200 m)</p>
             </td>
 
           </tr>
@@ -2365,7 +2371,8 @@
               <input type="text" name="sensorCoolingfan" style="width:140px;">
             </td>
             <td>
-              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">55 deg plus explanation</p>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">55 deg plus explanation
+              </p>
             </td>
           </tr>
 
@@ -2375,24 +2382,144 @@
               <input type="text" name="sensorSamplegain" style="width:140px;">
             </td>
             <td>
-              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">70 dB plus explanation</p>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">70 dB plus explanation
+              </p>
             </td>
           </tr>
 
+        </table>
+
+        <h3>Status check</h3>
+
+        <table>
+          <tr>
+            <td>
+              <label for="sensorSanitycheckstatus">Status Indication:</label>
+              <select name="sensorSanitycheckstatus" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="YES">NO</option>
+                <option value="NO">NO</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">All status indications
+                are green</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td>
+              <label for="sensorSanitycheckreboot">Sensor Reboot:</label>
+              <select name="sensorSanitycheckreboot" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="YES">NO</option>
+                <option value="NO">NO</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Sensor reboos via UI
+                and time counter updated</p>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorSanitycheckfirmware">Firmware Version:</label>
+              <input type="text" name="sensorSanitycheckfirmware" style="width:140px;">
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Enter Firmware Version
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorSanitycheckmrupitch">MRU Pitch:</label>
+              <select name="sensorSanitycheckmrupitch" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="180">180</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Ensure MRU mounting
+                pitch is 180 degrees.</p>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              <label for="sensorSanitycheckmrufw">MRU Firmware:</label>
+              <select name="sensorSanitycheckmrufw" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="2.4.10">2.4.10</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Ensure MRU firmware is
+                2.4.10.</p>
+            </td>
+
+          </tr>
 
 
+          <tr>
+            <td>
+              <label for="sensorSanitycheckheading">Site heading:</label>
+              <select name="sensorSanitycheckheading" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Ensure site heading is
+                visible.</p>
+            </td>
 
+          </tr>
 
+          <tr>
+            <td>
+              <label for="sensorSanitycheckmotionpage">Motion Page:</label>
+              <select name="sensorSanitycheckmotionpage" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Ensure motion page is
+                showing data.</p>
+            </td>
 
+          </tr>
 
+          <tr>
+            <td>
+              <label for="sensorSanitycheckrollpitch">Roll & Pitch:</label>
+              <select name="sensorSanitycheckrollpitch" style="width: 150px;">
+                <option value=" "> </option>
+                <option value="OK">OK</option>
+                <option value="Not OK">Not OK</option>
+              </select>
+            </td>
+            <td>
+              <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">If on land, should not
+                show many deviations from +/-0 deg.</p>
+            </td>
 
+          </tr>
 
+        </table>
 
+        <h3>Service check</h3>
 
-
-
-
-
+        <table>
 
 
 
@@ -2400,6 +2527,29 @@
 
 
         </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <label for="em129Comments">Comments:</label>
         <!-- <input type="text" name="em129Comments" style="width:300px; height: 100px;"> -->
         <textarea type="em129Comments" name="em129Comments" rows="8" cols="40"></textarea>
