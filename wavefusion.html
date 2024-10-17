@@ -36,7 +36,6 @@
 
       </select>
     </form>
-    <h2>Miros IoT</h2>
     <h3>WaveFusion</h3>
     <p>The following page should be used to ensure the system is commissioned correctly and all the relevant site
       information is captured.</p>
@@ -48,18 +47,15 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
-
-        <!-- OVERVIEW. -->
-
+<br>
+<br>
+<br>
+    <br>   
+    <br>
+    <br> 
+    
+    
+    <!-- OVERVIEW. -->
         <h2>1. Overview</h2>
         <label for="system">System:</label>
         <select name="system">
@@ -1218,9 +1214,9 @@
             </td>
           </tr>
         </table>
-        <label for="radarLocation">Radar Location Suitability:</label>
+        <label for="sensorLocation">Sensor Location Suitability:</label>
         <!-- <input type="text" name="radarLocation" style="width: 400px;height: 100px;"> -->
-        <textarea type="radarLocation" name="radarLocation" rows="8" cols="40"></textarea>
+        <textarea type="sensorLocation" name="sensorLocation" rows="8" cols="40"></textarea>
         <!-- NETWORK DETAILS. -->
         <div class="line"></div>
         <h2>4. Network Details</h2>
@@ -1707,7 +1703,6 @@
         <div class="line"></div>
 
            <!-- COMMISSIONING. -->
-        <div class="line"></div>
 
         <h2>6. Configuration & Commissioning</h2>
         <button class="show_explanation">Info</button>
@@ -1767,6 +1762,7 @@
             </td>
 
           </tr>
+          
 
 
           <tr>
@@ -2058,8 +2054,14 @@
           </tr>
 
         </table>
+        <div class="line_sub"></div>
+        <h3>6.2 Status check</h3>
+        <button class="show_explanation">Info</button>
+        <p class="expandableText" style="display: none;" width="100x">XXX.
+        </p>
+        <br>
+        <br>
 
-        <h3>Status check</h3>
 
         <table>
           <tr>
@@ -2187,7 +2189,15 @@
 
         </table>
 
-        <h3>Service check</h3>
+        <h3>6.3 Service check</h3>
+        <button class="show_explanation">Info</button>
+        <p class="expandableText" style="display: none;" width="100x">XXX.
+        </p>
+        <br>
+        <br>
+        <div class="line_sub"></div>
+
+
 
         <table>
 
@@ -2303,28 +2313,11 @@
             <table>
               <tr>
                 <td>
-                  <label for="backupWavexJson">Config JSON:</label>
-                  <select name="backupWavexJson" style="width: 150px;">
+                  <label for="backupJson">Config JSON:</label>
+                  <select name="backupJson" style="width: 150px;">
                     <option value=" "> </option>
                     <option value="OK">OK</option>
                     <option value="Not OK">Not OK</option>
-                  </select>
-                </td>
-                <td>
-                  <label for="backupDF047">Radar Images:</label>
-                  <select name="backupDF047" style="width: 150px;">
-                    <option value=" "> </option>
-                    <option value="OK">OK</option>
-                    <option value="Not OK">Not OK</option>
-                  </select>
-                </td>
-                <td>
-                  <label for="backupEM129">EM-129 Configuration:</label>
-                  <select name="backupEM129" style="width: 150px;">
-                    <option value=" "> </option>
-                    <option value="OK">OK</option>
-                    <option value="Not OK">Not OK</option>
-                    <option value="NA">NA</option>
                   </select>
                 </td>
                 <td>
