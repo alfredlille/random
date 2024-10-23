@@ -335,7 +335,7 @@ function saveImageDataAndDescriptionOLD(key, imageData, description) {
 }
 
 
-function exportToJson() {
+function exportToJsonWavex() {
   // Get the form element values
   var systemValue = document.querySelector('select[name="system"]').value;
   var workTypeValue = document.querySelector('select[name="workType"]').value;
@@ -1742,7 +1742,7 @@ function fillFormFromJson(data) {
 
 
 
-function openFullReport() {
+function openFullReportWavex() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
@@ -3849,7 +3849,7 @@ function openFullReportMocean() {
 }
 
 
-function openReport() {
+function openReportWavex() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
