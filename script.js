@@ -3849,6 +3849,7 @@ function openFullReportMocean() {
 }
 
 
+
 function openReportWavex() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
