@@ -508,106 +508,20 @@ function openFullReportWaveFusion() {
 </tr>
 </tbody>
 </table>
-<h4>3.2 Equipment Specific Checks</h4>
+<h4>3.2 Measure Area Checks</h4>
 
-  <h4>Radar</h4>
+  <h4>Sensor</h4>
   <table>
   <tr>
-  <td class="table-cell"><span class="emphasis">Radar Manufacturer:</span> ${selectedElements.radarManufacturer}</td>
-  <td style="padding-right: 20px;"><strong>Radar Model:</strong> ${selectedElements.radarModel}</td>
+  <td style="padding-right: 20px;"><strong>Sensor Down Viewpoint:</strong> ${selectedElements.sensorFrontOpenView}</td>
+  <td style="padding-right: 20px;"><strong>Sensor Down Viewpoint:</strong> ${selectedElements.sensorDownOpenView}</td>
+  <td style="padding-right: 20px;"><strong>Suitable Direction:</strong> ${selectedElements.sensorDirectionPredominance}</td>
     </tr>
     <tr>  
 
-    <td style="padding-right: 20px;"><strong>Radar Use:</strong> ${selectedElements.radarUse}</td>
-    <td style="padding-right: 20px;"><strong>Radar Txtime:</strong> ${selectedElements.radarTxtime}</td>
+    <td style="padding-right: 20px;"><strong>Sensor Location Suitability:</strong> ${selectedElements.sensorLocation}</td>
     </tr>
-    <tr>  
-
-    <td style="padding-right: 20px;"><strong>Radar Location:</strong> ${selectedElements.radarLocation}</td>
-    <td style="padding-right: 20px;"><strong>Radar Settings:</strong> ${selectedElements.radarSettings}</td>
-  </tr>
   </table>
-  <h4>Other Checks</h4>
-  <table>
-  <tr>
-    <td style="padding-right: 20px;"><strong>GPS Check:</strong> ${selectedElements.gpsCheck}</td>
-    <td style="padding-right: 20px;"><strong>Gyro Check:</strong> ${selectedElements.gyroCheck}</td>
-    <td style="padding-right: 20px;"><strong>Wind Check:</strong> ${selectedElements.windCheck}</td>
-    </tr>
-    <tr>  
-    <td style="padding-right: 20px;"><strong>Draught Check:</strong> ${selectedElements.draughtCheck}</td>
-    <td style="padding-right: 20px;"><strong>Wave Check:</strong> ${selectedElements.waveCheck}</td>
-    <td style="padding-right: 20px;"><strong>Speed Log Check:</strong> ${selectedElements.speedlogCheck}</td>
-  </tr>
-  </table>
-  <h4>Radar Signal Cable Checks</h4>
-  <table>
-  <tr>
-  <td style="padding-right: 20px;"><strong>Video Cable Type:</strong> ${selectedElements.videoCableType}</td>
-    <td style="padding-right: 20px;"><strong>Video Cable Impedance:</strong> ${selectedElements.videoCableImpedance}</td>
-    <td style="padding-right: 20px;"><strong>Video Cable Comments:</strong> ${selectedElements.videoCableComments}</td>
-    </tr>
-    <tr>
-  
-    <td style="padding-right: 20px;"><strong>Sync Cable Type:</strong> ${selectedElements.syncCableType}</td>
-    <td style="padding-right: 20px;"><strong>Sync Cable Impedance:</strong> ${selectedElements.syncCableImpedance}</td>
-    <td style="padding-right: 20px;"><strong>Sync Cable Comments:</strong> ${selectedElements.syncCableComments}</td>
-  </tr>
-  <tr>
-  <td style="padding-right: 20px;"><strong>Azimuth Cable Type:</strong> ${selectedElements.azimuthCableType}</td>
-    <td style="padding-right: 20px;"><strong>Azimuth Cable Impedance:</strong> ${selectedElements.azimuthCableImpedance}</td>
-    <td style="padding-right: 20px;"><strong>Azimuth Cable Comments:</strong> ${selectedElements.azimuthCableComments}</td>
-    </tr>
-    <tr>
-  
-    <td style="padding-right: 20px;"><strong>Heading Cable Type:</strong> ${selectedElements.headingCableType}</td>
-    <td style="padding-right: 20px;"><strong>Heading Cable Impedance:</strong> ${selectedElements.headingCableImpedance}</td>
-    <td style="padding-right: 20px;"><strong>Heading Cable Comments:</strong> ${selectedElements.headingCableComments}</td>
-  </tr>
-</table>
-<h4>Signal Jumper Checks</h4>
-<table>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Video Jumper:</strong> ${formData.videoJumper}</td>
-    <td style="padding-right: 20px;"><strong>Sync Jumper:</strong> ${formData.syncJumper}</td>
-    </tr>
-    <tr>
-
-    <td style="padding-right: 20px;"><strong>Azimuth Jumper:</strong> ${formData.azimuthJumper}</td>
-    <td style="padding-right: 20px;"><strong>Heading Jumper:</strong> ${formData.headingJumper}</td>
-    </tr>
-    <tr>
-
-    <td style="padding-right: 20px;"><strong>Pullup Jumper:</strong> ${formData.pullupJumper}</td>
-    <td style="padding-right: 20px;"><strong>Pulldown Jumper:</strong> ${formData.pulldownJumper}</td>
-  </tr>
-  </table>
-  <h4>Radar Miscellaneous Checks</h4>
-  <table>
-  <tr>
-    <td style="padding-right: 20px;"><strong>Amplifier Type:</strong> ${formData.amplifierType}</td>
-    <td style="padding-right: 20px;"><strong>Amplifier Check:</strong> ${formData.amplifierCheck}</td>
-    <td style="padding-right: 20px;"><strong>Amplifier Comments:</strong> ${formData.amplifierComments}</td>
-    </tr>
-    <tr>
-
-    <td style="padding-right: 20px;"><strong>Radar Firewall Type:</strong> ${formData.radarFirewallType}</td>
-    <td style="padding-right: 20px;"><strong>Radar Firewall Check:</strong> ${formData.radarFirewallCheck}</td>
-    <td style="padding-right: 20px;"><strong>Radar Firewall Comments:</strong> ${formData.radarFirewallComments}</td>
-  </tr>
-  </table>
-  <h4>Other Hardware Checks</h4>
-  <table>
-
-  <tr>
-    <td style="padding-right: 20px;"><strong>Serial Interface Type:</strong> ${formData.serialInterfaceType}</td>
-    <td style="padding-right: 20px;"><strong>Serial Interface Check:</strong> ${formData.serialInterfaceCheck}</td>
-    <td style="padding-right: 20px;"><strong>Serial Interface Comments:</strong> ${formData.serialInterfaceComments}</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
 <h3>4. Network Information</h3>
 <h4>4.1 Site Network Connections</h4>
 
@@ -690,47 +604,47 @@ function openFullReportWaveFusion() {
 
 
 </table>
-<h3>5. Startup</h3>
-<h4>5.1 Computer and Software Installation Check</h4>
+<h3>Site Configuration</h3>
+<h4>add textk</h4>
 <table>
   <tr>
-    <td style="padding-right: 20px;"><strong>Computer Startup:</strong> ${formData.computerStartup}</td>
-    <td style="padding-right: 20px;"><strong>System Requirements:</strong> ${formData.systemRequirements}</td>
+    <td style="padding-right: 20px;"><strong>Mounting Height:</strong> ${formData.sensorMountingHeight}</td>
+    <td style="padding-right: 20px;"><strong>Look Direction:</strong> ${formData.sensorLookDirection}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Windows Version:</strong> ${formData.windowsVersion}</td>
-    <td style="padding-right: 20px;"><strong>Wavex Startup:</strong> ${formData.wavexStartup}</td>
+    <td style="padding-right: 20px;"><strong>Footprint Distance:</strong> ${formData.sensorDistanceFootprint}</td>
+    <td style="padding-right: 20px;"><strong>Footprint Depth:</strong> ${formData.sensorDepthFootprint}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Wavex Options:</strong> ${formData.wavexOptions}</td>
-    <td style="padding-right: 20px;"><strong>Third Party Startup:</strong> ${formData.thirdPartyStartup}</td>
+    <td style="padding-right: 20px;"><strong>Time Sync:</strong> ${formData.sensorTimeSync}</td>
+    <td style="padding-right: 20px;"><strong>Time Server:</strong> ${formData.sensorTimeServer}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Storage Space:</strong> ${formData.storageSpace}</td>
-    <td style="padding-right: 20px;"><strong>Remote Access Tools:</strong> ${formData.remoteAccessTools}</td>
+    <td style="padding-right: 20px;"><strong>Heading Input:</strong> ${formData.sensorHeadingInput}</td>
+    <td style="padding-right: 20px;"><strong>Settings:</strong> ${formData.sensorHeadingSource}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Serial Mouse Fix:</strong> ${formData.serialMouseFix}</td>
-    <td style="padding-right: 20px;"><strong>Network Interface Config:</strong> ${formData.networkInterfaceConfig}</td>
+    <td style="padding-right: 20px;"><strong>Minimum Range:</strong> ${formData.sensorMinRange}</td>
+    <td style="padding-right: 20px;"><strong>Maximum Range:</strong> ${formData.sensorMaxRange}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Windows Firewall:</strong> ${formData.windowsFirewall}</td>
-    <td style="padding-right: 20px;"><strong>AntiVirus:</strong> ${formData.antiVirus}</td>
+    <td style="padding-right: 20px;"><strong>Water Level Reference:</strong> ${formData.sensorWaterRef}</td>
+    <td style="padding-right: 20px;"><strong>Tracking:</strong> ${formData.sensorTracking}</td>
   </tr>
   </table>
-  <h4>5.2 System Startup</h4>
+  <h4>continued...</h4>
 <table>
   <tr>
-    <td style="padding-right: 20px;"><strong>GPS Check 2:</strong> ${formData.gpsCheck2}</td>
-    <td style="padding-right: 20px;"><strong>Gyro Check 2:</strong> ${formData.gyroCheck2}</td>
+    <td style="padding-right: 20px;"><strong>Window Size:</strong> ${formData.sensorWindowSize}</td>
+    <td style="padding-right: 20px;"><strong>Time Constant:</strong> ${formData.sensorTimeConstant}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Wind Check 2:</strong> ${formData.windCheck2}</td>
-    <td style="padding-right: 20px;"><strong>Draught Check 2:</strong> ${formData.draughtCheck2}</td>
+    <td style="padding-right: 20px;"><strong>Scan To Average:</strong> ${formData.sensorScanToAverage}</td>
+    <td style="padding-right: 20px;"><strong>Scan To Average Phase:</strong> ${formData.sensorScanToAveragePhase}</td>
   </tr>
   <tr>
-    <td style="padding-right: 20px;"><strong>Wave Check 2:</strong> ${formData.waveCheck2}</td>
-    <td style="padding-right: 20px;"><strong>Speed Log Check 2:</strong> ${formData.speedlogCheck2}</td>
+    <td style="padding-right: 20px;"><strong>Sensor Heading Server:</strong> ${formData.sensorHeadingServer}</td>
+    <td style="padding-right: 20px;"><strong>Sensor Heading Port:</strong> ${formData.sensorHeadingPort}</td>
   </tr>
   </table>
   <h3>6. Configuration & Commissioning</h3>
