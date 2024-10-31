@@ -5469,6 +5469,103 @@ function showExplanation(event) {
   }
 }
 
+function showHelpAlert(heading1 = "Enter Heading 1 Here", text1 = "Enter Paragraph 1 Here", heading2 = "Enter Heading 2 Here", text2 = "Enter Paragraph 2 Here", heading3 = "Enter Heading 3 Here", text3 = "Enter Paragraph 3 Here") {
+  // Check if the popup already exists and remove it to avoid duplicates
+  const existingPopup = document.getElementById("customAlertPopup");
+  if (existingPopup) {
+      existingPopup.remove();
+  }
+
+  // Create overlay
+  const overlay = document.createElement("div");
+  overlay.id = "customAlertPopup";
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  overlay.style.display = "flex";
+  overlay.style.justifyContent = "center";
+  overlay.style.alignItems = "center";
+  overlay.style.zIndex = "1000";
+
+  // Create popup box
+  const popupBox = document.createElement("div");
+  popupBox.style.backgroundColor = "white";
+  popupBox.style.padding = "20px";
+  popupBox.style.borderRadius = "8px";
+  popupBox.style.width = "320px";
+  popupBox.style.textAlign = "left";
+  popupBox.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+
+  // Helper function to create a heading
+  function createHeading(text) {
+      const heading = document.createElement("div");
+      heading.innerText = text;
+      heading.style.fontSize = "1.2em";
+      heading.style.fontWeight = "bold";
+      heading.style.marginBottom = "5px";
+      return heading;
+  }
+
+  // Helper function to create a paragraph
+  function createParagraph(text) {
+      const paragraph = document.createElement("div");
+      paragraph.innerText = text;
+      paragraph.style.fontSize = "1em";
+      paragraph.style.color = "#555";
+      paragraph.style.marginBottom = "15px";
+      return paragraph;
+  }
+
+  // Add headings and paragraphs to popup
+  popupBox.appendChild(createHeading(heading1));
+  popupBox.appendChild(createParagraph(text1));
+  popupBox.appendChild(createHeading(heading2));
+  popupBox.appendChild(createParagraph(text2));
+  popupBox.appendChild(createHeading(heading3));
+  popupBox.appendChild(createParagraph(text3));
+
+  // Create close button
+  const closeButton = document.createElement("button");
+  closeButton.innerText = "Close";
+  closeButton.style.backgroundColor = "#333";
+  closeButton.style.color = "white";
+  closeButton.style.border = "none";
+  closeButton.style.padding = "8px 12px";
+  closeButton.style.marginTop = "15px";
+  closeButton.style.cursor = "pointer";
+  closeButton.style.borderRadius = "5px";
+  closeButton.onclick = function () {
+      document.body.removeChild(overlay);
+  };
+
+  // Append close button to popup box
+  popupBox.appendChild(closeButton);
+
+  // Append popup box to overlay
+  overlay.appendChild(popupBox);
+
+  // Append overlay to body
+  document.body.appendChild(overlay);
+}
+
+// Example usage with custom or default text
+showCustomAlert(
+  "Introduction",          // Heading 1
+  "Welcome to our website.", // Paragraph 1
+  "Features",             // Heading 2
+  "We offer a range of services.", // Paragraph 2
+  "Get Started",         // Heading 3
+  "Explore more by signing up."  // Paragraph 3
+);
+
+// Usage
+// Call this function wherever needed to show the custom alert
+// Example: showCustomAlert("Heading 1", "Text 1", "Heading 2", "Text 2", "Heading 3", "Text 3");
+
+
 // Wait for the DOM to be loaded before attaching the event listener
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("showExplanation").addEventListener("click", showExplanation);
