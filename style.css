@@ -115,6 +115,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-right: 30px;
 }
 
+
+
 .toggle_scroll {
   background-color: #171C23;
   border-style: none;
@@ -122,6 +124,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   float: right;
+  margin-right: 4px;
+}
+
+.help_button {
+  background-color: #171C23;
+  border-style: none;
+  color: lightgreen;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  float: right;
+
   margin-right: 4px;
 }
 

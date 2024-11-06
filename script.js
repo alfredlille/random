@@ -1747,7 +1747,7 @@ function openFullReportWavex() {
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
-    alert('Check the work status. It is not possible to generate a cloud certificate at this stage.');
+    alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
   }
 
@@ -2788,7 +2788,7 @@ function openFullReportMocean() {
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
-    alert('Check the work status. It is not possible to generate a cloud certificate at this stage.');
+    alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
   }
 
@@ -3855,7 +3855,7 @@ function openReportWavex() {
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
-    alert('Check the work status. It is not possible to generate a cloud certificate at this stage.');
+    alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
   }
 
@@ -4556,7 +4556,7 @@ function openReportMocean() {
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
-    alert('Check the work status. It is not possible to generate a cloud certificate at this stage.');
+    alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
   }
 
@@ -5257,7 +5257,7 @@ function openCloudCertificateOLD() {
   const workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
-    alert('Check the work status. It is not possible to generate a cloud certificate at this stage.');
+    alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
   }
 
@@ -5362,7 +5362,7 @@ function openCloudCertificate() {
   const workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
-    alert('Check the work status. It is not possible to generate a cloud certificate at this stage.');
+    alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
   }
 
@@ -5469,14 +5469,55 @@ function showExplanation(event) {
   }
 }
 
-function showHelpAlert(heading1 = "Enter Heading 1 Here", text1 = "Enter Paragraph 1 Here", heading2 = "Enter Heading 2 Here", text2 = "Enter Paragraph 2 Here", heading3 = "Enter Heading 3 Here", text3 = "Enter Paragraph 3 Here") {
-  // Check if the popup already exists and remove it to avoid duplicates
+function showHelpAlert() {
+  // Define your headings, paragraphs, and hyperlinks here
+  const heading1 = "How to use this tool";
+  const text1 = "Follow the relevant system commissioning procedure and fill in all required fields.";
+  const heading2 = "Generating reports";
+  const text2 = "Once completed, generate a report and print as a .pdf file. Remember to include backgrounds and images.";
+  const heading3 = "Saving data";
+  const text3 = "Data is automatically saved in browser cache but ensure you download the data as a .json file for future usage.";
+  
+  // New Headings and Paragraphs with Hyperlinks
+  const heading4 = "Wavex Commissioning Procedure";
+  const text4 = "<a href='https://mirosas.sharepoint.com/sites/doc/PR-002/PublishedDocuments/PR-002%20-%20Wavex%20v6.1%20commissioning%20(Procedure).pdf' target='_blank'>Link</a>";
+  const heading5 = "Product Page";
+  const text5 = "<a href='https://mirosas.sharepoint.com/sites/doc/PR-002/PublishedDocuments/Forms/AllDocuments.aspx' target='_blank'>Link</a>";
+
+  // Check if the popup already exists to avoid duplicates
   const existingPopup = document.getElementById("customAlertPopup");
   if (existingPopup) {
-      existingPopup.remove();
+    existingPopup.remove();
   }
 
   // Create overlay
+  const overlay = createOverlay();
+
+  // Create the popup box
+  const popupBox = createPopupBox();
+
+  // Append headings and paragraphs
+  popupBox.appendChild(createContent(heading1, text1));
+  popupBox.appendChild(createContent(heading2, text2));
+  popupBox.appendChild(createContent(heading3, text3));
+
+  // Append the new headings and paragraphs with hyperlinks
+  popupBox.appendChild(createContent(heading4, text4));
+  popupBox.appendChild(createContent(heading5, text5));
+
+  // Create and add the close button
+  const closeButton = createCloseButton(overlay);
+  popupBox.appendChild(closeButton);
+
+  // Append popup box to overlay
+  overlay.appendChild(popupBox);
+
+  // Append the overlay to the body
+  document.body.appendChild(overlay);
+}
+
+// Helper function to create the overlay
+function createOverlay() {
   const overlay = document.createElement("div");
   overlay.id = "customAlertPopup";
   overlay.style.position = "fixed";
@@ -5489,8 +5530,11 @@ function showHelpAlert(heading1 = "Enter Heading 1 Here", text1 = "Enter Paragra
   overlay.style.justifyContent = "center";
   overlay.style.alignItems = "center";
   overlay.style.zIndex = "1000";
+  return overlay;
+}
 
-  // Create popup box
+// Helper function to create the popup box
+function createPopupBox() {
   const popupBox = document.createElement("div");
   popupBox.style.backgroundColor = "white";
   popupBox.style.padding = "20px";
@@ -5498,39 +5542,39 @@ function showHelpAlert(heading1 = "Enter Heading 1 Here", text1 = "Enter Paragra
   popupBox.style.width = "320px";
   popupBox.style.textAlign = "left";
   popupBox.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+  return popupBox;
+}
 
-  // Helper function to create a heading
-  function createHeading(text) {
-      const heading = document.createElement("div");
-      heading.innerText = text;
-      heading.style.fontSize = "1.2em";
-      heading.style.fontWeight = "bold";
-      heading.style.marginBottom = "5px";
-      return heading;
-  }
+// Helper function to create content (heading + paragraph)
+function createContent(headingText, paragraphText) {
+  const content = document.createElement("div");
 
-  // Helper function to create a paragraph
-  function createParagraph(text) {
-      const paragraph = document.createElement("div");
-      paragraph.innerText = text;
-      paragraph.style.fontSize = "1em";
-      paragraph.style.color = "#555";
-      paragraph.style.marginBottom = "15px";
-      return paragraph;
-  }
+  // Create heading
+  const heading = document.createElement("div");
+  heading.innerText = headingText;
+  heading.style.fontSize = "1.2em";
+  heading.style.fontWeight = "bold";
+  heading.style.marginBottom = "5px";
+  heading.style.color = "black";  // Set heading text color to black
+  
+  // Create paragraph with possible hyperlinks
+  const paragraph = document.createElement("div");
+  paragraph.innerHTML = paragraphText;  // Use innerHTML to allow for hyperlinks in the text
+  paragraph.style.fontSize = "1em";
+  paragraph.style.color = "black";  // Set paragraph text color to black
+  paragraph.style.marginBottom = "15px";
 
-  // Add headings and paragraphs to popup
-  popupBox.appendChild(createHeading(heading1));
-  popupBox.appendChild(createParagraph(text1));
-  popupBox.appendChild(createHeading(heading2));
-  popupBox.appendChild(createParagraph(text2));
-  popupBox.appendChild(createHeading(heading3));
-  popupBox.appendChild(createParagraph(text3));
+  content.appendChild(heading);
+  content.appendChild(paragraph);
 
-  // Create close button
+  return content;
+}
+
+// Helper function to create the close button
+function createCloseButton(overlay) {
   const closeButton = document.createElement("button");
   closeButton.innerText = "Close";
-  closeButton.style.backgroundColor = "#333";
+  closeButton.style.backgroundColor = "#232B35";
   closeButton.style.color = "white";
   closeButton.style.border = "none";
   closeButton.style.padding = "8px 12px";
@@ -5538,32 +5582,11 @@ function showHelpAlert(heading1 = "Enter Heading 1 Here", text1 = "Enter Paragra
   closeButton.style.cursor = "pointer";
   closeButton.style.borderRadius = "5px";
   closeButton.onclick = function () {
-      document.body.removeChild(overlay);
+    document.body.removeChild(overlay);
   };
-
-  // Append close button to popup box
-  popupBox.appendChild(closeButton);
-
-  // Append popup box to overlay
-  overlay.appendChild(popupBox);
-
-  // Append overlay to body
-  document.body.appendChild(overlay);
+  return closeButton;
 }
 
-// Example usage with custom or default text
-showCustomAlert(
-  "Introduction",          // Heading 1
-  "Welcome to our website.", // Paragraph 1
-  "Features",             // Heading 2
-  "We offer a range of services.", // Paragraph 2
-  "Get Started",         // Heading 3
-  "Explore more by signing up."  // Paragraph 3
-);
-
-// Usage
-// Call this function wherever needed to show the custom alert
-// Example: showCustomAlert("Heading 1", "Text 1", "Heading 2", "Text 2", "Heading 3", "Text 3");
 
 
 // Wait for the DOM to be loaded before attaching the event listener

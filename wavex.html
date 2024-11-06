@@ -37,44 +37,7 @@
       </select>
     </form>
 
-    <br>
 
-    <button class="show_explanation">Info</button>
-    <div class="expandableText">
-      <h2>How to use this tool</h2>
-      <p>Additional text
-      </p>
-      <ul>
-        <li>
-          <span>Filling our the report:</span>
-          <ol>
-            <li>Please consult the relevant commissioning procedure before carrying out any of the following checks. This tool serves as a way of recording that a commissioning is completed in the correct way</li>
-          </ol>
-        </li>
-        <li>
-          <span>Report types:</span>
-          <ol>
-            <li>There are 2 reports you can generate. A standard report only contains basic information, a full report contains all the information recorded.
-            </li>
-          </ol>
-        </li>
-        <li>
-          <span>Download and upload:</span>
-          <ol>
-            <li>Always download the recorded data as a json file using the download button. The upload button allows you to edit and regenerate a report.
-            </li>
-          </ol>
-          <li>
-            <span>Printing:</span>
-
-          <ol>
-            <li>Saver the report as a PDF and ensure you check the print backgrounds button.
-            </li>
-          </ol>
-
-        </li>
-      </ul>
-    </div>
 
 
     <h2>X Band Suite</h2>
@@ -3430,9 +3393,11 @@
     <button class="button" onclick="exportToJsonWavex()">Download</button>
     <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">
     <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload</button>
-    <button class="button" onclick="showHelpAlert()">Help</button>
     <button class="clear_button" onclick="clearForm()">Clear Data</button>
     <button class="toggle_scroll" onclick="toggleScroll()">Jump to End / Start</button>
+    <button class="help_button" onclick="showHelpAlert()">Help</button>
+
+    
   </div>
 </body>
 
