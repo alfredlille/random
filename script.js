@@ -648,8 +648,9 @@ function exportToJsonWavex() {
   var loginPassword3Value = document.querySelector('input[name="loginPassword3"]').value;
   var loginComments3Value = document.querySelector('input[name="loginComments3"]').value;
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
-  var subscriptionExpiryValue = document.querySelector('input[name="subscriptionExpiry"]').value;
   var subscriptionStatusValue = document.querySelector('input[name="subscriptionStatus"]').value;
+
+  var subscriptionExpiryValue = document.querySelector('input[name="subscriptionExpiry"]').value;
 
 
   var generalCommentsValue = document.querySelector('textarea[name="generalComments"]').value;
@@ -666,8 +667,9 @@ function exportToJsonWavex() {
     system: systemValue,
     workType: workTypeValue,
     workStatus: workStatusValue,
-    subscriptionExpiry: subscriptionExpiryValue,
     subscriptionStatus: subscriptionStatusValue,
+
+    subscriptionExpiry: subscriptionExpiryValue,
     generalComments: generalCommentsValue,
     siteType: siteTypeValue,
     customer: customerValue,
@@ -1325,8 +1327,9 @@ function exportToJsonMocean() {
   var loginPassword3Value = document.querySelector('input[name="loginPassword3"]').value;
   var loginComments3Value = document.querySelector('input[name="loginComments3"]').value;
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
-  var subscriptionExpiryValue = document.querySelector('input[name="subscriptionExpiry"]').value;
   var subscriptionStatusValue = document.querySelector('input[name="subscriptionStatus"]').value;
+
+  var subscriptionExpiryValue = document.querySelector('input[name="subscriptionExpiry"]').value;
 
 
   var generalCommentsValue = document.querySelector('textarea[name="generalComments"]').value;
@@ -1343,8 +1346,9 @@ function exportToJsonMocean() {
     system: systemValue,
     workType: workTypeValue,
     workStatus: workStatusValue,
-    subscriptionExpiry: subscriptionExpiryValue,
     subscriptionStatus: subscriptionStatusValue,
+
+    subscriptionExpiry: subscriptionExpiryValue,
     generalComments: generalCommentsValue,
     siteType: siteTypeValue,
     customer: customerValue,
@@ -2099,11 +2103,7 @@ function openFullReportWavex() {
     <div class="info"><span class="label">Date:</span> <span class="value">${selectedElements.date}</span></div>
     <div class="info"><span class="label">Work Type:</span> <span class="value">${selectedElements.workType}</span></div>
     <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
-    <div class="info">
- <span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus}</span>
-    <span class="label"></span> <span class="value">${selectedElements.subscriptionExpiry}</span>
-    
-    </div>
+    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus}   ${selectedElements.subscriptionExpiry}</span></div>
 </div>
 <!-- Large image to the right -->
 <EDITimg src="header.jpeg" alt="Large Image Description" class="large-image">
@@ -3125,8 +3125,8 @@ function openFullReportMocean() {
     loginPassword3: formData.loginPassword3,
     loginComments3: formData.loginComments3,
     workStatus: formData.workStatus,
-    subscriptionExpiry: formData.subscriptionExpiry,
     subscriptionStatus: formData.subscriptionStatus,
+    subscriptionExpiry: formData.subscriptionExpiry,
 
     generalComments: formData.generalComments
   };
@@ -3156,10 +3156,7 @@ function openFullReportMocean() {
     <div class="info"><span class="label">Date:</span> <span class="value">${selectedElements.date}</span></div>
     <div class="info"><span class="label">Work Type:</span> <span class="value">${selectedElements.workType}</span></div>
     <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
-    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span>
-        <span class="label"></span> <span class="value">${selectedElements.subscriptionStatus}</span>
-
-    </div>
+    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus},${selectedElements.subscriptionExpiry}</span></div>
 </div>
 <!-- Large image to the right -->
 <EDITimg src="header.jpeg" alt="Large Image Description" class="large-image">
@@ -4071,8 +4068,9 @@ function openReportWavex() {
     loginPassword3: formData.loginPassword3,
     loginComments3: formData.loginComments3,
     workStatus: formData.workStatus,
-    subscriptionExpiry: formData.subscriptionExpiry,
     subscriptionStatus: formData.subscriptionStatus,
+
+    subscriptionExpiry: formData.subscriptionExpiry,
 
 
     generalComments: formData.generalComments
@@ -4103,8 +4101,7 @@ function openReportWavex() {
     <div class="info"><span class="label">Date:</span> <span class="value">${selectedElements.date}</span></div>
     <div class="info"><span class="label">Work Type:</span> <span class="value">${selectedElements.workType}</span></div>
     <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
-    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span>
-<span class="label"></span> <span class="value">${selectedElements.subscriptionStatus}</span>    </div>
+    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus}   ${selectedElements.subscriptionExpiry}</span></div>
 </div>
 <!-- Large image to the right -->
 <img src="none.png" alt="Large Image Description" class="large-image">
@@ -4776,8 +4773,9 @@ function openReportMocean() {
     loginPassword3: formData.loginPassword3,
     loginComments3: formData.loginComments3,
     workStatus: formData.workStatus,
-    subscriptionExpiry: formData.subscriptionExpiry,
     subscriptionStatus: formData.subscriptionStatus,
+
+    subscriptionExpiry: formData.subscriptionExpiry,
     generalComments: formData.generalComments
   };
 
@@ -4806,7 +4804,7 @@ function openReportMocean() {
     <div class="info"><span class="label">Date:</span> <span class="value">${selectedElements.date}</span></div>
     <div class="info"><span class="label">Work Type:</span> <span class="value">${selectedElements.workType}</span></div>
     <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
-    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span></div>
+    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus},${selectedElements.subscriptionExpiry}</span></div>
 </div>
 <!-- Large image to the right -->
 <EDITimg src="header.jpeg" alt="Large Image Description" class="large-image">
@@ -5341,8 +5339,8 @@ function openCloudCertificateOLD() {
     <p><span style="font-weight:bold;">Customer:</span> <span style="font-weight:normal;">${selectedElements.customer}</span></p>
     <p><span style="font-weight:bold;">Date:</span> <span style="font-weight:normal;">${selectedElements.date}</span></p>
     <p><span style="font-weight:bold;">Work Status:</span> <span style="font-weight:normal;">${selectedElements.workStatus}</span></p>
-    <p><span style="font-weight:bold;">Subscription Expiry:</span> <span style="font-weight:normal;">${selectedElements.subscriptionExpiry}</span></p>
-  </div>
+    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus},${selectedElements.subscriptionExpiry}</span></div>
+</div>
 
   <div class="container">
     <br>
@@ -5438,8 +5436,8 @@ function openCloudCertificate() {
     <p><span style="font-weight:bold;">Customer:</span> <span style="font-weight:normal;">${selectedElements.customer}</span></p>
     <p><span style="font-weight:bold;">Date:</span> <span style="font-weight:normal;">${selectedElements.date}</span></p>
     <p><span style="font-weight:bold;">Work Status:</span> <span style="font-weight:normal;">${selectedElements.workStatus}</span></p>
-    <p><span style="font-weight:bold;">Subscription Expiry:</span> <span style="font-weight:normal;">${selectedElements.subscriptionExpiry}</span></p>
-  </div>
+    <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus},${selectedElements.subscriptionExpiry}</span></div>
+</div>
 
   <div class="container">
     <br>
