@@ -90,6 +90,8 @@
           <option value="Work & Repair Vessel">Work & Repair Vessel</option>
           <option value="Multi Purpose Vessel">Multi Purpose Vessel</option>
           <option value="FPSO">FPSO</option>
+          <option value="Port">Port</option>
+
         </select>
         <label for="customer">Customer:</label>
         <input type="text" name="customer">
@@ -3233,8 +3235,8 @@
               <table>
                 <tr>
                   <td>
-                    <label for="backupOSDJson">Config JSON:</label>
-                    <select name="backupOSDJson" style="width: 150px;">
+                    <label for="backupWavexJson">Config JSON:</label>
+                    <select name="backupWavexJson" style="width: 150px;">
                       <option value=" "> </option>
                       <option value="OK">OK</option>
                       <option value="Not OK">Not OK</option>
@@ -3365,6 +3367,15 @@
                     </select>
                   </td>
                   <td>
+                    <label for="subscriptionStatus">Subscription Status:</label>
+                    <select name="subscriptionStatus" style="width:200px;">
+                      <option value="NA">NA</option>
+                      <option value="Miros Cloud">Miros Cloud</option>
+                      <option value="Miros aaS">Miros aaS</option>
+                    </select>
+                  </td>
+
+                  <td>
                     <label for="subscriptionExpiry">aaS Subscription Expiry:</label>
                     <input type="date" id="dateInputNextYear" name="subscriptionExpiry" style="width:200px">
                   </td>
@@ -3383,10 +3394,10 @@
     <input type="file" id="imageFileInput" multiple accept="image/*" style="display: none;"
       onchange="handleImageFiles(event)">
     <button class="img_button" onclick="document.getElementById('imageFileInput').click()">Add Images</button>
-    <button class="button" onclick="openReport()">Standard Report</button>
+    <button class="button" onclick="openReportWavex()">Standard Report</button>
     <button class="button" onclick="openFullReport()">Detailed Report</button>
     <button class="button" onclick="openCloudCertificate()">Miros Cloud Certificate</button>
-    <button class="button" onclick="exportToJson()">Download</button>
+    <button class="button" onclick="exportToJsonWavex()">Download</button>
     <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">
     <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload</button>
     <button class="clear_button" onclick="clearForm()">Clear Data</button>
