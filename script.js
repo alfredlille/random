@@ -2068,8 +2068,9 @@ function openFullReportWavex() {
     loginPassword3: formData.loginPassword3,
     loginComments3: formData.loginComments3,
     workStatus: formData.workStatus,
-    subscriptionExpiry: formData.subscriptionExpiry,
     subscriptionStatus: formData.subscriptionStatus,
+
+    subscriptionExpiry: formData.subscriptionExpiry,
     generalComments: formData.generalComments
   };
 
@@ -2099,8 +2100,8 @@ function openFullReportWavex() {
     <div class="info"><span class="label">Work Type:</span> <span class="value">${selectedElements.workType}</span></div>
     <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
     <div class="info">
-    <span class="label"></span> <span class="value">${selectedElements.subscriptionStatus}</span>
-    <span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionExpiry}</span>
+ <span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus}</span>
+    <span class="label"></span> <span class="value">${selectedElements.subscriptionExpiry}</span>
     
     </div>
 </div>
