@@ -648,11 +648,8 @@ function exportToJsonWavex() {
   var loginPassword3Value = document.querySelector('input[name="loginPassword3"]').value;
   var loginComments3Value = document.querySelector('input[name="loginComments3"]').value;
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
-  var subscriptionStatusValue = document.querySelector('input[name="subscriptionStatus"]').value;
-
+  var subscriptionStatusValue = document.querySelector('select[name="subscriptionStatus"]').value;
   var subscriptionExpiryValue = document.querySelector('input[name="subscriptionExpiry"]').value;
-
-
   var generalCommentsValue = document.querySelector('textarea[name="generalComments"]').value;
 
 
@@ -668,7 +665,6 @@ function exportToJsonWavex() {
     workType: workTypeValue,
     workStatus: workStatusValue,
     subscriptionStatus: subscriptionStatusValue,
-
     subscriptionExpiry: subscriptionExpiryValue,
     generalComments: generalCommentsValue,
     siteType: siteTypeValue,
@@ -1327,11 +1323,8 @@ function exportToJsonMocean() {
   var loginPassword3Value = document.querySelector('input[name="loginPassword3"]').value;
   var loginComments3Value = document.querySelector('input[name="loginComments3"]').value;
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
-  var subscriptionStatusValue = document.querySelector('input[name="subscriptionStatus"]').value;
-
+  var subscriptionStatusValue = document.querySelector('select[name="subscriptionStatus"]').value;
   var subscriptionExpiryValue = document.querySelector('input[name="subscriptionExpiry"]').value;
-
-
   var generalCommentsValue = document.querySelector('textarea[name="generalComments"]').value;
 
 
@@ -1347,7 +1340,6 @@ function exportToJsonMocean() {
     workType: workTypeValue,
     workStatus: workStatusValue,
     subscriptionStatus: subscriptionStatusValue,
-
     subscriptionExpiry: subscriptionExpiryValue,
     generalComments: generalCommentsValue,
     siteType: siteTypeValue,
@@ -2073,7 +2065,6 @@ function openFullReportWavex() {
     loginComments3: formData.loginComments3,
     workStatus: formData.workStatus,
     subscriptionStatus: formData.subscriptionStatus,
-
     subscriptionExpiry: formData.subscriptionExpiry,
     generalComments: formData.generalComments
   };
@@ -3127,7 +3118,6 @@ function openFullReportMocean() {
     workStatus: formData.workStatus,
     subscriptionStatus: formData.subscriptionStatus,
     subscriptionExpiry: formData.subscriptionExpiry,
-
     generalComments: formData.generalComments
   };
 
@@ -4069,10 +4059,7 @@ function openReportWavex() {
     loginComments3: formData.loginComments3,
     workStatus: formData.workStatus,
     subscriptionStatus: formData.subscriptionStatus,
-
     subscriptionExpiry: formData.subscriptionExpiry,
-
-
     generalComments: formData.generalComments
   };
 
@@ -4774,7 +4761,6 @@ function openReportMocean() {
     loginComments3: formData.loginComments3,
     workStatus: formData.workStatus,
     subscriptionStatus: formData.subscriptionStatus,
-
     subscriptionExpiry: formData.subscriptionExpiry,
     generalComments: formData.generalComments
   };
