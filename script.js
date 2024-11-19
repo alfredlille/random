@@ -208,12 +208,6 @@ window.onload = function () {
   populateImagesFromLocalStorage();  
 };
 
-
-
-
-
-
-
 // Function to handle image files
 function handleImageFilesOLD(event) {
   const files = event.target.files;
@@ -2414,10 +2408,6 @@ function fillFormFromJson(data) {
   });
 }
 
-
-
-
-
 function openFullReportWavex() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
@@ -4228,7 +4218,7 @@ function openFullReportOSD() {
   </tr>
   <tr>
     <td style="padding-right: 20px;"><strong>Windows Version:</strong> ${formData.windowsVersion}</td>
-    <td style="padding-right: 20px;"><strong>osd Startup:</strong> ${formData.osdStartup}</td>
+    <td style="padding-right: 20px;"><strong>OSD Startup:</strong> ${formData.osdStartup}</td>
   </tr>
   <tr>
     <td style="padding-right: 20px;"><strong>OSD Options:</strong> ${formData.osdOptions}</td>
@@ -6494,6 +6484,7 @@ function openReportOSD() {
 <div class="header">
   <div class="text-container">
   <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px; padding-bottom: 10px;">
+
   <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
     <div class="info"><span class="label">Customer:</span> <span class="value">${selectedElements.customer}</span></div>
@@ -6502,15 +6493,60 @@ function openReportOSD() {
     <div class="info"><span class="label">Work Status:</span> <span class="value">${selectedElements.workStatus}</span></div>
     <div class="info"><span class="label">Subscription Expiry:</span> <span class="value">${selectedElements.subscriptionStatus}   ${selectedElements.subscriptionExpiry}</span></div>
 </div>
-<!-- Large image to the right -->
-<img src="none.png" alt="Large Image Description" class="large-image">
+
+<table style="width: 100%; text-align: right; color: #ffffff; border-collapse: collapse;">
+  <!-- First Row -->
+  <tr>
+    <td style="font-size: 20px; font-weight: bold; padding-right: 40px; white-space: nowrap;">
+      Site Report
+    </td>
+  </tr>
+  
+  <!-- Second Row (Email) -->
+  <tr>
+    <td style="font-size: 14px; padding-right: 40px; white-space: nowrap;">
+      
+    </td>
+  </tr>
+</table>
 </div>
 
 
 <div class="container">
-  <h2>Site Report</h2>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <h3>Overview</h3>
   <p style="max-width: 750px;">${selectedElements.generalComments}</p>
+
+
+
+
 
   <table class="info-table">
   <!-- System -->
@@ -7891,7 +7927,7 @@ function showExplanation(event) {
   }
 }
 
-function showHelpAlert() {
+function showHelpAlertWavex() {
   // Define your headings, paragraphs, and hyperlinks here
   const heading1 = "How to use this tool";
   const text1 = "Follow the relevant system commissioning procedure and fill in all required fields.";
@@ -7905,6 +7941,53 @@ function showHelpAlert() {
   const text4 = "<a href='https://mirosas.sharepoint.com/sites/doc/PR-002/PublishedDocuments/PR-002%20-%20Wavex%20v6.1%20commissioning%20(Procedure).pdf' target='_blank'>Link</a>";
   const heading5 = "Product Page";
   const text5 = "<a href='https://mirosas.sharepoint.com/sites/doc/PR-002/PublishedDocuments/Forms/AllDocuments.aspx' target='_blank'>Link</a>";
+
+  // Check if the popup already exists to avoid duplicates
+  const existingPopup = document.getElementById("customAlertPopup");
+  if (existingPopup) {
+    existingPopup.remove();
+  }
+
+  // Create overlay
+  const overlay = createOverlay();
+
+  // Create the popup box
+  const popupBox = createPopupBox();
+
+  // Append headings and paragraphs
+  popupBox.appendChild(createContent(heading1, text1));
+  popupBox.appendChild(createContent(heading2, text2));
+  popupBox.appendChild(createContent(heading3, text3));
+
+  // Append the new headings and paragraphs with hyperlinks
+  popupBox.appendChild(createContent(heading4, text4));
+  popupBox.appendChild(createContent(heading5, text5));
+
+  // Create and add the close button
+  const closeButton = createCloseButton(overlay);
+  popupBox.appendChild(closeButton);
+
+  // Append popup box to overlay
+  overlay.appendChild(popupBox);
+
+  // Append the overlay to the body
+  document.body.appendChild(overlay);
+}
+
+function showHelpAlertOsd() {
+  // Define your headings, paragraphs, and hyperlinks here
+  const heading1 = "How to use this tool";
+  const text1 = "Follow the relevant system commissioning procedure and fill in all required fields.";
+  const heading2 = "Generating reports";
+  const text2 = "Once completed, generate a report and print as a .pdf file. Remember to include backgrounds and images.";
+  const heading3 = "Saving data";
+  const text3 = "Data is automatically saved in browser cache but ensure you download the data as a .json file for future usage.";
+  
+  // New Headings and Paragraphs with Hyperlinks
+  const heading4 = "OSD Commissioning Procedure";
+  const text4 = "<a href='https://mirosas.sharepoint.com/sites/doc/PR-003/PublishedDocuments/PR-003%20-%20Miros%20OSD%20v5.10%20Commissioning%20(Procedure).pdf' target='_blank'>Link</a>";
+  const heading5 = "Product Page";
+  const text5 = "<a href='https://mirosas.sharepoint.com/sites/doc/PR-003/PublishedDocuments/Forms/AllDocuments.aspx' target='_blank'>Link</a>";
 
   // Check if the popup already exists to avoid duplicates
   const existingPopup = document.getElementById("customAlertPopup");

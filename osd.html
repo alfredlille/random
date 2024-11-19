@@ -36,15 +36,12 @@
        
       </select>
     </form>
-    <h2>X Band Suite</h2>
-    <h3>Oil Spill Detection</h3>
-    <p>The following page should be used to ensure the system is commissioned correctly and all the relevant site information is captured.</p>
+    <h2>Oil Spill Detection</h2>
+    <p>The following page should be used to ensure all relevant site information is captured and a system is confgured correctly.</p>
   </div>
   <div class="container">
     <div class="form-container">
       <form id="myForm" oninput="saveToLocalStorage()">
-        <br>
-        <br>
         <br>
         <br>
         <br>
@@ -3395,14 +3392,14 @@
       onchange="handleImageFiles(event)">
     <button class="img_button" onclick="document.getElementById('imageFileInput').click()">Add Images</button>
     <button class="button" onclick="openReportOSD()">Standard Report</button>
-    <button class="button" onclick="openFullReport()">Detailed Report</button>
+    <button class="button" onclick="openFullReportOSD()">Detailed Report</button>
     <button class="button" onclick="openCloudCertificate()">Miros Cloud Certificate</button>
     <button class="button" onclick="exportToJsonOSD()">Download</button>
     <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">
     <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload</button>
     <button class="clear_button" onclick="clearForm()">Clear Data</button>
     <button class="toggle_scroll" onclick="toggleScroll()">Jump to End / Start</button>
-    <button class="help_button" onclick="showHelpAlert()">Help</button>
+    <button class="help_button" onclick="showHelpAlertOsd()">Help</button>
 
   </div>
 </body>
