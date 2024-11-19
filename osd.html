@@ -2377,8 +2377,8 @@
                 <input type="text" name="windowsVersion" style="width:140px;">
               </td>
               <td>
-                <label for="wavexStartup">OSD Startup:</label>
-                <select name="wavexStartup" style="width: 150px;">
+                <label for="osdStartup">OSD Startup:</label>
+                <select name="osdStartup" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -2386,12 +2386,12 @@
               </td>
             <tr>
               <td>
-                <label for="wavexOptions">OSD Options:</label>
-                <select name="wavexOptions" style="width: 150px;">
+                <label for="osdOptions">OSD Options:</label>
+                <select name="osdOptions" style="width: 150px;">
                   <option value=" "> </option>
+                  <option value="FLIR">FLIR</option>
                   <option value="Wave">Wave</option>
-                  <option value="Wave & Current">Wave & Current</option>
-                  <option value="Wave & Current & STW">Wave & Current & STW</option>
+                  <option value="ICE">ICE</option>
                 </select>
               </td>
               <td>
@@ -2600,7 +2600,7 @@
           <!-- <input type="text" name="em129Comments" style="width:300px; height: 100px;"> -->
           <textarea type="em129Comments" name="em129Comments" rows="8" cols="40"></textarea>
           </td>
-          <!-- WAVEX SOFTWARE CONFIGURATION. -->
+          <!-- osd SOFTWARE CONFIGURATION. -->
           <div class="line_sub"></div>
 
           <h3>6.2. OSD Software Configuration</h3>
@@ -2613,16 +2613,16 @@
           <table>
             <tr>
               <td>
-                <label for="wavexDescription">Description:</label>
-                <select name="wavexDescription" style="width: 150px;">
+                <label for="osdDescription">Description:</label>
+                <select name="osdDescription" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
                 </select>
               </td>
               <td>
-                <label for="wavexMovement">Movement:</label>
-                <select name="wavexMovement" style="width: 150px;">
+                <label for="osdMovement">Movement:</label>
+                <select name="osdMovement" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="Fixed">Fixed</option>
                   <option value="Rotating">Rotating</option>
@@ -2633,16 +2633,16 @@
           <table>
             <tr>
               <td>
-                <label for="wavexLat">Latitude:</label>
-                <input type="text" name="wavexLat" style="width:140px;">
+                <label for="osdLat">Latitude:</label>
+                <input type="text" name="osdLat" style="width:140px;">
               </td>
               <td>
-                <label for="wavexLong">Latitude:</label>
-                <input type="text" name="wavexLong" style="width:140px;">
+                <label for="osdLong">Latitude:</label>
+                <input type="text" name="osdLong" style="width:140px;">
               </td>
               <td>
-                <label for="wavexHeading">Heading:</label>
-                <input type="text" name="wavexHeading" style="width:140px;">
+                <label for="osdHeading">Heading:</label>
+                <input type="text" name="osdHeading" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">Fixed and
@@ -2656,23 +2656,23 @@
           <table>
             <tr>
               <td>
-                <label for="wavexRadar">Radar Configuration:</label>
-                <select name="wavexRadar" style="width: 150px;">
+                <label for="osdRadar">Radar Configuration:</label>
+                <select name="osdRadar" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
                 </select>
               </td>
               <td>
-                <label for="wavexMulticast">Multicast Address:</label>
-                <input type="text" name="wavexMulticast" style="width:140px;">
+                <label for="osdMulticast">Multicast Address:</label>
+                <input type="text" name="osdMulticast" style="width:140px;">
               </td>
           </table>
           <table>
             <tr>
               <td>
-                <label for="wavexTransceiver">Transceiver ID:</label>
-                <input type="text" name="wavexTransceiver" style="width:140px;">
+                <label for="osdTransceiver">Transceiver ID:</label>
+                <input type="text" name="osdTransceiver" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style:italic; color: grey;">Wartsila & Raytheon
@@ -2683,8 +2683,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexRinId">RIN ID:</label>
-                <select name="wavexRinId" style="width: 150px;">
+                <label for="osdRinId">RIN ID:</label>
+                <select name="osdRinId" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -2693,8 +2693,8 @@
                 </select>
               </td>
               <td>
-                <label for="wavexRinNetwork">RIN Network:</label>
-                <select name="wavexRinNetwork" style="width: 150px;">
+                <label for="osdRinNetwork">RIN Network:</label>
+                <select name="osdRinNetwork" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="A">A</option>
                   <option value="B">B</option>
@@ -2707,8 +2707,8 @@
             </tr>
             <tr>
               <td>
-                <label for="wavexImageStorage">Image Storage:</label>
-                <select name="wavexImageStorage" style="width: 150px;">
+                <label for="osdImageStorage">Image Storage:</label>
+                <select name="osdImageStorage" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -2720,8 +2720,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexGPS">Configuration:</label>
-                <select name="wavexGPS" style="width: 150px;">
+                <label for="osdGPS">Configuration:</label>
+                <select name="osdGPS" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -2729,31 +2729,31 @@
                 </select>
               </td>
               <td>
-                <label for="wavexGPSPositionSentence">Position Sentence:</label>
-                <select name="wavexGPSPositionSentence" style="width: 150px;">
+                <label for="osdGPSPositionSentence">Position Sentence:</label>
+                <select name="osdGPSPositionSentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="GGA">GGA</option>
                   <option value="GLL">GLL</option>
                 </select>
               </td>
               <td>
-                <label for="wavexGPSTrackSpeedSentence">Track & Speed Sentence:</label>
-                <select name="wavexGPSTrackSpeedSentence" style="width: 150px;">
+                <label for="osdGPSTrackSpeedSentence">Track & Speed Sentence:</label>
+                <select name="osdGPSTrackSpeedSentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="VTG">VTG</option>
                 </select>
               </td>
               <td>
-                <label for="wavexGPSTimeSentence">Time Sentence:</label>
-                <select name="wavexGPSTimeSentence" style="width: 150px;">
+                <label for="osdGPSTimeSentence">Time Sentence:</label>
+                <select name="osdGPSTimeSentence" style="width: 150px;">
                   <option value=" "> </option>
-                  <option value="ZDA">VTG</option>
+                  <option value="ZDA">ZDA</option>
                   <option value="NA">NA</option>
                 </select>
               </td>
               <td>
-                <label for="wavexGPSSettings">Settings:</label>
-                <input type="text" name="wavexGPSSettings" style="width:140px;">
+                <label for="osdGPSSettings">Settings:</label>
+                <input type="text" name="osdGPSSettings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -2764,8 +2764,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexGyro">Configuration:</label>
-                <select name="wavexGyro" style="width: 150px;">
+                <label for="osdGyro">Configuration:</label>
+                <select name="osdGyro" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -2773,16 +2773,16 @@
                 </select>
               </td>
               <td>
-                <label for="wavexGyroSentence">Gyro Sentence:</label>
-                <select name="wavexGyroSentence" style="width: 150px;">
+                <label for="osdGyroSentence">Gyro Sentence:</label>
+                <select name="osdGyroSentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="HDT">HDT</option>
                   <option value="THS">THS</option>
                 </select>
               </td>
               <td>
-                <label for="wavexGyroSettings">Settings:</label>
-                <input type="text" name="wavexGyroSettings" style="width:140px;">
+                <label for="osdGyroSettings">Settings:</label>
+                <input type="text" name="osdGyroSettings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -2793,8 +2793,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexWind">Configuration:</label>
-                <select name="wavexWind" style="width: 150px;">
+                <label for="osdWind">Configuration:</label>
+                <select name="osdWind" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -2802,15 +2802,15 @@
                 </select>
               </td>
               <td>
-                <label for="wavexWindSentence">Wind Sentence:</label>
-                <select name="wavexWindSentence" style="width: 150px;">
+                <label for="osdWindSentence">Wind Sentence:</label>
+                <select name="osdWindSentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="MWV">MWV</option>
                 </select>
               </td>
               <td>
-                <label for="wavexWindSettings">Settings:</label>
-                <input type="text" name="wavexWindSettings" style="width:140px;">
+                <label for="osdWindSettings">Settings:</label>
+                <input type="text" name="osdWindSettings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -2821,8 +2821,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexWave">Configuration:</label>
-                <select name="wavexWave" style="width: 150px;">
+                <label for="osdWave">Configuration:</label>
+                <select name="osdWave" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -2830,8 +2830,8 @@
                 </select>
               </td>
               <td>
-                <label for="wavexWaveSentence">Wave Sentence:</label>
-                <select name="wavexWaveSentence" style="width: 150px;">
+                <label for="osdWaveSentence">Wave Sentence:</label>
+                <select name="osdWaveSentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="PMIRWM">PMIRWM</option>
                   <option value="PMIRLD">PMIRLD</option>
@@ -2842,8 +2842,8 @@
                 </select>
               </td>
               <td>
-                <label for="wavexWaveSettings">Settings:</label>
-                <input type="text" name="wavexWaveSettings" style="width:140px;">
+                <label for="osdWaveSettings">Settings:</label>
+                <input type="text" name="osdWaveSettings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -2854,8 +2854,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexDraught">Configuration:</label>
-                <select name="wavexDraught" style="width: 150px;">
+                <label for="osdDraught">Configuration:</label>
+                <select name="osdDraught" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -2863,15 +2863,15 @@
                 </select>
               </td>
               <td>
-                <label for="wavexDraughtSentence">Draught Sentence:</label>
-                <select name="wavexDraughtSentence" style="width: 150px;">
+                <label for="osdDraughtSentence">Draught Sentence:</label>
+                <select name="osdDraughtSentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="XDR">XDR</option>
                 </select>
               </td>
               <td>
-                <label for="wavexDraughtSettings">Settings:</label>
-                <input type="text" name="wavexDraughtSettings" style="width:140px;">
+                <label for="osdDraughtSettings">Settings:</label>
+                <input type="text" name="osdDraughtSettings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -2882,8 +2882,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexSpeedlog">Configuration:</label>
-                <select name="wavexSpeedlog" style="width: 150px;">
+                <label for="osdSpeedlog">Configuration:</label>
+                <select name="osdSpeedlog" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -2891,16 +2891,16 @@
                 </select>
               </td>
               <td>
-                <label for="wavexSpeedlogSentence">Speed Log Sentence:</label>
-                <select name="wavexSpeedlogSentence" style="width: 150px;">
+                <label for="osdSpeedlogSentence">Speed Log Sentence:</label>
+                <select name="osdSpeedlogSentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="VBW">VBW</option>
                   <option value="VHW">VHW</option>
                 </select>
               </td>
               <td>
-                <label for="wavexSpeedlogSettings">Settings:</label>
-                <input type="text" name="wavexSpeedlogSettings" style="width:140px;">
+                <label for="osdSpeedlogSettings">Settings:</label>
+                <input type="text" name="osdSpeedlogSettings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -2918,40 +2918,40 @@
           <table>
             <tr>
               <td>
-                <label for="wavexGeometryRadarX">X Offset:</label>
-                <input type="text" name="wavexGeometryRadarX" style="width:70px;">
+                <label for="osdGeometryRadarX">X Offset:</label>
+                <input type="text" name="osdGeometryRadarX" style="width:70px;">
               </td>
               <td>
-                <label for="wavexGeometryRadarY">Y Offset:</label>
-                <input type="text" name="wavexGeometryRadarY" style="width:70px;">
+                <label for="osdGeometryRadarY">Y Offset:</label>
+                <input type="text" name="osdGeometryRadarY" style="width:70px;">
               </td>
               <td>
-                <label for="wavexGeometryRadarZ">Height above MSL or keel:</label>
-                <input type="text" name="wavexGeometryRadarZ" style="width:140px;">
+                <label for="osdGeometryRadarZ">Height above MSL or keel:</label>
+                <input type="text" name="osdGeometryRadarZ" style="width:140px;">
               </td>
           </table>
           <p> GPS:</p>
           <table>
             <tr>
               <td>
-                <label for="wavexGeometryGPSX">X Offset:</label>
-                <input type="text" name="wavexGeometryGPSX" style="width:70px;">
+                <label for="osdGeometryGPSX">X Offset:</label>
+                <input type="text" name="osdGeometryGPSX" style="width:70px;">
               </td>
               <td>
-                <label for="wavexGeometryGPSY">Y Offset:</label>
-                <input type="text" name="wavexGeometryGPSY" style="width:70px;">
+                <label for="osdGeometryGPSY">Y Offset:</label>
+                <input type="text" name="osdGeometryGPSY" style="width:70px;">
               </td>
           </table>
           <p> Wind:</p>
           <table>
             <tr>
               <td>
-                <label for="wavexGeometryWindHeadingOffset">Heading Offset:</label>
-                <input type="text" name="wavexGeometryWindHeadingOffset" style="width:140px;">
+                <label for="osdGeometryWindHeadingOffset">Heading Offset:</label>
+                <input type="text" name="osdGeometryWindHeadingOffset" style="width:140px;">
               </td>
               <td>
-                <label for="wavexGeometryWindZ">Height above MSL:</label>
-                <input type="text" name="wavexGeometryWindZ" style="width:140px;">
+                <label for="osdGeometryWindZ">Height above MSL:</label>
+                <input type="text" name="osdGeometryWindZ" style="width:140px;">
               </td>
           </table>
           <p> Radar Settings</p>
@@ -2960,35 +2960,35 @@
           <table>
             <tr>
               <td>
-                <label for="wavexRadarRangeOffset">Range Offset:</label>
-                <input type="text" name="wavexRadarRangeOffset" style="width:100px;">
+                <label for="osdRadarRangeOffset">Range Offset:</label>
+                <input type="text" name="osdRadarRangeOffset" style="width:100px;">
               </td>
               <td>
-                <label for="wavexRadarAzimuthOffset">Azimuth Offset:</label>
-                <input type="text" name="wavexRadarAzimuthOffset" style="width:100px;">
+                <label for="osdRadarAzimuthOffset">Azimuth Offset:</label>
+                <input type="text" name="osdRadarAzimuthOffset" style="width:100px;">
               </td>
               <td>
-                <label for="wavexRadarStartAngle">Start Angle:</label>
-                <input type="text" name="wavexRadarStartAngle" style="width:100px;">
+                <label for="osdRadarStartAngle">Start Angle:</label>
+                <input type="text" name="osdRadarStartAngle" style="width:100px;">
               </td>
               <td>
-                <label for="wavexRadarSectorSize">Sector Size:</label>
-                <input type="text" name="wavexRadarSectorSize" style="width:100px;">
+                <label for="osdRadarSectorSize">Sector Size:</label>
+                <input type="text" name="osdRadarSectorSize" style="width:100px;">
               </td>
               <td>
-                <label for="wavexRadarStartRange">Start Range:</label>
-                <input type="text" name="wavexRadarStartRange" style="width:100px;">
+                <label for="osdRadarStartRange">Start Range:</label>
+                <input type="text" name="osdRadarStartRange" style="width:100px;">
               </td>
               <td>
-                <label for="wavexRadarStopRange">Stop Range:</label>
-                <input type="text" name="wavexRadarStopRange" style="width:100px;">
+                <label for="osdRadarStopRange">Stop Range:</label>
+                <input type="text" name="osdRadarStopRange" style="width:100px;">
               </td>
           </table>
           <table>
             <tr>
               <td>
-                <label for="wavexRadarImageCheck">Radar Image Check:</label>
-                <select name="wavexRadarImageCheck" style="width: 140px;">
+                <label for="osdRadarImageCheck">Radar Image Check:</label>
+                <select name="osdRadarImageCheck" style="width: 140px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -3004,8 +3004,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexAdvancedWaveAntennaMeanHeight">Antenna Mean Height:</label>
-                <select name="wavexAdvancedWaveAntennaMeanHeight" style="width: 140px;">
+                <label for="osdAdvancedWaveAntennaMeanHeight">Antenna Mean Height:</label>
+                <select name="osdAdvancedWaveAntennaMeanHeight" style="width: 140px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -3017,8 +3017,8 @@
               </td>
             <tr>
               <td>
-                <label for="wavexAdvancedWaveCartesianSections">Cartesian Sections:</label>
-                <select name="wavexAdvancedWaveCartesianSections" style="width: 140px;">
+                <label for="osdAdvancedWaveCartesianSections">Cartesian Sections:</label>
+                <select name="osdAdvancedWaveCartesianSections" style="width: 140px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -3030,8 +3030,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexAdvancedCurrentAntennaMeanHeight">Antenna Mean Height:</label>
-                <select name="wavexAdvancedCurrentAntennaMeanHeight" style="width: 140px;">
+                <label for="osdAdvancedCurrentAntennaMeanHeight">Antenna Mean Height:</label>
+                <select name="osdAdvancedCurrentAntennaMeanHeight" style="width: 140px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -3043,8 +3043,8 @@
               </td>
             <tr>
               <td>
-                <label for="wavexAdvancedCurrentCartesianSections">Cartesian Sections:</label>
-                <select name="wavexAdvancedCurrentCartesianSections" style="width: 140px;">
+                <label for="osdAdvancedCurrentCartesianSections">Cartesian Sections:</label>
+                <select name="osdAdvancedCurrentCartesianSections" style="width: 140px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -3057,8 +3057,8 @@
           <table>
             <tr>
               <td>
-                <label for="wavexOutput1">Configuration:</label>
-                <select name="wavexOutput1" style="width: 150px;">
+                <label for="osdOutput1">Configuration:</label>
+                <select name="osdOutput1" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -3066,8 +3066,8 @@
                 </select>
               </td>
               <td>
-                <label for="wavexOutput1Sentence">Sentence:</label>
-                <select name="wavexOutput1Sentence" style="width: 150px;">
+                <label for="osdOutput1Sentence">Sentence:</label>
+                <select name="osdOutput1Sentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="PMIRW">PMIRW</option>
                   <option value="PMILD">PMIRLD</option>
@@ -3075,12 +3075,12 @@
                 </select>
               </td>
               <td>
-                <label for="wavexOutput1UpdateInterval">Update Interval:</label>
-                <input type="text" name="wavexOutput1UpdateInterval" style="width:100px;">
+                <label for="osdOutput1UpdateInterval">Update Interval:</label>
+                <input type="text" name="osdOutput1UpdateInterval" style="width:100px;">
               </td>
               <td>
-                <label for="wavexOutput1Settings">Settings:</label>
-                <input type="text" name="wavexOutput1Settings" style="width:140px;">
+                <label for="osdOutput1Settings">Settings:</label>
+                <input type="text" name="osdOutput1Settings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -3088,8 +3088,8 @@
               </td>
             <tr>
               <td>
-                <label for="wavexOutput2"></label>
-                <select name="wavexOutput2" style="width: 150px;">
+                <label for="osdOutput2"></label>
+                <select name="osdOutput2" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -3097,8 +3097,8 @@
                 </select>
               </td>
               <td>
-                <label for="wavexOutput2Sentence"></label>
-                <select name="wavexOutput2Sentence" style="width: 150px;">
+                <label for="osdOutput2Sentence"></label>
+                <select name="osdOutput2Sentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="PMIRW">PMIRW</option>
                   <option value="PMILD">PMIRLD</option>
@@ -3106,12 +3106,12 @@
                 </select>
               </td>
               <td>
-                <label for="wavexOutput2UpdateInterval"></label>
-                <input type="text" name="wavexOutput2UpdateInterval" style="width:100px;">
+                <label for="osdOutput2UpdateInterval"></label>
+                <input type="text" name="osdOutput2UpdateInterval" style="width:100px;">
               </td>
               <td>
-                <label for="wavexOutput2Settings"></label>
-                <input type="text" name="wavexOutput2Settings" style="width:140px;">
+                <label for="osdOutput2Settings"></label>
+                <input type="text" name="osdOutput2Settings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -3119,8 +3119,8 @@
               </td>
             <tr>
               <td>
-                <label for="wavexOutput3"></label>
-                <select name="wavexOutput3" style="width: 150px;">
+                <label for="osdOutput3"></label>
+                <select name="osdOutput3" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="OK">OK</option>
                   <option value="Not OK">Not OK</option>
@@ -3128,8 +3128,8 @@
                 </select>
               </td>
               <td>
-                <label for="wavexOutput3Sentence"></label>
-                <select name="wavexOutput3Sentence" style="width: 150px;">
+                <label for="osdOutput3Sentence"></label>
+                <select name="osdOutput3Sentence" style="width: 150px;">
                   <option value=" "> </option>
                   <option value="PMIRW">PMIRW</option>
                   <option value="PMILD">PMIRLD</option>
@@ -3137,12 +3137,12 @@
                 </select>
               </td>
               <td>
-                <label for="wavexOutput3UpdateInterval"></label>
-                <input type="text" name="wavexOutput3UpdateInterval" style="width:100px;">
+                <label for="osdOutput3UpdateInterval"></label>
+                <input type="text" name="osdOutput3UpdateInterval" style="width:100px;">
               </td>
               <td>
-                <label for="wavexOutput3Settings"></label>
-                <input type="text" name="wavexOutput3Settings" style="width:140px;">
+                <label for="osdOutput3Settings"></label>
+                <input type="text" name="osdOutput3Settings" style="width:140px;">
               </td>
               <td>
                 <p style="padding-top: 15px; padding-left: 5px; font-style: italic; color: grey; ">i.e. COM 4 4800 8
@@ -3235,8 +3235,8 @@
               <table>
                 <tr>
                   <td>
-                    <label for="backupWavexJson">Config JSON:</label>
-                    <select name="backupWavexJson" style="width: 150px;">
+                    <label for="backuposdJson">Configuration:</label>
+                    <select name="backuposdJson" style="width: 150px;">
                       <option value=" "> </option>
                       <option value="OK">OK</option>
                       <option value="Not OK">Not OK</option>
@@ -3394,10 +3394,10 @@
     <input type="file" id="imageFileInput" multiple accept="image/*" style="display: none;"
       onchange="handleImageFiles(event)">
     <button class="img_button" onclick="document.getElementById('imageFileInput').click()">Add Images</button>
-    <button class="button" onclick="openReportWavex()">Standard Report</button>
+    <button class="button" onclick="openReportOSD()">Standard Report</button>
     <button class="button" onclick="openFullReport()">Detailed Report</button>
     <button class="button" onclick="openCloudCertificate()">Miros Cloud Certificate</button>
-    <button class="button" onclick="exportToJsonWavex()">Download</button>
+    <button class="button" onclick="exportToJsonOSD()">Download</button>
     <input type="file" id="jsonFileInput" style="display: none;" onchange="handleJsonFile(event)">
     <button class="button" onclick="document.getElementById('jsonFileInput').click()">Upload</button>
     <button class="clear_button" onclick="clearForm()">Clear Data</button>
