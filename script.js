@@ -6497,32 +6497,16 @@ function openReportOSD() {
 <table style="width: 100%; text-align: right; color: #ffffff; border-collapse: collapse;">
   <!-- First Row -->
   <tr>
-    <td style="font-size: 20px; font-weight: bold; padding-right: 40px; padding-top: 15px; white-space: nowrap;">
-      Site Report
-    </td>
+<td 
+  style="font-size: 20px; font-weight: bold; padding-right: 40px; padding-top: 15px; white-space: nowrap;">
+  Site Report
+</td>
   </tr>
   
   <!-- Second Row (Email) -->
-<button 
-    onclick="generatePDF()" 
-    style="
-      position: fixed; 
-      top: 20px; 
-      right: 20px; 
-      padding: 10px 20px; 
-      font-size: 16px; 
-      background-color: #007BFF; 
-      color: white; 
-      border: none; 
-      border-radius: 5px; 
-      cursor: pointer; 
-      z-index: 1000; 
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    ">
-    Download PDF
-  </button>  <tr>
+<tr>
     <td style="font-size: 14px; padding-right: 40px; white-space: nowrap;">
-
+<button id="downloadButton" onclick="generatePDF()">Download PDF</button>
     </td>
   </tr>
 </table>
@@ -6997,26 +6981,38 @@ function openReportOSD() {
 
 </div>  
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
- 
-  <script>
-    function generatePDF() {
-      const element = document.body;
-      const options = {
-        margin: 0.5,
-        filename: 'google-logo-page.pdf',
-        image: { type: 'png', quality: 0.98 },
-        html2canvas: {
-          scale: 2, // Higher scale for better quality
-          useCORS: true  // Enable CORS for external images (like the Google logo)
-        },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      };
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
-      // Generate PDF from the selected element
-      html2pdf().set(options).from(element).save();
-    }
-  </script>
+<script>
+  function generatePDF() {
+    // Get the button element
+    const downloadButton = document.getElementById('downloadButton');
+
+    // Temporarily hide the button so it doesn't appear in the PDF
+    downloadButton.style.display = 'none';
+
+    // The element you want to convert into a PDF
+    const element = document.body; // You can target a specific part like a div here if you want
+
+    // Set up the options for html2pdf
+    const options = {
+      margin: 0.5,
+      filename: 'site_report.pdf',
+      image: { type: 'png', quality: 0.98 },
+      html2canvas: {
+        scale: 2, // Higher scale for better quality
+        useCORS: true  // Enable CORS for external images (like the Google logo)
+      },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    // Generate the PDF
+    html2pdf().set(options).from(element).save().then(() => {
+      // Re-show the button after the PDF is generated
+      downloadButton.style.display = 'inline-block';
+    });
+  }
+</script>
   </body>
   
   </html>
