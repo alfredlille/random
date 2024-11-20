@@ -6503,14 +6503,51 @@ function openReportOSD() {
   </tr>
   
   <!-- Second Row (Email) -->
-  <tr>
+<button 
+    onclick="generatePDF()" 
+    style="
+      position: fixed; 
+      top: 20px; 
+      right: 20px; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      background-color: #007BFF; 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      z-index: 1000; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    ">
+    Download PDF
+  </button>  <tr>
     <td style="font-size: 14px; padding-right: 40px; white-space: nowrap;">
-      
+
     </td>
   </tr>
 </table>
 </div>
 
+ <script src="html2pdf.bundle.min.js"></script>
+  <!-- JavaScript to generate PDF -->
+  <script>
+    function generatePDF() {
+      // Select the entire body
+      const element = document.body;
+
+      // Ensure images are loaded before generating the PDF
+      const options = {
+        margin: 0.5,
+        filename: 'full-page-with-images.pdf',
+        image: { type: 'png', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+
+      // Generate the PDF after ensuring images are fully loaded
+      html2pdf().set(options).from(element).save();
+    }
+  </script>
 
 <div class="container">
 <div style="text-align: center; padding-top: 20px; padding-bottom: 10px;">
