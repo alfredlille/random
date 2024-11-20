@@ -6483,7 +6483,7 @@ function openReportOSD() {
 
 <div class="header">
   <div class="text-container">
-  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 200px; padding-bottom: 10px;">
+  <img src="images/miros_logo.svg" style="width: 200px; padding-bottom: 10px;">
 
   <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
@@ -6528,30 +6528,10 @@ function openReportOSD() {
 </table>
 </div>
 
- <script src="html2pdf.bundle.min.js"></script>
-  <!-- JavaScript to generate PDF -->
-  <script>
-    function generatePDF() {
-      // Select the entire body
-      const element = document.body;
-
-      // Ensure images are loaded before generating the PDF
-      const options = {
-        margin: 0.5,
-        filename: 'full-page-with-images.pdf',
-        image: { type: 'png', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      };
-
-      // Generate the PDF after ensuring images are fully loaded
-      html2pdf().set(options).from(element).save();
-    }
-  </script>
 
 <div class="container">
 <div style="text-align: center; padding-top: 20px; padding-bottom: 10px;">
-    <img src="https://www.miros-group.com/wp-content/uploads/2023/08/oil-spill-with-radar-corrected-full-e1578990505511-1200x801-1.png" style="width: 700px;">
+    <img src="images/osd.png" style="width: 700px;">
 </div>
 
 
@@ -7012,11 +6992,33 @@ function openReportOSD() {
   <p>&copy; 2024 Miros Group. All rights reserved.</p>
   <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
   <a href="https://www.miros-group.com">
-  <img src="https://miros.app/miros-logo-two-tone-light.631848d3e1f5088e7f228ac7b63d6dbc.svg" style="width: 100px;">
+  <img src="images/miros_logo.svg" style="width: 100px;">
 </a>
 
 </div>  
+
+<script src="js/html2pdf.bundle.min.js"></script>
+
+  <script>
+    function generatePDF() {
+      const element = document.body;
+      const options = {
+        margin: 0.5,
+        filename: 'google-logo-page.pdf',
+        image: { type: 'png', quality: 0.98 },
+        html2canvas: {
+          scale: 2, // Higher scale for better quality
+          useCORS: true  // Enable CORS for external images (like the Google logo)
+        },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+
+      // Generate PDF from the selected element
+      html2pdf().set(options).from(element).save();
+    }
+  </script>
   </body>
+  
   </html>
   `;
 
