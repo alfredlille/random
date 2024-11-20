@@ -6483,7 +6483,7 @@ function openReportOSD() {
 
 <div class="header">
   <div class="text-container">
-  <img src="https://github.com/alfredlille/random/blob/main/images/miros_logo.svg" style="width: 200px; padding-bottom: 10px;">
+  <img src="https://raw.githubusercontent.com/alfredlille/random/refs/heads/main/images/miros_logo.svg" style="width: 200px; padding-bottom: 10px;">
 
   <div class="info"><span class="label">System:</span> <span class="value">${selectedElements.system}</span></div>
     <div class="info"><span class="label">Site:</span> <span class="value">${selectedElements.site}</span></div>
@@ -6531,7 +6531,7 @@ function openReportOSD() {
 
 <div class="container">
 <div style="text-align: center; padding-top: 20px; padding-bottom: 10px;">
-    <img src="https://github.com/alfredlille/random/blob/main/images/osd.png" style="width: 700px;">
+    <img src="https://raw.githubusercontent.com/alfredlille/random/refs/heads/main/images/osd.png" style="width: 700px;">
 </div>
 
 
@@ -6992,12 +6992,12 @@ function openReportOSD() {
   <p>&copy; 2024 Miros Group. All rights reserved.</p>
   <p><a href="https://www.miros-group.com" style="color: white;">Miros Cloud Terms & Conditions</a></p>
   <a href="https://www.miros-group.com">
-  <img src="https://github.com/alfredlille/random/blob/main/images/miros_logo.svg" style="width: 100px;">
+  <img src="https://raw.githubusercontent.com/alfredlille/random/refs/heads/main/images/miros_logo.svg" style="width: 100px;">
 </a>
 
 </div>  
 
-<script src="js/html2pdf.bundle.min.js"></script>
+<script src="https://raw.githubusercontent.com/alfredlille/random/refs/heads/main/js/function%20openFullReportWaveFusion()%20%7B.js"></script>
 
   <script>
     function generatePDF() {
