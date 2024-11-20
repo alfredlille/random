@@ -6497,7 +6497,7 @@ function openReportOSD() {
 <table style="width: 100%; text-align: right; color: #ffffff; border-collapse: collapse;">
   <!-- First Row -->
   <tr>
-    <td style="font-size: 20px; font-weight: bold; padding-right: 40px; white-space: nowrap;">
+    <td style="font-size: 20px; font-weight: bold; padding-right: 40px; padding-top: 15px; white-space: nowrap;">
       Site Report
     </td>
   </tr>
@@ -6513,34 +6513,11 @@ function openReportOSD() {
 
 
 <div class="container">
+<div style="text-align: center; padding-top: 20px; padding-bottom: 10px;">
+    <img src="https://www.miros-group.com/wp-content/uploads/2023/08/oil-spill-with-radar-corrected-full-e1578990505511-1200x801-1.png" style="width: 700px;">
+</div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
   <h3>Overview</h3>
   <p style="max-width: 750px;">${selectedElements.generalComments}</p>
 
@@ -6983,6 +6960,10 @@ function openReportOSD() {
 <div class="image-container">
   ${imageUrls.map(url => `<div><img src="${url}" style="max-width: 100%;"></div>`).join('')}
 </div>
+<br>  
+<br>
+<br>
+<br>
 
  
   </div>
