@@ -6997,8 +6997,8 @@ function openReportOSD() {
 
 </div>  
 
-<script src="https://raw.githubusercontent.com/alfredlille/random/refs/heads/main/js/function%20openFullReportWaveFusion()%20%7B.js"></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+ 
   <script>
     function generatePDF() {
       const element = document.body;
