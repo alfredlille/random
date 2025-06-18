@@ -205,7 +205,7 @@ function populateImagesFromLocalStorage() {
 }
 
 window.onload = function () {
-  populateImagesFromLocalStorage();  
+  populateImagesFromLocalStorage();
 };
 
 // Function to handle image files
@@ -998,7 +998,7 @@ function exportToJsonWavex() {
 
   // Trigger the download
   link.click();
-}1
+} 1
 
 function exportToJsonOSD() {
   // Get the form element values
@@ -2412,9 +2412,9 @@ function openFullReportWavex() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
-if (workStatusValue === 'Complete') {
+  if (workStatusValue === 'Complete') {
     alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
-}
+  }
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
@@ -3455,6 +3455,11 @@ if (workStatusValue === 'Complete') {
 function openFullReportOSD() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
+
+  if (workStatusValue === 'Complete') {
+    alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
+  }
+
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
@@ -4498,6 +4503,11 @@ function openFullReportOSD() {
 function openFullReportMocean() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
+
+  if (workStatusValue === 'Complete') {
+    alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
+  }
+
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
@@ -5567,6 +5577,11 @@ function openReportWavex() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
+  if (workStatusValue === 'Complete') {
+    alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
+  }
+
+
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
@@ -6267,6 +6282,11 @@ function openReportWavex() {
 function openReportOSD() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
+
+  if (workStatusValue === 'Complete') {
+    alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
+  }
+
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
@@ -7032,6 +7052,11 @@ function openReportMocean() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
+  if (workStatusValue === 'Complete') {
+    alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
+  }
+
+
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
@@ -7734,6 +7759,11 @@ function openCloudCertificateOLD() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   const workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
+  if (workStatusValue === 'Complete') {
+    alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
+  }
+
+
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
@@ -7838,6 +7868,11 @@ function openCloudCertificateOLD() {
 function openCloudCertificate() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   const workStatusValue = document.querySelector('select[name="workStatus"]').value;
+
+  if (workStatusValue === 'Complete') {
+    alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
+  }
+
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
@@ -7955,7 +7990,7 @@ function showHelpAlertWavex() {
   const text2 = "Once completed, generate a report and print as a .pdf file. Remember to include backgrounds and images.";
   const heading3 = "Saving data";
   const text3 = "Data is automatically saved in browser cache but ensure you download the data as a .json file for future usage.";
-  
+
   // New Headings and Paragraphs with Hyperlinks
   const heading4 = "Wavex Commissioning Procedure";
   const text4 = "<a href='https://mirosas.sharepoint.com/sites/doc/PR-002/PublishedDocuments/PR-002%20-%20Wavex%20v6.1%20commissioning%20(Procedure).pdf' target='_blank'>Link</a>";
@@ -8002,7 +8037,7 @@ function showHelpAlertOsd() {
   const text2 = "Once completed, generate a report and print as a .pdf file. Remember to include backgrounds and images.";
   const heading3 = "Saving data";
   const text3 = "Data is automatically saved in browser cache but ensure you download the data as a .json file for future usage.";
-  
+
   // New Headings and Paragraphs with Hyperlinks
   const heading4 = "OSD Commissioning Procedure";
   const text4 = "<a href='https://mirosas.sharepoint.com/sites/doc/PR-003/PublishedDocuments/PR-003%20-%20Miros%20OSD%20v5.10%20Commissioning%20(Procedure).pdf' target='_blank'>Link</a>";
@@ -8081,7 +8116,7 @@ function createContent(headingText, paragraphText) {
   heading.style.fontWeight = "bold";
   heading.style.marginBottom = "5px";
   heading.style.color = "black";  // Set heading text color to black
-  
+
   // Create paragraph with possible hyperlinks
   const paragraph = document.createElement("div");
   paragraph.innerHTML = paragraphText;  // Use innerHTML to allow for hyperlinks in the text
