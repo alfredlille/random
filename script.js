@@ -2413,7 +2413,7 @@ function openFullReportWavex() {
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
 if (workStatusValue === 'Complete') {
-    alert('Reminder: Please ensure the site is set to "Commissioned" in miros.app.');
+    alert('Please ensure the site is set to "Commissioned" in the Miros Cloud administration area.');
 }
 
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
