@@ -2412,6 +2412,10 @@ function openFullReportWavex() {
   const formData = JSON.parse(localStorage.getItem('formData'));
   var workStatusValue = document.querySelector('select[name="workStatus"]').value;
 
+if (workStatusValue === 'Complete') {
+    alert('Reminder: Please ensure the site is set to "Commissioned" in miros.app.');
+}
+
   if (workStatusValue !== 'Complete' && workStatusValue !== 'In Progress' && workStatusValue !== 'Needs Attention') {
     alert('Check the work status. It is not possible to generate a report or certificate at this stage.');
     return;
